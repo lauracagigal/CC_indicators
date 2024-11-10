@@ -18,6 +18,7 @@ concurrency:
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
+    environment: github-pages  # Añadir el entorno aquí
     # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
     permissions:
       pages: write
