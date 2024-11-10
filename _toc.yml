@@ -1,0 +1,27 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro.md
+parts:
+  - caption: Getting started
+    chapters:
+    - file: README.md
+      sections:
+      - file: notebooks/introduction.md
+  - caption: HISTORICAL
+    chapters:
+    - file: notebooks/atmosphere/atmosphere.md
+      sections:
+      - file: notebooks/atmosphere/rainfall.md
+        sections:
+        - file: notebooks/atmosphere/rainfall/rainfall_mswep.ipynb
+      - file: notebooks/atmosphere/wind/wind.md
+        sections:
+        - file: notebooks/atmosphere/wind/wind_era5.ipynb
+    - file: notebooks/ocean_waves_sl/ocean_waves_sl.md
+      sections:
+      - file: notebooks/ocean_waves_sl/waves/waves.md
+        sections:
+        - file: notebooks/ocean_waves/waves/waves_era5.ipynb
+

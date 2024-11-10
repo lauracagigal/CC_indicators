@@ -1,0 +1,49 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: CC Indicators
+author: Laura Cagigal
+logo: resources/icons/icon.png
+copyright                   : "2024"  # Copyright year to be placed in the footer
+only_build_toc_files : true
+
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: 'off'
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# # Add a bibtex file so that we can create citations
+# bibtex_bibfiles:
+#   - SeaLevelIndicators.bib
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/lauracagigal/CC_indicators # Online location of your book
+  branch: main  # Which branch of the repository should be used when creating links (optional)
+
+
+# Parse and render settings
+parse:
+  myst_url_schemes: [mailto, http, https] # URI schemes that will be recognised as external URLs in Markdown links
+  myst_enable_extensions:
+    - amsmath
+    - dollarmath
+sphinx:
+  config:
+    html_js_files:
+    - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
+    suppress_warnings: ["mystnb.unknown_mime_type"]
+
+launch_buttons:
+  # Binder button
+  binderhub_url: "https://mybinder.org"  # The URL for your BinderHub deployment
+  binderhub_logo_url: "https://mybinder.org/static/images/logo.svg"  # Logo for your BinderHub deployment
+  binderhub_logo_inject: true  # Inject the logo defined above in the Binder button?
+  use_jupyter_lab: true  # Should the classic notebook interface be used, or JupyterLab?
+  thebe: true  # Should Binder/Thebe be enabled?
