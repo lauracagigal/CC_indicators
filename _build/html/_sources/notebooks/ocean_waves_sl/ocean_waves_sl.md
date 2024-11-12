@@ -5,9 +5,6 @@ This section of the repository focuses on the analysis of ocean waves and sea le
 ## Contents
 
 
-3. [Wave Analysis](#wave-analysis)
-4. [Sea Level Analysis](#sea-level-analysis)
-
 ## Introduction
 
 In this section, we delve into the study of ocean waves and sea level. We aim to understand the characteristics, patterns, and trends associated with these phenomena. By analyzing relevant data and applying various techniques, we gain insights into the behavior of waves and sea level in different regions.
