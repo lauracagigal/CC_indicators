@@ -24,4 +24,7 @@ parts:
       - file: notebooks/ocean_waves_sl/waves/waves.md
         sections:
         - file: notebooks/ocean_waves/waves/waves_era5.ipynb
+    - file: notebooks/ocean_sst/ocean_sst.md
+      sections:
+      - file: notebooks/ocean_sst/ocean_sst_oisst.ipynb
 
