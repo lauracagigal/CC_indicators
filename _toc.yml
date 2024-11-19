@@ -4,27 +4,31 @@
 format: jb-book
 root: intro.md
 parts:
-  - caption: Getting started
+  - caption: Map
     chapters:
-    - file: README.md
-      sections:
-      - file: notebooks/introduction.md
+    - file: intro_map.ipynb
   - caption: HISTORICAL
     chapters:
-    - file: notebooks/atmosphere/atmosphere.md
+    - file: notebooks_historical/atmosphere/atmosphere.md
       sections:
-      - file: notebooks/atmosphere/rainfall/rainfall.md
+      - file: notebooks_historical/atmosphere/atmospheric_co2/co2.md
         sections:
-        - file: notebooks/atmosphere/rainfall/rainfall_mswep.ipynb
-      - file: notebooks/atmosphere/wind/wind.md
+        - file: notebooks_historical/atmosphere/atmospheric_co2/atmospheric_co2.ipynb
+      - file: notebooks_historical/atmosphere/surface_temperature/surface_temperature.md
         sections:
-        - file: notebooks/atmosphere/wind/winds_era5.ipynb
-    - file: notebooks/ocean_waves_sl/ocean_waves_sl.md
+        - file: notebooks_historical/atmosphere/surface_temperature/mean_temperature.ipynb
+      - file: notebooks_historical/atmosphere/rainfall/rainfall.md
+        sections:
+        - file: notebooks_historical/atmosphere/rainfall/rainfall_mswep.ipynb
+      - file: notebooks_historical/atmosphere/wind/wind.md
+        sections:
+        - file: notebooks_historical/atmosphere/wind/winds_era5.ipynb
+    - file: notebooks_historical/ocean_waves_sl/ocean_waves_sl.md
       sections:
-      - file: notebooks/ocean_waves_sl/waves/waves.md
+      - file: notebooks_historical/ocean_waves_sl/waves/waves.md
         sections:
-        - file: notebooks/ocean_waves_sl/waves/waves_ERA5.ipynb
-    - file: notebooks/ocean_sst/ocean_sst.md
+        - file: notebooks_historical/ocean_waves_sl/waves/waves_ERA5.ipynb
+    - file: notebooks_historical/ocean_sst/ocean_sst.md
       sections:
-      - file: notebooks/ocean_sst/ocean_sst_oisst_.ipynb
-
+      - file: notebooks_historical/ocean_sst/ocean_sst_oisst_.ipynb
+      
