@@ -6,6 +6,8 @@ import numpy as np
 
 import requests
 import re
+from io import BytesIO
+
 
 # MLO
 def download_MLO_CO2_data(url):
@@ -182,3 +184,33 @@ class GHCN:
                 globals()[dict_name].append(info_dic)           
         
         return globals()[dict_name], IDS
+    
+
+#IBTrACS
+    
+def download_ibtracs(url, basin=None):
+    """
+    Downloads a file from the given URL and returns an xarray dataset.
+
+    Parameters:
+    url (str): The URL of the file to be downloaded.
+    basin (str, optional): The basin to filter the dataset by. Defaults to None.
+
+    Returns:
+    xr.Dataset: The downloaded file as an xarray dataset.
+
+    Raises:
+    None
+    """
+    
+    response = requests.get(url)
+    # Verify the request was successful
+    if response.status_code == 200:
+        tcs = xr.open_dataset(BytesIO(response.content))
+    else:
+        print(f"Error while downloading file: {response.status_code}")
+    
+    if basin:
+        tcs = tcs.isel(storm=np.where(tcs.isel(date_time=0).basin.values.astype(str) == basin)[0])
+
+    return tcs[['wmo_wind', 'wmo_pres', 'name']]

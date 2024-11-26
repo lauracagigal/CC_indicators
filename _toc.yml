@@ -7,28 +7,48 @@ parts:
   - caption: Map
     chapters:
     - file: intro_map.ipynb
+
+## HISTORICAL
+
   - caption: HISTORICAL
     chapters:
+
+## ATMOSPHERE
     - file: notebooks_historical/atmosphere/atmosphere.md
       sections:
-      - file: notebooks_historical/atmosphere/atmospheric_co2/co2.md
+
+# -> 1. greenhouse gases
+      - file: notebooks_historical/atmosphere/1_greenhouse_gases/greenhouse_gases.md
         sections:
-        - file: notebooks_historical/atmosphere/atmospheric_co2/atmospheric_co2.ipynb
-      - file: notebooks_historical/atmosphere/surface_temperature/surface_temperature.md
+        - file: notebooks_historical/atmosphere/1_greenhouse_gases/a_atmospheric_co2.ipynb
+# -> 2. surface temperature
+      - file: notebooks_historical/atmosphere/2_surface_temperature/surface_temperature.md
         sections:
-        - file: notebooks_historical/atmosphere/surface_temperature/mean_temperature.ipynb
-      - file: notebooks_historical/atmosphere/rainfall/rainfall.md
+        - file: notebooks_historical/atmosphere/2_surface_temperature/a_mean_temperature.ipynb
+# -> 3. rainfall
+      # - file: notebooks_historical/atmosphere/3_rainfall/rainfall.md
+      #   sections:
+      - file: notebooks_historical/atmosphere/3_rainfall/rainfall_mswep.ipynb
+# -> 4. tropical cyclones surface winds
+      - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/tropical_cyclones_surface_winds.md
         sections:
-        - file: notebooks_historical/atmosphere/rainfall/rainfall_mswep.ipynb
-      - file: notebooks_historical/atmosphere/wind/wind.md
-        sections:
-        - file: notebooks_historical/atmosphere/wind/winds_era5.ipynb
-    - file: notebooks_historical/ocean_waves_sl/ocean_waves_sl.md
+        - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/a_tropical_cyclones_int.ipynb
+        - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/b_tropical_cyclones.ipynb
+
+## OCEAN
+
+    - file: notebooks_historical/ocean/ocean.md
       sections:
-      - file: notebooks_historical/ocean_waves_sl/waves/waves.md
+# -> 1. Sea Level
+      - file: notebooks_historical/ocean/1_sea_level/sea_level.md
         sections:
-        - file: notebooks_historical/ocean_waves_sl/waves/waves_ERA5.ipynb
-    - file: notebooks_historical/ocean_sst/ocean_sst.md
+        - file: notebooks_historical/ocean/a_sea_level.ipynb
+# -> 2. Temperature
+    - file: notebooks_historical/ocean/temperature.md
       sections:
-      - file: notebooks_historical/ocean_sst/ocean_sst_oisst_.ipynb
-      
+      - file: notebooks_historical/ocean/ocean_sst_oisst.ipynb
+# -> 3. Biochemistry
+    - file: notebooks_historical/ocean/biochemistry.md
+      sections:
+      - file: notebooks_historical/ocean/a_bio.ipynb
+            
