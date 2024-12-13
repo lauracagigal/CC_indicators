@@ -25,15 +25,21 @@ parts:
       - file: notebooks_historical/atmosphere/2_surface_temperature/surface_temperature.md
         sections:
         - file: notebooks_historical/atmosphere/2_surface_temperature/a_mean_temperature.ipynb
+        - file: notebooks_historical/atmosphere/2_surface_temperature/b_mean_temperature_10e.ipynb
+        - file: notebooks_historical/atmosphere/2_surface_temperature/c_temperature_ninho.ipynb
 # -> 3. rainfall
       # - file: notebooks_historical/atmosphere/3_rainfall/rainfall.md
       #   sections:
-      - file: notebooks_historical/atmosphere/3_rainfall/rainfall_mswep.ipynb
+      - file: notebooks_historical/atmosphere/3_rainfall/a_Wet_day_rainfall.ipynb.ipynb
+      - file: notebooks_historical/atmosphere/3_rainfall/b_Consecutive_dry_days.ipynb
+      - file: notebooks_historical/atmosphere/3_rainfall/c_Extreme_Rainfall.ipynb
+      
 # -> 4. tropical cyclones surface winds
       - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/tropical_cyclones_surface_winds.md
         sections:
         - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/a_tropical_cyclones_int.ipynb
         - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/b_tropical_cyclones.ipynb
+        - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/c_tropical_cyclones_ninho.ipynb
 
 ## OCEAN
 

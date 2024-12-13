@@ -6,8 +6,7 @@ import numpy as np
 
 import requests
 import re
-from io import BytesIO
-
+from io import BytesIO, StringIO
 
 # MLO
 def download_MLO_CO2_data(url):
@@ -174,7 +173,7 @@ class GHCN:
                 # print(f'Var: {var}, Station: {df_country_stations.iloc[i]['ID']}, {df_country_stations.iloc[i]['Name']}')
                 IDS.append(df_country_stations.iloc[i]['ID'])
 
-                if var == 'TMIN' or var == 'TMAX':
+                if var == 'TMIN' or var == 'TMAX' or var == 'PRCP':
                     df[var] = df[var] / 10
                     label = f'Station {df_country_stations.iloc[i]['ID']}' 
                 else:
@@ -214,3 +213,31 @@ def download_ibtracs(url, basin=None):
         tcs = tcs.isel(storm=np.where(tcs.isel(date_time=0).basin.values.astype(str) == basin)[0])
 
     return tcs[['wmo_wind', 'wmo_pres', 'name']]
+
+
+## ONI index
+
+def download_oni_index(p_data):
+    """
+    Retrieves the Oceanic Niño Index (ONI) from the given data source.
+
+    Parameters:
+    p_data (str): The URL or file path of the data source.
+
+    Returns:
+    pandas.DataFrame: The ONI index as a DataFrame with dates as the index and ONI values as the column.
+    """
+
+    content = requests.get(p_data).content.decode()
+    oni = pd.read_csv(
+        StringIO(content), skiprows=1, delim_whitespace=True, header=None, index_col=0
+    )[1:-8]
+    oni = oni.apply(pd.to_numeric, errors="coerce")
+
+    df1 = pd.DataFrame(oni.values.reshape(-1), columns=["ONI"])
+    df1.index = pd.date_range(
+        start=f"{oni.index[0]}-01-01", periods=len(df1), freq="MS"
+    )
+    df1.replace(-99.9, np.nan, inplace=True)
+
+    return df1
