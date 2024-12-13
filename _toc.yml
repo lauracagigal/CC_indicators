@@ -7,54 +7,29 @@ parts:
   - caption: Map
     chapters:
     - file: intro_map.ipynb
-
-## HISTORICAL
-
   - caption: HISTORICAL
     chapters:
-
-## ATMOSPHERE
-    - file: notebooks_historical/atmosphere/atmosphere.md
-      sections:
-
-# -> 1. greenhouse gases
-      - file: notebooks_historical/atmosphere/1_greenhouse_gases/greenhouse_gases.md
+      - file: notebooks_historical/atmosphere/atmosphere.md
         sections:
-        - file: notebooks_historical/atmosphere/1_greenhouse_gases/a_atmospheric_co2.ipynb
-# -> 2. surface temperature
-      - file: notebooks_historical/atmosphere/2_surface_temperature/surface_temperature.md
-        sections:
-        - file: notebooks_historical/atmosphere/2_surface_temperature/a_mean_temperature.ipynb
-        - file: notebooks_historical/atmosphere/2_surface_temperature/b_mean_temperature_10e.ipynb
-        - file: notebooks_historical/atmosphere/2_surface_temperature/c_temperature_ninho.ipynb
-# -> 3. rainfall
-      # - file: notebooks_historical/atmosphere/3_rainfall/rainfall.md
-      #   sections:
-      - file: notebooks_historical/atmosphere/3_rainfall/a_Wet_day_rainfall.ipynb.ipynb
-      - file: notebooks_historical/atmosphere/3_rainfall/b_Consecutive_dry_days.ipynb
-      - file: notebooks_historical/atmosphere/3_rainfall/c_Extreme_Rainfall.ipynb
-      
-# -> 4. tropical cyclones surface winds
-      - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/tropical_cyclones_surface_winds.md
-        sections:
-        - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/a_tropical_cyclones_int.ipynb
-        - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/b_tropical_cyclones.ipynb
-        - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/c_tropical_cyclones_ninho.ipynb
-
-## OCEAN
-
-    - file: notebooks_historical/ocean/ocean.md
-      sections:
-# -> 1. Sea Level
-      - file: notebooks_historical/ocean/1_sea_level/sea_level.md
-        sections:
-        - file: notebooks_historical/ocean/a_sea_level.ipynb
-# -> 2. Temperature
-    - file: notebooks_historical/ocean/temperature.md
-      sections:
-      - file: notebooks_historical/ocean/ocean_sst_oisst.ipynb
-# -> 3. Biochemistry
-    - file: notebooks_historical/ocean/biochemistry.md
-      sections:
-      - file: notebooks_historical/ocean/a_bio.ipynb
-            
+          # -> 1. greenhouse gases
+          - file: notebooks_historical/atmosphere/1_greenhouse_gases/greenhouse_gases.md
+            sections:
+              - file: notebooks_historical/atmosphere/1_greenhouse_gases/a_atmospheric_co2.ipynb
+          # -> 2. surface temperature
+          - file: notebooks_historical/atmosphere/2_surface_temperature/surface_temperature.md
+            sections:
+              - file: notebooks_historical/atmosphere/2_surface_temperature/a_mean_temperature.ipynb
+              - file: notebooks_historical/atmosphere/2_surface_temperature/b_mean_temperature_10e.ipynb
+              - file: notebooks_historical/atmosphere/2_surface_temperature/c_temperature_ninho.ipynb
+          # -> 3. rainfall
+          - file: notebooks_historical/atmosphere/3_rainfall/rainfall.md
+            sections:
+              - file: notebooks_historical/atmosphere/3_rainfall/a_Wet_day_rainfall.ipynb
+              - file: notebooks_historical/atmosphere/3_rainfall/b_Consecutive_dry_days.ipynb
+              - file: notebooks_historical/atmosphere/3_rainfall/c_Extreme_Rainfall.ipynb
+          # -> 4. tropical cyclones surface winds
+          - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/tropical_cyclones_surface_winds.md
+            sections:
+              - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/a_tropical_cyclones_int.ipynb
+              - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/b_tropical_cyclones.ipynb
+              - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/c_tropical_cyclones_ninho.ipynb
