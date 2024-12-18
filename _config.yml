@@ -10,7 +10,8 @@ only_build_toc_files : true
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: 'cache' # 'cache' | 'force' | 'off' | 
+  execute_notebooks: 'force' # 'cache' | 'force' | 'off' | 
+  timeout: -1 # -1 means no timeout
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -31,7 +32,7 @@ html:
   use_repository_button: true
   use_edit_page_button: true
   home_page_in_navbar: true
-  announcement: "In development! Please post issues and suggestions to github."
+  announcement: "In development!"
   comments:
     hypothesis: true
 

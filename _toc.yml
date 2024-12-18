@@ -27,9 +27,18 @@ parts:
               - file: notebooks_historical/atmosphere/3_rainfall/a_Wet_day_rainfall.ipynb
               - file: notebooks_historical/atmosphere/3_rainfall/b_Consecutive_dry_days.ipynb
               - file: notebooks_historical/atmosphere/3_rainfall/c_Extreme_Rainfall.ipynb
+              - file: notebooks_historical/atmosphere/3_rainfall/d_Rainfall_ninho.ipynb
           # -> 4. tropical cyclones surface winds
           - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/tropical_cyclones_surface_winds.md
             sections:
               - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/a_tropical_cyclones_int.ipynb
               - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/b_tropical_cyclones.ipynb
               - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/c_tropical_cyclones_ninho.ipynb
+      - file: notebooks_historical/ocean/ocean.md
+        sections:
+          - file: notebooks_historical/ocean/3_biochemistry/biochemistry.md
+            sections:
+              - file: notebooks_historical/ocean/3_biochemistry/a_chlorophyll.ipynb
+              - file: notebooks_historical/ocean/3_biochemistry/b_chlorophyll_ninho.ipynb
+              - file: notebooks_historical/ocean/3_biochemistry/c_phytoplankton.ipynb
+              - file: notebooks_historical/ocean/3_biochemistry/d_phytoplankton_ninho.ipynb

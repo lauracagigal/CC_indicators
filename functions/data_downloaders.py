@@ -241,3 +241,30 @@ def download_oni_index(p_data):
     df1.replace(-99.9, np.nan, inplace=True)
 
     return df1
+
+# ERDDAP
+
+def download_ERDDAP_data(base_url, dataset_id, date_ini, date_end, lon_range, lat_range):
+    """
+    Downloads data from an ERDDAP server based on the specified parameters.
+
+    Parameters:
+    - base_url (str): The base URL of the ERDDAP server.
+    - dataset_id (str): The ID of the dataset to download.
+    - date_ini (str): The start date of the data to download.
+    - date_end (str): The end date of the data to download.
+    - lon_range (tuple): The range of longitudes to download data for.
+    - lat_range (tuple): The range of latitudes to download data for.
+
+    Returns:
+    - data (pd.DataFrame): The downloaded data as a pandas DataFrame.
+    """
+    # https://oceanwatch.pifsc.noaa.gov/
+    # https://oceanwatch.pifsc.noaa.gov/erddap/info/md50_exp/index.html
+    
+    url = f'{base_url}?{dataset_id}%5B({date_ini}):1:({date_end})%5D%5B({lat_range[0]}):1:({lat_range[1]})%5D%5B({lon_range[0]}):1:({lon_range[1]})%5D'
+    data = pd.read_csv(url).iloc[1:].reset_index(drop=True)
+    data['time'] = pd.to_datetime(data['time'].values)
+    for var in ['latitude', 'longitude', dataset_id]:
+        data[var] = data[var].astype(float)
+    return data
