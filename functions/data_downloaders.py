@@ -27,10 +27,20 @@ def download_MLO_CO2_data(url):
     # Oceanic and Atmospheric Administration [Keeling, 1976]. NOAA started its own CO2 measurements in May of 1974, and they have run
     # in parallel with those made by Scripps since then [Thoning, 1989]. 
 
-    MLO_data = pd.read_csv(url, sep = r'\s+', na_values = -999.99, header=158, usecols=range(11))
-    MLO_data.index = pd.to_datetime(MLO_data['datetime'])
-    MLO_data = MLO_data.rename(columns = {'value':'CO2'}).drop(columns=['datetime', 'time_decimal',\
-            'year', 'month', 'day', 'hour', 'minute', 'second'])
+    # # This is for this url starting in 1974:
+    # url = 'https://www.esrl.noaa.gov/gmd/aftp/data/trace_gases/co2/in-situ/surface/txt/co2_mlo_surface-insitu_1_ccgg_MonthlyData.txt'
+    # MLO_data = pd.read_csv(url, sep = r'\s+', na_values = -999.99, header=158, usecols=range(11))
+    # MLO_data.index = pd.to_datetime(MLO_data['datetime'])
+    # MLO_data = MLO_data.rename(columns = {'value':'CO2'}).drop(columns=['datetime', 'time_decimal',\
+    #         'year', 'month', 'day', 'hour', 'minute', 'second'])
+
+
+    # For this url starting in 1958:
+    # url = 'https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.txt'
+
+    MLO_data = pd.read_csv(url, skiprows=42, sep=r'\s+', header=None, usecols=[0,1,3], names=['year', 'month', 'CO2'], na_values=-99.99)
+    MLO_data.index = pd.to_datetime(MLO_data[['year', 'month']].assign(day=1))
+    MLO_data = MLO_data.drop(columns=['year', 'month'])
 
     return MLO_data
 
