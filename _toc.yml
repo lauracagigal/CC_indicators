@@ -37,6 +37,17 @@ parts:
               - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/c_tropical_cyclones_ninho.ipynb
       - file: notebooks_historical/ocean/ocean.md
         sections:
+          # -> 1. Sea Level
+          - file: notebooks_historical/ocean/1_sea_level/sea_level.md
+            sections:
+              - file: notebooks_historical/ocean/1_sea_level/a_sea_level.ipynb
+          # -> 2. Temperature
+          - file: notebooks_historical/ocean/2_temperature/temperature.md
+            sections:
+              - file: notebooks_historical/ocean/2_temperature/a_ocean_sst_oisst_.ipynb
+              - file: notebooks_historical/ocean/2_temperature/b_DHW.ipynb
+              - file: notebooks_historical/ocean/2_temperature/c_ocean_sst_ninho.ipynb
+          # -> 3. Biochemistry
           - file: notebooks_historical/ocean/3_biochemistry/biochemistry.md
             sections:
               - file: notebooks_historical/ocean/3_biochemistry/a_chlorophyll.ipynb
