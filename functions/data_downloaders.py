@@ -185,9 +185,9 @@ class GHCN:
 
                 if var == 'TMIN' or var == 'TMAX' or var == 'PRCP':
                     df[var] = df[var] / 10
-                    label = f'Station {df_country_stations.iloc[i]['ID']}' 
+                    label = f"Station {df_country_stations.iloc[i]['ID']}"
                 else:
-                    label = f'Station {df_country_stations.iloc[i]['ID']}' 
+                    label = f"Station {df_country_stations.iloc[i]['ID']}"
 
                 info_dic = {'data' : df[[var]], 'var' : var, 'ax' : 1, 'label' : label}
                 globals()[dict_name].append(info_dic)           
