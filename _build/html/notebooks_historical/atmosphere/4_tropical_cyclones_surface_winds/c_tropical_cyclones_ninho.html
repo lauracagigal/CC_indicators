@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -209,7 +209,8 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../ocean/ocean.html">Ocean parameters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../ocean/1_sea_level/sea_level.html">Sea Level</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../ocean/1_sea_level/a_sea_level.html">Sea Level</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ocean/1_sea_level/a_sea_level_ff.html">Minor Flood Frequency and Duration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ocean/1_sea_level/b_sea_level_trend.html">Regional and Local Sea Level Change</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../ocean/2_temperature/temperature.html">Sea Surface Temperature</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -218,17 +219,14 @@
 <li class="toctree-l3"><a class="reference internal" href="../../ocean/2_temperature/c_ocean_sst_ninho.html">SST - El Niño</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../ocean/3_biochemistry/biochemistry.html">Biochemistry</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../ocean/3_biochemistry/a_chlorophyll.html">Chlorophyll</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../ocean/3_biochemistry/b_chlorophyll_ninho.html">Clorophyll - El Niño</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../ocean/3_biochemistry/c_phytoplankton.html">Phytoplankton</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../ocean/3_biochemistry/d_phytoplankton_ninho.html">Phytoplankton - El Niño</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../ocean/3_biochemistry/e_oceanic_pH.html">pH</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../ocean/3_biochemistry/f_oceanic_pH_ninho.html">pH - El Niño</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../ocean/3_biochemistry/g_dissolved_o2.html">O2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../ocean/3_biochemistry/h_dissolved_o2_ninho.html">O2 - El Niño</a></li>
-</ul>
-</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ocean/3_biochemistry/a_chlorophyll.html">Chlorophyll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ocean/3_biochemistry/b_chlorophyll_ninho.html">Clorophyll - El Niño</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ocean/3_biochemistry/c_phytoplankton.html">Phytoplankton</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ocean/3_biochemistry/d_phytoplankton_ninho.html">Phytoplankton - El Niño</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ocean/3_biochemistry/e_oceanic_pH.html">pH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ocean/3_biochemistry/f_oceanic_pH_ninho.html">pH - El Niño</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ocean/3_biochemistry/g_dissolved_o2.html">O2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ocean/3_biochemistry/h_dissolved_o2_ninho.html">O2 - El Niño</a></li>
 </ul>
 </details></li>
 </ul>
@@ -484,6 +482,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-data">Get Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oni-index">ONI index</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-tcs">ALL TCs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#severe-tcs">SEVERE TCs</a></li>
@@ -511,10 +510,12 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os.path</span> <span class="k">as</span> <span class="nn">op</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;../../../functions&quot;</span><span class="p">)</span>
@@ -538,10 +539,24 @@
 </div>
 </div>
 </div>
+<section id="get-data">
+<h2>Get Data<a class="headerlink" href="#get-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r01/access/netcdf/IBTrACS.ALL.v04r01.nc&#39;</span>
-<span class="n">tcs</span> <span class="o">=</span> <span class="n">download_ibtracs</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">basin</span> <span class="o">=</span> <span class="n">basin</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">update_data</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">path_data</span> <span class="o">=</span> <span class="s2">&quot;../../../data&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">update_data</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r01/access/netcdf/IBTrACS.ALL.v04r01.nc&#39;</span>
+    <span class="n">tcs</span> <span class="o">=</span> <span class="n">download_ibtracs</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">basin</span> <span class="o">=</span> <span class="n">basin</span><span class="p">)</span>
+    <span class="n">tcs</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path_data</span><span class="si">}</span><span class="s2">/tcs_</span><span class="si">{</span><span class="n">basin</span><span class="si">}</span><span class="s2">.nc&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">tcs</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path_data</span><span class="si">}</span><span class="s2">/tcs_</span><span class="si">{</span><span class="n">basin</span><span class="si">}</span><span class="s2">.nc&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -577,6 +592,7 @@
 <img alt="../../../_images/4125f4f67eda22bb99f6a09f4c3b77d3527dc6b61851537f4b230d5c46f0fe45.png" src="../../../_images/4125f4f67eda22bb99f6a09f4c3b77d3527dc6b61851537f4b230d5c46f0fe45.png" />
 </div>
 </div>
+</section>
 <section id="oni-index">
 <h2>ONI index<a class="headerlink" href="#oni-index" title="Link to this heading">#</a></h2>
 <p>https://origin.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ONI_v5.php</p>
@@ -589,7 +605,13 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oni</span> <span class="o">=</span> <span class="n">download_oni_index</span><span class="p">(</span><span class="n">p_data</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">update_data</span><span class="p">:</span>
+    <span class="n">df1</span> <span class="o">=</span> <span class="n">download_oni_index</span><span class="p">(</span><span class="n">p_data</span><span class="p">)</span>
+    <span class="n">df1</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_data</span><span class="p">,</span> <span class="s1">&#39;oni_index.pkl&#39;</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_data</span><span class="p">,</span> <span class="s1">&#39;oni_index.pkl&#39;</span><span class="p">))</span>
+
+<span class="n">oni</span> <span class="o">=</span> <span class="n">df1</span>
 </pre></div>
 </div>
 </div>
@@ -893,6 +915,7 @@ dtype: float64
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-data">Get Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oni-index">ONI index</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-tcs">ALL TCs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#severe-tcs">SEVERE TCs</a></li>
