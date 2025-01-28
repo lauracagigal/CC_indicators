@@ -1,0 +1,27 @@
+name: cc_indicators_v2
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python==3.12.0
+  - pandas
+  - ipykernel
+  - xarray
+  - matplotlib
+  - plotly
+  - geopy
+  - cartopy
+  - seaborn
+  - folium
+  - cmocean
+  - contextily
+  - ipywidgets
+  - nbformat
+  - jupyter-book
+  - geopandas
+  - erddapy
+  - papermill
+  - pip
+  - pip:
+    - df2img
+    - copernicusmarine
