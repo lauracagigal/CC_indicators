@@ -4,3 +4,8 @@ data/.DS_Store
 .DS_Store
 data/output/
 _build/.doctrees
+/_build
+/_build/.doctrees
+/_build
+/_build/html
+/data
