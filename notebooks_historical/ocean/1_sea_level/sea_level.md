@@ -1,11 +1,20 @@
 # Sea Level
 
+## Indicators
+
+```{tableofcontents}
+:depth: 2
+:local:
+```
+
 ## Highlights
 
-- Sea level has risen across the Pacific Islands region.  In much of the western tropical Pacific sea level has risen approximately 10–15 cm (4–6 in), close to or nearly twice the global rate measured since 1993.  In the central tropical Pacific sea level has risen approximately 5–10 cm (2–4 in).
-- For the most part, local rates of change obtained from tide gauges are in agreement with those derived from satellites.  However, owing to vertical land motion and other factors, there are locations such as Pago Pago, American Samoa where the local change of 31 ± 7 cm. (12 in ± 3 in) since 1993 as measured in the tide gauge is well above the amount derived from satellite observations.
- - Natural patterns of variability play an important role in regional and local variation in sea level.  These seasonal, interannual, and multi-decadal changes in sea level sometimes exceed 30 cm (12 in) above or below normal, which is a much larger amplitude than the observed long-term trend.
-- Rising mean sea levels have resulted in dramatic increases in the frequency of minor flooding since 1980.  Notable increases include: Guam from 2 to 22 times a year (a 1000% increase); Penrhyn, Cook Islands from 5 to 43 times a year (a 760% increase); Majuro, Republic of the Marshall Islands from 2 to 20 times a year (a 900% increase); Papeete, French Polynesia from 5 to 34 times a year (a 548% increase); and Pago Pago, American Samoa from 0 to 102 times a year.
+- Satellite measurements of global sea level indicate that the mean sea level in the vicinity of the Malakal tide gauge has risen by 17.34 cm (6.82 in) since 1993.  This compares to a value of 12.26 cm (4.83 in) measured by the tide gauge over this same time period.  These differences are largely attributable to vertical land motion.
+- In response to ENSO, sea level varies dramatically in Palau.  For example, the 1997-1998 El Niño produced water levels nearly 30 cm below the average sea level and the corresponding 1998-2001 La Niña produced values over 35 cm above the average sea level.
+- Consistent with the rising trends in mean sea level, minor flood frequency increased at a statistically significant (p < 0.05) rate of 0.95 days per year over the period 1983-2024. 
+- During the decade 2013–2023 relative to the decade 1983–1993, minor flood counts increased in Palau from 18 to 48 times a year (a 167% increase, or nearly 3-fold). 
+- High yearly flood event clustering occurs in conjunction with La Niña events. In contrast, El Niño is rarely associated with high counts of minor flood days. 
+- Minor flooding has a pronounced seasonality.  Minor flooding during the four months July-October comprise 50% of all minor flooding days.
 
 
 ## Background
