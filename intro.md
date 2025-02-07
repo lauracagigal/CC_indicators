@@ -1,11 +1,13 @@
-# Introduction
+# Palau Climate Change Monitor: 2024 
 
-This repository aims to analyze atmospheric and oceanic variables in different locations of the Pacific Ocean. The analysis is conducted using Jupyter notebooks, which are hosted in the following Jupyter Book: [https://lauracagigal.github.io/CC_indicators/](https://lauracagigal.github.io/CC_indicators/).
+![Palau Picture](resources/pictures/palau_pic.png)
 
-The main goal of this analysis is to study the impact of climate change on the Pacific Ocean and its surrounding regions. By examining various indicators such as sea surface temperature, ocean currents, and atmospheric pressure, we can gain insights into the changing climate patterns and their potential consequences.
+<br>
+This report was produced by NOAA’s National Centers for Environmental Information (NCEI) working in partnership with the Palau Office of Climate Change and other agencies, organizations and institutions in the **Republic of Palau**.  It draws on the latest meteorological and oceanographic data from published sources and applies established analytical techniques to document observed long-term changes in climate in and around the Republic of Palau.  It also includes projections of future changes in climate in the vicinity of Palau. It is intended to inform decision-makers seeking to better understand a changing climate, assess its impacts on people’s lives and livelihoods, and prioritize their actions to adapt.<br>
+<br>
+The state of knowledge about rapid climate change in and around Palau is characterized via a set of **environmental indicators**.  Attention is given to two broad categories of indicators: the atmosphere and the ocean, each in separate sections with individual indicators.  Important information about each indicator is summarized and shown graphically using multiple measures, reflecting different data sources and/or different ways to characterize the data. <br>
 
-The Jupyter notebooks in this repository provide step-by-step instructions on how to retrieve and process the data, perform statistical analysis, and visualize the results. They are designed to be accessible to both researchers and students interested in studying climate change and its effects on the Pacific Ocean.
+🌤 **Atmosphere:** CO2, Surface temperature, rainfall, tropical cyclones 
+🌊 **Ocean:** Sea level, ocean temperature, biochemistry
 
-We encourage collaboration and contributions from the scientific community. If you have any suggestions, improvements, or additional data sources that could enhance our analysis, please feel free to submit a pull request or open an issue on our GitHub repository.
-
-Let's work together to deepen our understanding of climate change and its impact on the Pacific Ocean!
+![Palau Map](resources/pictures/palau_map.png)
