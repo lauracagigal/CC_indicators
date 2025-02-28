@@ -1,1 +1,3 @@
 # Sea Surface Temperature
+
+Sea surface temperature (SST) is one of the most well-known and widely observed measures of long-term global climate change.  Changes in SST are used to track modes of natural climate variability such as the ENSO and the IPO/PDO, that affect patterns of wind and rain as well as ocean circulation.  Changes in ocean surface temperature have important ramifications for marine ecosystems. They influence species distribution, growth, and lifespan, alter their migration and breeding patterns.  Increases in SST can threaten sensitive ecosystems such as coral reefs, where high temperatures over extended periods can lead to severe, widespread bleaching and significant coral mortality.  

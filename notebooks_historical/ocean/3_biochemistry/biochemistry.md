@@ -1,1 +1,12 @@
 # Biochemistry
+
+
+Measures of changing ocean chemistry include changes in the acidity of the ocean, phytoplankton abundance, and subsurface oxygen content.     
+
+As the amount of CO2 in the atmosphere has risen, a substantial portion (as much as 26%) has been absorbed by the ocean. The result is that the ocean has become more acidic (that is, the ocean pH has decreased).  Increasing ocean acidity makes it harder for corals and plankton to form calcium carbonate, the main mineral that makes up their hard skeletons and shells. This adversely impacts coral reefs and shellfish, and threatens other marine ecosystems including pelagic fisheries. 
+
+Phytoplankton are the foundation of the marine food web.  Their abundance affects food availability for all marine organisms, ranging from zooplankton to apex predators. Chlorophyll concentration is used as a proxy for phytoplankton abundance.  Phytoplankton size provides insight into ecosystem productivity with larger phytoplankton generally supporting more productive ecosystems with larger fish.  Phytoplankton abundance (chlorophyll concentration) and phytoplankton size varies greatly across the Pacific basin, with higher concentrations generally found at higher latitudes and particularly around coastlines.  Phytoplankton abundance and size also vary in response to natural climate variability such as ENSO, with larger phytoplankton more prevalent across the equatorial Pacific during cooler La Niña periods and vice versa during El Niño.  Decreasing phytoplankton abundance and size has the potential to negatively impact ocean and coastal fisheries. 
+
+Subsurface oxygen levels are a critical indicator of marine ecosystem health and functioning.  When oxygen levels decline below the surface, marine habitats can shrink, causing shifts in species distribution.  This affects marine biodiversity and fisheries, and disrupting livelihoods dependent on these resources.  Subsurface oxygen levels are closely tied to the development of hypoxic “dead zones”, where oxygen concentrations are too low to sustain most marine life.  Changes in subsurface oxygen are driven by factors such as warming oceans, altered circulation patterns, and nutrient runoff.  
+
+ 

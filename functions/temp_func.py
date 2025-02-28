@@ -6,19 +6,15 @@ from datetime import datetime
 import pandas as pd
 import numpy as np
 
+from datetime import datetime
+import pandas as pd
+import numpy as np
+
+from datetime import datetime
+import pandas as pd
+import numpy as np
+
 def exceedance_rate_for_base_period(climate_data, variable_name):
-    """
-    Calculate the exceedance rates for a given climate variable during a base period.
-
-    Parameters:
-    climate_data (DataFrame): The climate data containing the variable of interest.
-    variable_name (str): The name of the climate variable.
-
-    Returns:
-    tuple: A tuple containing two dictionaries. The first dictionary contains the exceedance rates for each year in the base period.
-    The second dictionary contains the exceedance rate for each year in the base period, with the year as the key.
-
-    """
     exceedance_rates = {}
     all_exceedance_data = {}
 
@@ -45,18 +41,6 @@ def exceedance_rate_for_base_period(climate_data, variable_name):
     return exceedance_rates, all_exceedance_data
 
 def centered_percentile(date, base_df, variable_name):
-    """
-    Calculate the centered percentile for a given date and variable in a DataFrame.
-
-    Args:
-        date (datetime): The date for which to calculate the centered percentile.
-        base_df (pandas.DataFrame): The base DataFrame containing the data.
-        variable_name (str): The name of the variable for which to calculate the centered percentile.
-
-    Returns:
-        float: The centered percentile value.
-
-    """
     filtered_df = base_df[(base_df["DATE"] >= datetime(1960, 12, 29)) & (base_df["DATE"] <= datetime(1991, 1, 2))]
     window_values = []
 
@@ -70,17 +54,6 @@ def centered_percentile(date, base_df, variable_name):
         return np.percentile(window_values, 10)
 
 def exceedance_rate_for_outbase_period(climate_data, variable_name):
-    """
-    Calculates the exceedance rate for a given climate variable during an outbase period.
-
-    Parameters:
-    climate_data (pd.DataFrame): The climate data containing the variable of interest.
-    variable_name (str): The name of the variable to calculate the exceedance rate for.
-
-    Returns:
-    pd.DataFrame: A DataFrame containing the exceedance rate for each day in the outbase period.
-    """
-    
     date_range = pd.date_range('2024-01-01', '2024-12-31', freq='D')
     df_exceedance = pd.DataFrame({'DAY': date_range})
 
@@ -89,18 +62,6 @@ def exceedance_rate_for_outbase_period(climate_data, variable_name):
     return df_exceedance
 
 def centered_percentile(date, base_df, variable_name):
-    """
-    Calculate the centered percentile for a given date and variable in a base dataframe.
-
-    Parameters:
-    date (datetime): The date for which to calculate the centered percentile.
-    base_df (DataFrame): The base dataframe containing the data.
-    variable_name (str): The name of the variable for which to calculate the centered percentile.
-
-    Returns:
-    float: The centered percentile value.
-
-    """
     filtered_df = base_df[(base_df["DATE"] >= datetime(1960, 12, 29)) & (base_df["DATE"] <= datetime(1991, 1, 2))]
     window_values = []
 

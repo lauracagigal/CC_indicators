@@ -16,8 +16,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
   -->
   <noscript>
     <style>
@@ -27,10 +27,10 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
@@ -39,10 +39,10 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
@@ -61,6 +61,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks_historical/ocean/3_biochemistry/biochemistry';</script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -182,21 +184,20 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../atmosphere/atmosphere.html">Atmosphere</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../atmosphere/1_greenhouse_gases/greenhouse_gases.html">Atmospheric CO2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../atmosphere/1_greenhouse_gases/a_atmospheric_co2.html">Carbon dioxide (CO2)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../atmosphere/1_greenhouse_gases/a_atmospheric_co2.html">Atmospheric Concentration of Carbon Dioxide (CO2)</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../atmosphere/2_surface_temperature/surface_temperature.html">Atmospheric ST</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../atmosphere/2_surface_temperature/a_mean_temperature.html">Mean Atmospheric Temperature</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../atmosphere/2_surface_temperature/surface_temperature.html">Surface temperature</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../atmosphere/2_surface_temperature/a_mean_temperature.html">Surface Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../atmosphere/2_surface_temperature/b_mean_temperature_10e.html">Top 10 Events</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../atmosphere/2_surface_temperature/c_temperature_ninho.html">Atmospheric Temperature vs Niño</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../atmosphere/2_surface_temperature/d_hot_days.html">Hot and cold days</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../atmosphere/2_surface_temperature/c_temperature_ninho.html">El Niño vs La Niña</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../atmosphere/2_surface_temperature/d_hot_days.html">Hot days and cold nights</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../atmosphere/3_rainfall/rainfall.html">Rainfall</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../atmosphere/3_rainfall/a_Wet_day_rainfall.html">Wet Day</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../atmosphere/3_rainfall/a_Wet_day_rainfall.html">Wet and dry days</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../atmosphere/3_rainfall/b_Consecutive_dry_days.html">Consecutive dry days</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../atmosphere/3_rainfall/c_Extreme_Rainfall.html">Extreme Rainfall</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../atmosphere/3_rainfall/d_Rainfall_ninho.html">Rainfall vs Niño</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../atmosphere/3_rainfall/d_Rainfall_ninho.html">El Niño vs La Niña</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../atmosphere/4_tropical_cyclones_surface_winds/tropical_cyclones_surface_winds.html">Tropical Cyclones and Surface Winds</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -214,7 +215,7 @@
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../2_temperature/temperature.html">Sea Surface Temperature</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../2_temperature/a_ocean_sst_oisst_.html">OISST: SST Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2_temperature/a_ocean_sst_oisst_.html">SST</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../2_temperature/b_DHW.html">DHW</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../2_temperature/c_ocean_sst_ninho.html">SST - El Niño</a></li>
 </ul>
@@ -224,10 +225,10 @@
 <li class="toctree-l3"><a class="reference internal" href="b_chlorophyll_ninho.html">Clorophyll - El Niño</a></li>
 <li class="toctree-l3"><a class="reference internal" href="c_phytoplankton.html">Phytoplankton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="d_phytoplankton_ninho.html">Phytoplankton - El Niño</a></li>
-<li class="toctree-l3"><a class="reference internal" href="e_oceanic_pH.html">pH</a></li>
-<li class="toctree-l3"><a class="reference internal" href="f_oceanic_pH_ninho.html">pH - El Niño</a></li>
-<li class="toctree-l3"><a class="reference internal" href="g_dissolved_o2.html">O2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="h_dissolved_o2_ninho.html">O2 - El Niño</a></li>
+<li class="toctree-l3"><a class="reference internal" href="e_oceanic_pH.html">Ocean Acidification: pH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="f_oceanic_pH_ninho.html">pH - El Niño vs La Niña</a></li>
+<li class="toctree-l3"><a class="reference internal" href="g_dissolved_o2.html"><span class="math notranslate nohighlight">\(O_2\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="h_dissolved_o2_ninho.html"><span class="math notranslate nohighlight">\(O_2\)</span> - El Niño vs La Niña</a></li>
 </ul>
 </details></li>
 </ul>
@@ -240,14 +241,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -445,6 +441,10 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="biochemistry">
 <h1>Biochemistry<a class="headerlink" href="#biochemistry" title="Link to this heading">#</a></h1>
+<p>Measures of changing ocean chemistry include changes in the acidity of the ocean, phytoplankton abundance, and subsurface oxygen content.</p>
+<p>As the amount of CO2 in the atmosphere has risen, a substantial portion (as much as 26%) has been absorbed by the ocean. The result is that the ocean has become more acidic (that is, the ocean pH has decreased).  Increasing ocean acidity makes it harder for corals and plankton to form calcium carbonate, the main mineral that makes up their hard skeletons and shells. This adversely impacts coral reefs and shellfish, and threatens other marine ecosystems including pelagic fisheries.</p>
+<p>Phytoplankton are the foundation of the marine food web.  Their abundance affects food availability for all marine organisms, ranging from zooplankton to apex predators. Chlorophyll concentration is used as a proxy for phytoplankton abundance.  Phytoplankton size provides insight into ecosystem productivity with larger phytoplankton generally supporting more productive ecosystems with larger fish.  Phytoplankton abundance (chlorophyll concentration) and phytoplankton size varies greatly across the Pacific basin, with higher concentrations generally found at higher latitudes and particularly around coastlines.  Phytoplankton abundance and size also vary in response to natural climate variability such as ENSO, with larger phytoplankton more prevalent across the equatorial Pacific during cooler La Niña periods and vice versa during El Niño.  Decreasing phytoplankton abundance and size has the potential to negatively impact ocean and coastal fisheries.</p>
+<p>Subsurface oxygen levels are a critical indicator of marine ecosystem health and functioning.  When oxygen levels decline below the surface, marine habitats can shrink, causing shifts in species distribution.  This affects marine biodiversity and fisheries, and disrupting livelihoods dependent on these resources.  Subsurface oxygen levels are closely tied to the development of hypoxic “dead zones”, where oxygen concentrations are too low to sustain most marine life.  Changes in subsurface oxygen are driven by factors such as warming oceans, altered circulation patterns, and nutrient runoff.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -547,8 +547,8 @@ By Laura Cagigal
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

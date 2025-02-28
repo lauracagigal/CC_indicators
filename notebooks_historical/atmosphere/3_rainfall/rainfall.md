@@ -1,1 +1,5 @@
 # Rainfall
+
+Changes in rainfall can have a wide-ranging impact on humans and ecosystems.  On islands, where rainfall is often the primary source of all freshwater, extended dry periods (i.e., drought) affect drinking water supply.  Drought also affects the agriculture, as well as streamflow necessary to maintain aquatic habitat. Heavy or extreme rainfall events can damage crops,  increase soil erosion, and lead to in-land flooding that damages infrastructure. Runoff from excessive precipitation can also carry harmful pollutants into nearby water bodies, endangering aquatic species as well as human health. 
+
+Rainfall patterns across Palau are strongly linked to the occurrence of ENSO events, the location of the Intertropical Convergence Zone, and seasonal monsoons. As a result, Palau’s rainfall is highly variable from year to year. Long dry periods tend to be associated with strong El Niño events.  For example, during the 1982–1983, 1997–1998, and 2015–2016 El Niño events Palau experienced droughts and acute water shortages which resulted in water rationing (Polhemus 2017; Rupic et al. 2018). Wetter conditions are common during La Niña.  

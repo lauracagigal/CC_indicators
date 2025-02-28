@@ -222,7 +222,7 @@ def download_ibtracs(url, basin=None):
     if basin:
         tcs = tcs.isel(storm=np.where(tcs.isel(date_time=0).basin.values.astype(str) == basin)[0])
 
-    return tcs[['wmo_wind', 'wmo_pres', 'name']]
+    return tcs#[['wmo_wind', 'wmo_pres', 'name']]
 
 
 ## ONI index

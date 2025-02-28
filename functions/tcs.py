@@ -81,12 +81,14 @@ def Extract_Circle(xds_TCs, p_lon, p_lat, r, d_vns):
     nm_lon = d_vns['longitude']
     nm_lat = d_vns['latitude']
     nm_prs = d_vns['pressure']
+    nm_wnd = d_vns['wind']
     nm_tim = d_vns['time']
 
     # storms longitude, latitude, pressure and time (if available)
     lon = xds_TCs[nm_lon].values[:]
     lat = xds_TCs[nm_lat].values[:]
     prs = xds_TCs[nm_prs].values[:]
+    wnd = xds_TCs[nm_wnd].values[:]
     time = xds_TCs[nm_tim].values[:]
 
     # get storms inside circle area
@@ -102,6 +104,8 @@ def Extract_Circle(xds_TCs, p_lon, p_lat, r, d_vns):
     l_date_last = []    # last cyclone date 
     l_gamma = []        # azimuth 
     l_delta = []        # delta 
+
+    l_wnd_max_in = []   # circle minimun pressure
 
     l_ix_in = []        # historical enters the circle index
     l_ix_out = []       # historical leaves the circle index 
@@ -189,6 +193,7 @@ def Extract_Circle(xds_TCs, p_lon, p_lat, r, d_vns):
 
             # more parameters 
             prs_s_in = prs[i_storm][ix_in]  # pressure
+            wnd_s_in = wnd[i_storm][ix_in]  # pressure
 
             # nan data filter
             if np.all(np.isnan(prs_s_in)):
@@ -199,10 +204,15 @@ def Extract_Circle(xds_TCs, p_lon, p_lat, r, d_vns):
             prs_s_min = np.min(prs_s_in)  # pressure minimun
             prs_s_mean = np.mean(prs_s_in)
 
+
+            wnd_s_max = np.nanmax(wnd_s_in)  # wind maximum
+
+
             vel_s_in = velpm[ix_in][no_nan]  # velocity
             vel_s_mean = np.mean(vel_s_in) # velocity mean
 
-            categ = GetStormCategory(prs_s_min)  # category
+            categ = GetStormCategory_pres(prs_s_min)  # category
+            # categ = GetStormCategory_wind(wnd_s_max)  # category
 
             dist_in = geo_dist[ix_in][no_nan]
             p_dm = np.where((dist_in==np.min(dist_in)))[0]  # closest to point
@@ -226,6 +236,7 @@ def Extract_Circle(xds_TCs, p_lon, p_lat, r, d_vns):
             l_date_in.append(time_closest)
             l_gamma.append(gamma)
             l_delta.append(delta)
+            l_wnd_max_in.append(np.array(wnd_s_max))
 
             # store historical indexes inside circle 
             l_ix_in.append(ix_in[0])
@@ -243,6 +254,7 @@ def Extract_Circle(xds_TCs, p_lon, p_lat, r, d_vns):
         {
             'pressure_min':(('storm'), np.array(l_prs_min_in)),
             'pressure_mean':(('storm'), np.array(l_prs_mean_in)),
+            'wind_max':(('storm'), np.array(l_wnd_max_in)),
             'velocity_mean':(('storm'), np.array(l_vel_mean_in)),
             'gamma':(('storm'), np.array(l_gamma)),
             'delta':(('storm'), np.array(l_delta)),
@@ -264,7 +276,7 @@ def Extract_Circle(xds_TCs, p_lon, p_lat, r, d_vns):
 
     return xds_TCs_sel, xds_TCs_sel_params
 
-def GetStormCategory(pres_min):
+def GetStormCategory_pres(pres_min):
     '''
     Returns storm category (int 5-0)
     '''
@@ -280,6 +292,29 @@ def GetStormCategory(pres_min):
     elif pres_min <= pres_lims[3]:
         return 2
     elif pres_min <= pres_lims[4]:
+        return 1
+    else:
+        return 0
+
+def GetStormCategory_wind(wind_max):
+    '''
+    Returns storm category (int 5-0)
+    '''
+    # https://www.nhc.noaa.gov/aboutsshws.php
+
+    wind_max = wind_max/.88 # The saffir simpson scale corresponds to the 1min sustained wind speed. WMO is 10min
+
+    wind_lims = [136, 114, 98, 83, 64]
+
+    if wind_max >= wind_lims[0]:
+        return 5
+    elif wind_max >= wind_lims[1]:
+        return 4
+    elif wind_max >= wind_lims[2]:
+        return 3
+    elif wind_max >= wind_lims[3]:
+        return 2
+    elif wind_max >= wind_lims[4]:
         return 1
     else:
         return 0

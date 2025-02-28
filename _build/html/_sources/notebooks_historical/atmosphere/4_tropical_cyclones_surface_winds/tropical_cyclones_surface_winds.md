@@ -1,1 +1,3 @@
 # Tropical Cyclones and Surface Winds
+
+Tropical Cyclones (TCs), also known as tropical storms or typhoons (hurricane, cyclones) depending on their strength, can have dramatic effects on human life and property. Impacts due to strong winds, heavy rains, and high seas associated with a landfalling TC can be devastating across multiple sectors, especially for islands like Palau.   Potential changes in the intensity, frequency, and location of TCs is an important consideration with respect to assessing the impacts of climate variability and ​￼​change.  
