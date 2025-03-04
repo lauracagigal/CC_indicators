@@ -55,7 +55,7 @@ def GeoAzimuth(lat1, lon1, lat2, lon2):
     return az
 
 
-def Extract_Circle(xds_TCs, p_lon, p_lat, r, d_vns):
+def Extract_Circle(xds_TCs, p_lon, p_lat, r, d_vns, fillwinds = False):
     '''
     Extracts TCs inside circle - used with NWO or Nakajo databases
 
@@ -73,6 +73,15 @@ def Extract_Circle(xds_TCs, p_lon, p_lat, r, d_vns):
         xds_area: selection of xds_TCs inside circle
         xds_inside: contains TCs custom data inside circle
     '''
+
+    if fillwinds:
+        
+        xfit = xds_TCs.wmo_pres.min(dim = 'date_time').values
+        yfit = xds_TCs.wmo_wind.max(dim = 'date_time').values
+        mask = np.isnan(xfit) | np.isnan(yfit)
+        linreg = np.polyfit(xfit[~mask], yfit[~mask], 2)
+        xds_TCs['wmo_wind'] = xds_TCs['wmo_wind'].fillna(linreg[0]*xds_TCs['wmo_pres']**2 + linreg[1]*xds_TCs['wmo_pres'] + linreg[2])
+
 
     # point longitude and latitude
     lonlat_p = np.array([[p_lon, p_lat]])
@@ -126,6 +135,7 @@ def Extract_Circle(xds_TCs, p_lon, p_lat, r, d_vns):
         ix_nonan = ~np.isnan(lonlat_s).any(axis=1)
         lonlat_s = lonlat_s[ix_nonan]
 
+
         # calculate geodesic distance (degree)
         geo_dist = []
         for lon_ps, lat_ps in lonlat_s:
@@ -134,6 +144,7 @@ def Extract_Circle(xds_TCs, p_lon, p_lat, r, d_vns):
 
         # find storm inside circle and calculate parameters
         if (geo_dist < r).any():
+
 
             # storm inside circle
             ix_in = np.where(geo_dist < r)[0][:]
@@ -197,53 +208,80 @@ def Extract_Circle(xds_TCs, p_lon, p_lat, r, d_vns):
 
             # nan data filter
             if np.all(np.isnan(prs_s_in)):
-                continue
-            no_nan = ~np.isnan(prs_s_in)
 
-            prs_s_in = prs_s_in[no_nan]
-            prs_s_min = np.min(prs_s_in)  # pressure minimun
-            prs_s_mean = np.mean(prs_s_in)
+                dist_in = geo_dist[ix_in]
+                p_dm = np.where((dist_in==np.min(dist_in)))[0]  # closest to point
+                time_s_in = time[i_storm][ix_in]  # time
+                time_closest = time_s_in[p_dm][0]  # time closest to point 
+                # continue
+                l_storms_area.append(i_storm)
+                l_prs_min_in.append(np.array(np.nan))
+                l_prs_mean_in.append(np.array(np.nan))
+                l_vel_mean_in.append(np.array(np.nan))
+                l_categ_in.append(np.array(np.nan))
+                l_date_in.append(time_closest)
+                l_gamma.append(np.nan)
+                l_delta.append(np.nan)
+                l_wnd_max_in.append(np.array(np.nan))
+
+                # store historical indexes inside circle 
+                l_ix_in.append(ix_in[0])
+                l_ix_out.append(ix_in[-1])
+
+                # store last cyclone date too
+                l_date_last.append(time[i_storm][ix_nonan][-1])
+            else:
+
+                no_nan = ~np.isnan(prs_s_in)
+                    
+                prs_s_in = prs_s_in[no_nan]
+                prs_s_min = np.min(prs_s_in)  # pressure minimun
+                prs_s_mean = np.mean(prs_s_in)
 
 
-            wnd_s_max = np.nanmax(wnd_s_in)  # wind maximum
+                wnd_s_max = np.nanmax(wnd_s_in)  # wind maximum inside
+                # wnd_s_max = np.nanmax(wnd[i_storm]) # wind maximum all track
 
 
-            vel_s_in = velpm[ix_in][no_nan]  # velocity
-            vel_s_mean = np.mean(vel_s_in) # velocity mean
+                vel_s_in = velpm[ix_in][no_nan]  # velocity
+                vel_s_mean = np.mean(vel_s_in) # velocity mean
 
-            categ = GetStormCategory_pres(prs_s_min)  # category
-            # categ = GetStormCategory_wind(wnd_s_max)  # category
+                # categ = GetStormCategory_pres(prs_s_min)  # category
+                categ = GetStormCategory_wind(wnd_s_max)  # category
 
-            dist_in = geo_dist[ix_in][no_nan]
-            p_dm = np.where((dist_in==np.min(dist_in)))[0]  # closest to point
+                dist_in = geo_dist[ix_in][no_nan]
+                p_dm = np.where((dist_in==np.min(dist_in)))[0]  # closest to point
 
-            time_s_in = time[i_storm][ix_in][no_nan]  # time
-            time_closest = time_s_in[p_dm][0]  # time closest to point 
+                time_s_in = time[i_storm][ix_in][no_nan]  # time
+                time_closest = time_s_in[p_dm][0]  # time closest to point 
 
-            # filter storms 
-            # TODO: storms with only one track point inside radius. solve?
-            if np.isnan(np.array(prs_s_in)).any() or \
-               (np.array(prs_s_in) <= 860).any() or \
-               gamma == 0.0:
-                continue
+                
+                # filter storms 
+                # TODO: storms with only one track point inside radius. solve?
+                if np.isnan(np.array(prs_s_in)).any() or \
+                (np.array(prs_s_in) <= 860).any() or \
+                gamma == 0.0:
+                    
+                    continue
 
-            # store parameters
-            l_storms_area.append(i_storm)
-            l_prs_min_in.append(np.array(prs_s_min))
-            l_prs_mean_in.append(np.array(prs_s_mean))
-            l_vel_mean_in.append(np.array(vel_s_mean))
-            l_categ_in.append(np.array(categ))
-            l_date_in.append(time_closest)
-            l_gamma.append(gamma)
-            l_delta.append(delta)
-            l_wnd_max_in.append(np.array(wnd_s_max))
+                # store parameters
 
-            # store historical indexes inside circle 
-            l_ix_in.append(ix_in[0])
-            l_ix_out.append(ix_in[-1])
+                l_storms_area.append(i_storm)
+                l_prs_min_in.append(np.array(prs_s_min))
+                l_prs_mean_in.append(np.array(prs_s_mean))
+                l_vel_mean_in.append(np.array(vel_s_mean))
+                l_categ_in.append(np.array(categ))
+                l_date_in.append(time_closest)
+                l_gamma.append(gamma)
+                l_delta.append(delta)
+                l_wnd_max_in.append(np.array(wnd_s_max))
 
-            # store last cyclone date too
-            l_date_last.append(time[i_storm][ix_nonan][-1])
+                # store historical indexes inside circle 
+                l_ix_in.append(ix_in[0])
+                l_ix_out.append(ix_in[-1])
+
+                # store last cyclone date too
+                l_date_last.append(time[i_storm][ix_nonan][-1])
 
     # cut storm dataset to selection
     xds_TCs_sel = xds_TCs.isel(storm=l_storms_area)

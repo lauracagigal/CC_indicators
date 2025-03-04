@@ -570,6 +570,13 @@
 </div>
 </details>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tcs</span> <span class="o">=</span> <span class="n">tcs</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">storm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tcs</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">date_time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span> <span class="o">&gt;=</span> <span class="mi">1950</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>    
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell tag_hide tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -584,11 +591,18 @@
     <span class="s1">&#39;pressure&#39;</span><span class="p">:</span> <span class="s1">&#39;wmo_pres&#39;</span><span class="p">,</span>
     <span class="s1">&#39;wind&#39;</span><span class="p">:</span> <span class="s1">&#39;wmo_wind&#39;</span><span class="p">,</span>
 <span class="p">}</span>
-<span class="n">tcs_sel</span><span class="p">,</span> <span class="n">tcs_sel_params</span> <span class="o">=</span> <span class="n">Extract_Circle</span><span class="p">(</span><span class="n">tcs</span><span class="p">,</span> <span class="n">lon_lat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lon_lat</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">r1</span><span class="p">,</span> <span class="n">d_vns</span><span class="p">)</span>
+<span class="n">tcs_sel</span><span class="p">,</span> <span class="n">tcs_sel_params</span> <span class="o">=</span> <span class="n">Extract_Circle</span><span class="p">(</span><span class="n">tcs</span><span class="p">,</span> <span class="n">lon_lat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lon_lat</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">r1</span><span class="p">,</span> <span class="n">d_vns</span><span class="p">,</span> <span class="n">fillwinds</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </details>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tcs_sel_params</span><span class="p">[</span><span class="s1">&#39;category&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;storm&#39;</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">category</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">category</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -605,7 +619,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/4125f4f67eda22bb99f6a09f4c3b77d3527dc6b61851537f4b230d5c46f0fe45.png" src="../../../_images/4125f4f67eda22bb99f6a09f4c3b77d3527dc6b61851537f4b230d5c46f0fe45.png" />
+<img alt="../../../_images/abd52ee2c4146ec0632bb9333f50664c955e744147e6c57a1bdc3385240f31a6.png" src="../../../_images/abd52ee2c4146ec0632bb9333f50664c955e744147e6c57a1bdc3385240f31a6.png" />
 </div>
 </div>
 </section>
@@ -667,13 +681,19 @@
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oni_perc_cat</span> <span class="o">=</span> <span class="n">oni</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;oni_cat&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span> <span class="o">/</span> <span class="n">oni</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span>
 <span class="n">oni_perc_cat</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>oni_cat
 -1    33.783784
@@ -684,18 +704,24 @@ dtype: float64
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tcs_perc_cat</span> <span class="o">=</span> <span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;oni_cat&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">tcs_perc_cat</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>oni_cat
--1    32.673267
- 0    41.584158
- 1    25.742574
+-1.0    30.447761
+ 0.0    42.686567
+ 1.0    26.268657
 dtype: float64
 </pre></div>
 </div>
@@ -710,57 +736,33 @@ dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>oni_cat
--1    0.967129
- 0    1.139714
- 1    0.865887
+-1.0    0.901254
+ 0.0    1.169928
+ 1.0    0.883582
 dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">dmin_date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">values</span>
 <span class="n">u</span><span class="p">,</span> <span class="n">cu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">gridspec_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;height_ratios&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
-<span class="n">oni</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">oni</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">ONI</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;ONI&#39;</span><span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;ONI index&#39;</span><span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">u</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">cu</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightcoral&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">.5</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;TC counts&#39;</span><span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;TC counts&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;TC counts&#39;)
-</pre></div>
-</div>
-<img alt="../../../_images/f401c2f640f9e0657563509d1eb749ab9473c7b58877d5cca7750f340d763ce6.png" src="../../../_images/f401c2f640f9e0657563509d1eb749ab9473c7b58877d5cca7750f340d763ce6.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">dmin_date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">values</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">dmin_date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">values</span>
 <span class="n">u</span><span class="p">,</span> <span class="n">cu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">tc_c</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cu</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">u</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time_sev</span> <span class="o">=</span> <span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">category</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">dmin_date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">values</span>
+<span class="n">time_sev</span> <span class="o">=</span> <span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">category</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">dmin_date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">values</span>
 <span class="n">u_sev</span><span class="p">,</span> <span class="n">cu_sev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">time_sev</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">tc_c_sev</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cu_sev</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">u_sev</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -785,7 +787,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/c5cd1fe5fe15f92123e926d3e0fb1a0e461d11fd490733b8e656dd4ab7cf6b60.png" src="../../../_images/c5cd1fe5fe15f92123e926d3e0fb1a0e461d11fd490733b8e656dd4ab7cf6b60.png" />
+<img alt="../../../_images/286e60f3d32ac83fe3a18e9b37f9ab819232d0edc343c34976215564e5b32585.png" src="../../../_images/286e60f3d32ac83fe3a18e9b37f9ab819232d0edc343c34976215564e5b32585.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -795,7 +797,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/144f1dd7b22002032978e9d9b36a1618c7ce912aa4b393b3f24e3e5b038f5612.png" src="../../../_images/144f1dd7b22002032978e9d9b36a1618c7ce912aa4b393b3f24e3e5b038f5612.png" />
+<img alt="../../../_images/fabe0267738240b9979c1f047333b4dabd3b6e01172e8ce9059dabe6ba6c10a2.png" src="../../../_images/fabe0267738240b9979c1f047333b4dabd3b6e01172e8ce9059dabe6ba6c10a2.png" />
 </div>
 </div>
 </section>
@@ -815,14 +817,14 @@ dtype: float64
         <span class="n">lon1</span><span class="p">,</span> <span class="n">lon2</span><span class="p">,</span> <span class="n">lat1</span><span class="p">,</span> <span class="n">lat2</span><span class="p">,</span>
         <span class="n">lon_lat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lon_lat</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">r1</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Historical SEVERE TCs: </span><span class="si">{</span><span class="n">names_cat</span><span class="p">[</span><span class="n">ic</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Historical TCs: </span><span class="si">{</span><span class="n">names_cat</span><span class="p">[</span><span class="n">ic</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/25c07bc51c5ef9b47f84f0747b66fcf6d090e17298af944e9797aaef058fbb7c.png" src="../../../_images/25c07bc51c5ef9b47f84f0747b66fcf6d090e17298af944e9797aaef058fbb7c.png" />
-<img alt="../../../_images/fa38d341eb422424d794d1afabbf276fd57fe28b6b4e06e4453ffd97b179da4d.png" src="../../../_images/fa38d341eb422424d794d1afabbf276fd57fe28b6b4e06e4453ffd97b179da4d.png" />
-<img alt="../../../_images/22b241d4f6801cf9bea58db271c651bfd690cf13c404c238c4adf885105c4fa0.png" src="../../../_images/22b241d4f6801cf9bea58db271c651bfd690cf13c404c238c4adf885105c4fa0.png" />
+<img alt="../../../_images/98d179b1f5add7b40b007add20426baaa10a872b67db072414e2a4bedde10ec4.png" src="../../../_images/98d179b1f5add7b40b007add20426baaa10a872b67db072414e2a4bedde10ec4.png" />
+<img alt="../../../_images/c6c252c518621a099d88ce5b4bece90df7492bd9082042186335958aa65f06ba.png" src="../../../_images/c6c252c518621a099d88ce5b4bece90df7492bd9082042186335958aa65f06ba.png" />
+<img alt="../../../_images/d84c31223b5a2253ba3df9cb12bafa7c672fa7760d476a00c44f8940524548e0.png" src="../../../_images/d84c31223b5a2253ba3df9cb12bafa7c672fa7760d476a00c44f8940524548e0.png" />
 </div>
 </div>
 </section>
@@ -862,9 +864,9 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/5d0cb605026df751ffe96ede97f7dcc164fb0cf4818c38e475b2cecfd2cc325c.png" src="../../../_images/5d0cb605026df751ffe96ede97f7dcc164fb0cf4818c38e475b2cecfd2cc325c.png" />
-<img alt="../../../_images/9f0c5110d87c5853234ecbdea28c1226ae30cc9324cb0593e5c3f86cd867cc1d.png" src="../../../_images/9f0c5110d87c5853234ecbdea28c1226ae30cc9324cb0593e5c3f86cd867cc1d.png" />
-<img alt="../../../_images/6b0495be64ec5a82074a711ecbf3a27288823eb134b15593357fddd6b22e224a.png" src="../../../_images/6b0495be64ec5a82074a711ecbf3a27288823eb134b15593357fddd6b22e224a.png" />
+<img alt="../../../_images/2382a4c66326e07679e51bc3331cff9f87b99af2510000b301033ed08096f811.png" src="../../../_images/2382a4c66326e07679e51bc3331cff9f87b99af2510000b301033ed08096f811.png" />
+<img alt="../../../_images/d3e6e43512775449ba704c1a10f317f860a842671ef61deda2fb0c01072b8f72.png" src="../../../_images/d3e6e43512775449ba704c1a10f317f860a842671ef61deda2fb0c01072b8f72.png" />
+<img alt="../../../_images/ed11969dd8608b01002deec798d749169157a03f1a5c9782571e881bf718a2f7.png" src="../../../_images/ed11969dd8608b01002deec798d749169157a03f1a5c9782571e881bf718a2f7.png" />
 </div>
 </div>
 </section>
