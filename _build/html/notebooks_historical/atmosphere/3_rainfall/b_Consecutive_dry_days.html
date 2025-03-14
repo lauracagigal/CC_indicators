@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -521,6 +521,7 @@
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;../../../../indicators_setup&quot;</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">ind_setup.plotting_int</span> <span class="kn">import</span> <span class="n">plot_timeseries_interactive</span>
 <span class="kn">from</span> <span class="nn">ind_setup.plotting</span> <span class="kn">import</span> <span class="n">plot_bar_probs</span>
+<span class="kn">from</span> <span class="nn">ind_setup.tables</span> <span class="kn">import</span> <span class="n">plot_df_table</span><span class="p">,</span> <span class="n">table_rain_dry_summary</span>
 
 
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;../../../functions&quot;</span><span class="p">)</span>
@@ -643,11 +644,13 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datag</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-<span class="n">datag</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">datag</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="nb">format</span> <span class="o">=</span> <span class="s1">&#39;%Y&#39;</span><span class="p">)</span>
-<span class="n">dict_plot</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;data&#39;</span> <span class="p">:</span> <span class="n">datag</span><span class="p">,</span> <span class="s1">&#39;var&#39;</span> <span class="p">:</span> <span class="s1">&#39;consecutive_days&#39;</span><span class="p">,</span> <span class="s1">&#39;ax&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">:</span><span class="s1">&#39;Max. number of consecutive dry days [&lt; 1mm]&#39;</span><span class="p">},]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">table_rain_dry_summary</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plot_df_table</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">150</span><span class="p">),)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/3cad536cb7094ce707481148b957c1180b4d49d689776f3370fa6a7275a99ac3.png" src="../../../_images/3cad536cb7094ce707481148b957c1180b4d49d689776f3370fa6a7275a99ac3.png" />
 </div>
 </div>
 </section>
