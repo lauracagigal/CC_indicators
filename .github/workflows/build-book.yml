@@ -18,8 +18,7 @@ concurrency:
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
-    environment: github-pages  # Añadir el entorno aquí
-    # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    environment: github-pages
     permissions:
       pages: write
       id-token: write
@@ -36,12 +35,18 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      # Copy custom HTML folder to a separate location inside the book output
+      - name: Add custom HTML folder to book
+        run: |
+          mkdir -p _build/html/extra
+          cp -r matrix_cc _build/html/extra/
+
       # Upload the book's HTML as an artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: "_build/html"
-          
+
       # Deploy the book's HTML to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
