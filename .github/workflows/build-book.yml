@@ -27,11 +27,18 @@ jobs:
         with:
           python-version: 3.12
 
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
 
-      # - name: Add custom HTML folder to book
-      #   run: |
-      #     mkdir -p _build/html/extra
-      #     cp -r matrix_cc _build/html/extra/
+      - name: Build Jupyter Book
+        run: |
+          jupyter-book build .
+
+      - name: Add custom HTML folder to book
+        run: |
+          mkdir -p _build/html/extra
+          cp -r matrix_cc _build/html/extra/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -41,3 +48,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+ 
