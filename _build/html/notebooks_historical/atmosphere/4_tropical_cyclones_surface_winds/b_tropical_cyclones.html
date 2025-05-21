@@ -511,11 +511,12 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os.path</span> <span class="k">as</span> <span class="nn">op</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;../../../functions&quot;</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">tcs</span> <span class="kn">import</span> <span class="n">Extract_Circle</span>
@@ -545,6 +546,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">update_data</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">path_data</span> <span class="o">=</span> <span class="s2">&quot;../../../data&quot;</span>
+<span class="n">path_figs</span> <span class="o">=</span> <span class="s2">&quot;../../../matrix_cc/figures&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -636,6 +638,8 @@
     <span class="n">lon1</span><span class="p">,</span> <span class="n">lon2</span><span class="p">,</span> <span class="n">lat1</span><span class="p">,</span> <span class="n">lat2</span><span class="p">,</span>
     <span class="n">lon_lat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lon_lat</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">r1</span><span class="p">,</span>
 <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_figs</span><span class="p">,</span> <span class="s1">&#39;F8_TCs_Historical.png&#39;</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -683,13 +687,12 @@
     <span class="n">lon_lat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lon_lat</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">r1</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Severe Historical TCs [Categories 3, 4 and 5]&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_figs</span><span class="p">,</span> <span class="s1">&#39;F8_TCs_Historical_Severe.png&#39;</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Severe Historical TCs [Categories 3, 4 and 5]&#39;)
-</pre></div>
-</div>
 <img alt="../../../_images/766ff54c6a61b9f04e481c439ba047fcd52266401788a59a7f455a218cd3cc74.png" src="../../../_images/766ff54c6a61b9f04e481c439ba047fcd52266401788a59a7f455a218cd3cc74.png" />
 </div>
 </div>
@@ -720,7 +723,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x17beb4650&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x17bf4ea50&gt;
 </pre></div>
 </div>
 <img alt="../../../_images/b8ea579c40ec8031fd0236e7f055409b5135161ab211304bbcee4d12bc3cda4a.png" src="../../../_images/b8ea579c40ec8031fd0236e7f055409b5135161ab211304bbcee4d12bc3cda4a.png" />
@@ -729,6 +732,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_tc_categories_trend</span><span class="p">(</span><span class="n">tcs_sel_params</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_figs</span><span class="p">,</span> <span class="s1">&#39;F8_TCs_Historical_bars_category.png&#39;</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

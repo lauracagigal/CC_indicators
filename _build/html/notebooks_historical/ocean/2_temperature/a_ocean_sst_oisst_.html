@@ -548,6 +548,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path_data</span> <span class="o">=</span> <span class="s2">&quot;../../../data&quot;</span>
+<span class="n">path_figs</span> <span class="o">=</span> <span class="s2">&quot;../../../matrix_cc/figures&quot;</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_data</span><span class="p">,</span> <span class="s1">&#39;sst_daily_1981_2024_palau.nc&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -568,13 +569,12 @@
                 <span class="n">vmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span> <span class="o">=</span> <span class="s1">&#39;time&#39;</span><span class="p">)[</span><span class="n">dataset_id</span><span class="p">],</span> <span class="mi">99</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">([</span><span class="n">lon_range</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lon_range</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">lat_range</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lat_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">crs</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;SST (ºC)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_figs</span><span class="p">,</span> <span class="s1">&#39;F12_SST_map.png&#39;</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x17a127aa0&gt;
-</pre></div>
-</div>
 <img alt="../../../_images/d95e742a5b8f88801980dd56a34332d9d393d48849501b886af9cb161f9e089e.png" src="../../../_images/d95e742a5b8f88801980dd56a34332d9d393d48849501b886af9cb161f9e089e.png" />
 </div>
 </div>
@@ -592,16 +592,13 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dict_plot</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;data&#39;</span> <span class="p">:</span> <span class="n">datag</span><span class="p">,</span> <span class="s1">&#39;var&#39;</span> <span class="p">:</span> <span class="s1">&#39;sst_ref&#39;</span><span class="p">,</span> <span class="s1">&#39;ax&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">:</span><span class="sa">f</span><span class="s1">&#39;Annual Maxima&#39;</span><span class="p">},]</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_bar_probs</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">datag</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">datag</span><span class="o">.</span><span class="n">sst_ref</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">trendline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
-                <span class="n">y_label</span> <span class="o">=</span> <span class="s1">&#39;SST [ºC]&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Annual Mean SST anomalies (Over and above 1961 - 1990 reference period)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">);</span>
-<span class="c1"># ax.set_ylim([29, None])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dict_plot = [{&#39;data&#39; : datag, &#39;var&#39; : &#39;sst_ref&#39;, &#39;ax&#39; : 1, &#39;label&#39;:f&#39;Annual Maxima&#39;},]</span>
+<span class="c1"># fig, ax = plot_bar_probs(x = datag.index.year, y = datag.sst_ref.values, trendline=True, figsize = (15, 4),</span>
+<span class="c1">#                 y_label = &#39;SST [ºC]&#39;)</span>
+<span class="c1"># ax.set_title(&#39;Annual Mean SST anomalies (Over and above 1961 - 1990 reference period)&#39;, fontsize=15);</span>
+<span class="c1"># # ax.set_ylim([29, None])</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/6789cce254919acb9c1e20c99b2bfcd82ca966420dcd1c0f2e008e85956ad6bd.png" src="../../../_images/6789cce254919acb9c1e20c99b2bfcd82ca966420dcd1c0f2e008e85956ad6bd.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -612,26 +609,12 @@
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">trend</span> <span class="o">=</span> <span class="n">plot_bar_probs</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data_mean</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">data_mean</span><span class="o">.</span><span class="n">sst_ref</span><span class="p">,</span> <span class="n">trendline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                                 <span class="n">y_label</span><span class="o">=</span><span class="s1">&#39;SST [°C]&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">return_trend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Annual Mean SST anomalies (Over and above 1961 - 1990 reference period)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_figs</span><span class="p">,</span> <span class="s1">&#39;F12_SST_trends_Annomalies.png&#39;</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <img alt="../../../_images/c1e5394c54a01f914249f10fdb972aa2d1d0ae17f8f2bc3d99cca01e9e4ba409.png" src="../../../_images/c1e5394c54a01f914249f10fdb972aa2d1d0ae17f8f2bc3d99cca01e9e4ba409.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datam</span> <span class="o">=</span> <span class="n">data_mean</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">data_mean</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-<span class="n">datam</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">datag</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="nb">format</span> <span class="o">=</span> <span class="s1">&#39;%Y&#39;</span><span class="p">)</span>
-<span class="n">datam</span><span class="p">[</span><span class="s1">&#39;sst_ref&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">datam</span><span class="p">[</span><span class="s1">&#39;sst&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">datam</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;1961&#39;</span><span class="p">:</span><span class="s1">&#39;1990&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sst</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_bar_probs</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">datam</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">datam</span><span class="o">.</span><span class="n">sst_ref</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">trendline</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
-                <span class="n">y_label</span> <span class="o">=</span> <span class="s1">&#39;SST [ºC]&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Annual Minimum SST anomalies (Over and above 1961 - 1990 reference period)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/79a38fd1a42a84bb5695499dc053cd0ffdd3d79b73673b79a49690bf54c61588.png" src="../../../_images/79a38fd1a42a84bb5695499dc053cd0ffdd3d79b73673b79a49690bf54c61588.png" />
 </div>
 </div>
 </section>

@@ -532,6 +532,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path_data</span> <span class="o">=</span> <span class="s1">&#39;sst_daily_1981_2024_palau.nc&#39;</span>
+<span class="n">path_figs</span> <span class="o">=</span> <span class="s2">&quot;../../../matrix_cc/figures&quot;</span>
 
 <span class="n">lon_site</span><span class="p">,</span> <span class="n">lat_site</span> <span class="o">=</span> <span class="mf">134.368203</span><span class="p">,</span> <span class="mf">7.322074</span>
 
@@ -633,14 +634,13 @@ Bleaching Alert Level 2	1 &lt;= HotSpot and 8 &lt;= DHW <br></p>
 
 <span class="n">ax2</span><span class="o">.</span><span class="n">hlines</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">data_crw</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data_crw</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> 
           <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;DHW thresholds: 2 and 4&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_figs</span><span class="p">,</span> <span class="s1">&#39;F13_DHW.png&#39;</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.LineCollection at 0x17835bbf0&gt;
-</pre></div>
-</div>
 <img alt="../../../_images/8edf66b41079cf057744e82edaef486c16a8dee6a18786e751a7509e3737bff2.png" src="../../../_images/8edf66b41079cf057744e82edaef486c16a8dee6a18786e751a7509e3737bff2.png" />
 </div>
 </div>
