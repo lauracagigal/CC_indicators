@@ -27,6 +27,14 @@ jobs:
         with:
           python-version: 3.12
 
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Build Jupyter Book
+        run: |
+          jupyter-book build .
+
       - name: Add custom HTML folder to book
         run: |
           mkdir -p _build/html/extra
