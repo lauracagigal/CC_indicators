@@ -1,0 +1,51 @@
+name: deploy-book
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  BASE_URL: /${{ github.event.repository.name }}
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy-book:
+    runs-on: ubuntu-latest
+    environment: github-pages
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Build Jupyter Book
+        run: |
+          jupyter-book build .
+
+      - name: Add custom HTML folder to book
+        run: |
+          mkdir -p _build/html/extra
+          cp -r matrix_cc _build/html/extra/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "_build/html"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+ 
