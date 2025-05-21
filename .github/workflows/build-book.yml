@@ -5,24 +5,28 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+env:
+  BASE_URL: /${{ github.event.repository.name }}
 
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  deploy-book:
     runs-on: ubuntu-latest
     environment: github-pages
+    permissions:
+      pages: write
+      id-token: write
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      # Incluye carpeta extra en la carpeta HTML ya construida localmente
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12
+
       - name: Add custom HTML folder to book
         run: |
           mkdir -p _build/html/extra
