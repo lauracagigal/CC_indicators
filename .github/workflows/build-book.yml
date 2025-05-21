@@ -19,20 +19,22 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # # Solo si necesitas añadir matrix_cc a extra
-      # - name: Copy custom HTML content
-      #   run: |
-      #     mkdir -p _build/html/extra
-      #     cp -r matrix_cc _build/html/extra/
+      - name: Copy built HTML from repo
+        run: |
+          cp -r _build/html deploy
+
+      - name: List contents
+        run: ls -R deploy
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "_build/html"
+          path: "deploy"
 
       - name: Deploy to GitHub Pages
         id: deployment
