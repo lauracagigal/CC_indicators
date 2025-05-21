@@ -27,7 +27,6 @@ jobs:
         with:
           python-version: 3.12
 
-
       - name: Add custom HTML folder to book
         run: |
           mkdir -p _build/html/extra
