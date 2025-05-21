@@ -5,36 +5,24 @@ on:
     branches:
       - main
 
-env:
-  BASE_URL: /${{ github.event.repository.name }}
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  deploy-book:
+  deploy:
     runs-on: ubuntu-latest
     environment: github-pages
-    permissions:
-      pages: write
-      id-token: write
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.12
-
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-
-      - name: Build Jupyter Book
-        run: |
-          jupyter-book build .
-
+      # Incluye carpeta extra en la carpeta HTML ya construida localmente
       - name: Add custom HTML folder to book
         run: |
           mkdir -p _build/html/extra
