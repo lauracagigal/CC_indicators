@@ -26,7 +26,8 @@ jobs:
 
       - name: Copy built HTML from repo
         run: |
-          cp -r _build/html deploy
+          mkdir deploy
+          cp -a _build/html/. deploy/
 
       - name: List contents
         run: ls -R deploy
