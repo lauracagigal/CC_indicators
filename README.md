@@ -2,7 +2,7 @@
 
 This repository aims to analyze atmospheric and oceanic variables in different locations of the Pacific Ocean. The analysis is conducted using Jupyter notebooks, which are hosted in the following Jupyter Book: [https://lauracagigal.github.io/CC_indicators/](https://lauracagigal.github.io/CC_indicators/).
 
-A summary matrix with the most relevant results can be accessed here: [https://lauracagigal.github.io/CC_indicators/extra/matrix_cc/index.html](https://lauracagigal.github.io/CC_indicators/extra/matrix_cc/index.html)
+A summary matrix with the most relevant results can be accessed here: [https://lauracagigal.github.io/CC_indicators/matrix_cc/index.html](https://lauracagigal.github.io/CC_indicators/matrix_cc/index.html)
 
 The main goal of this analysis is to study the impact of climate change on the Pacific Ocean and its surrounding regions. By examining various indicators such as sea surface temperature, ocean currents, and atmospheric pressure, we can gain insights into the changing climate patterns and their potential consequences.
 
