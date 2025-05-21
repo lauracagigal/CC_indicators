@@ -15,9 +15,10 @@ permissions:
   id-token: write
 
 jobs:
-  deploy:
+  deploy-book:
     runs-on: ubuntu-latest
-    environment: github-pages
+    environment:
+      name: github-pages
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
