@@ -1,6 +1,6 @@
 # Introduction
 
-This repository aims to analyze atmospheric and oceanic variables in different locations of the Pacific Ocean. The analysis is conducted using Jupyter notebooks, which are hosted in the following Jupyter Book: [https://lauracagigal.github.io/CC_indicators/index](https://lauracagigal.github.io/CC_indicators/index)
+This repository aims to analyze atmospheric and oceanic variables in different locations of the Pacific Ocean. The analysis is conducted using Jupyter notebooks, which are hosted in the following Jupyter Book: [https://lauracagigal.github.io/CC_indicators/intro](https://lauracagigal.github.io/CC_indicators/intro)
 
 A summary matrix with the most relevant results can be accessed here: [https://lauracagigal.github.io/CC_indicators/matrix_cc/index.html](https://lauracagigal.github.io/CC_indicators/matrix_cc/index.html)
 
