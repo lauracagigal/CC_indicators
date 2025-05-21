@@ -22,11 +22,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Solo si necesitas añadir matrix_cc a extra
-      - name: Copy custom HTML content
-        run: |
-          mkdir -p _build/html/extra
-          cp -r matrix_cc _build/html/extra/
+      # # Solo si necesitas añadir matrix_cc a extra
+      # - name: Copy custom HTML content
+      #   run: |
+      #     mkdir -p _build/html/extra
+      #     cp -r matrix_cc _build/html/extra/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
