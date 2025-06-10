@@ -484,7 +484,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-data">Get Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ibtracs">IBTrACS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oni-index">ONI index</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-tcs">ALL TCs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#severe-tcs">SEVERE TCs</a></li>
@@ -501,6 +502,9 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tc-analysis-nino">
 <h1>TC Analysis - Niño<a class="headerlink" href="#tc-analysis-nino" title="Link to this heading">#</a></h1>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
+<p>First, we need to import all the necessary libraries. Some of them are specifically developed to handle the download and plotting of the data and are hosted at the <a class="reference external" href="https://github.com/lauracagigal/indicators_setup">indicators set-up repository</a> in GitHub</p>
 <div class="cell tag_hide tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -543,8 +547,10 @@
 </div>
 </div>
 </div>
-<section id="get-data">
-<h2>Get Data<a class="headerlink" href="#get-data" title="Link to this heading">#</a></h2>
+</section>
+<section id="ibtracs">
+<h2>IBTrACS<a class="headerlink" href="#ibtracs" title="Link to this heading">#</a></h2>
+<p>IBTrACS (International Best Track Archive for Climate Stewardship) is the most comprehensive global database of tropical cyclones. It compiles data from all major meteorological agencies worldwide, providing track, intensity, and metadata for storms from 1842 to present. It supports research on cyclone trends, risks, and climate variability.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">update_data</span> <span class="o">=</span> <span class="kc">False</span>
@@ -627,6 +633,7 @@
 </section>
 <section id="oni-index">
 <h2>ONI index<a class="headerlink" href="#oni-index" title="Link to this heading">#</a></h2>
+<p>The Oceanic Niño Index (ONI) is the standard measure used to monitor El Niño and La Niña events. It is based on sea surface temperature anomalies in the central equatorial Pacific (Niño 3.4 region) averaged over 3-month periods.</p>
 <p>https://origin.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ONI_v5.php</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -780,6 +787,7 @@ dtype: float64
 </div>
 </div>
 </div>
+<p>The following bar plot represents the TC counts over time. The color of the bar represents wether it is a El Niño or La Niña year.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">plot_bar_probs_ONI</span><span class="p">(</span><span class="n">oni_y</span><span class="p">,</span> <span class="s1">&#39;tc_counts&#39;</span><span class="p">,</span> <span class="n">y_label</span><span class="o">=</span> <span class="s1">&#39;TC counts - ALL&#39;</span><span class="p">);</span>
@@ -790,6 +798,7 @@ dtype: float64
 <img alt="../../../_images/286e60f3d32ac83fe3a18e9b37f9ab819232d0edc343c34976215564e5b32585.png" src="../../../_images/286e60f3d32ac83fe3a18e9b37f9ab819232d0edc343c34976215564e5b32585.png" />
 </div>
 </div>
+<p>The following bar plot represents the severe TC counts over time. The color of the bar represents wether it is a El Niño or La Niña year.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">plot_bar_probs_ONI</span><span class="p">(</span><span class="n">oni_y</span><span class="p">,</span> <span class="s1">&#39;tc_counts_sev&#39;</span><span class="p">,</span> <span class="n">y_label</span><span class="o">=</span> <span class="s1">&#39;TC counts - Severe&#39;</span><span class="p">);</span>
@@ -804,6 +813,7 @@ dtype: float64
 </section>
 <section id="all-tcs">
 <h2>ALL TCs<a class="headerlink" href="#all-tcs" title="Link to this heading">#</a></h2>
+<p>The following plots represent all the TCs in the record for the three different phases of the El Niño Southern Oscillation: “El Niño”, “Neutral” and “La Niña”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names_cat</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;La Niña&#39;</span><span class="p">,</span> <span class="s1">&#39;Neutral&#39;</span><span class="p">,</span> <span class="s1">&#39;El Niño&#39;</span><span class="p">]</span>
@@ -834,6 +844,7 @@ dtype: float64
 <section id="severe-tcs">
 <h2>SEVERE TCs<a class="headerlink" href="#severe-tcs" title="Link to this heading">#</a></h2>
 <p>Category 3, 4 and 5</p>
+<p>The following plots represent all the <strong>severe</strong> TCs in the record for the three different phases of the El Niño Southern Oscillation: “El Niño”, “Neutral” and “La Niña”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">storms_severe_ids</span> <span class="o">=</span> <span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">storm</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">category</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
@@ -942,7 +953,8 @@ dtype: float64
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-data">Get Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ibtracs">IBTrACS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oni-index">ONI index</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-tcs">ALL TCs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#severe-tcs">SEVERE TCs</a></li>

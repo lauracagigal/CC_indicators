@@ -484,8 +484,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-data">Get Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-koror-station">Using Koror Station</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observations-from-koror-station">Observations from Koror Station</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-table">Generate table</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -503,6 +507,9 @@
 <ul class="simple">
 <li><p>There has been little change in the mean and maximum number of consecutive dry days over the period 1951 to 2024.</p></li>
 </ul>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
+<p>First, we need to import all the necessary libraries. Some of them are specifically developed to handle the download and plotting of the data and are hosted at the <a class="reference external" href="https://github.com/lauracagigal/indicators_setup">indicators set-up repository</a> in GitHub</p>
 <div class="cell tag_hide tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -541,6 +548,7 @@
 </div>
 </div>
 </div>
+</section>
 <section id="get-data">
 <h2>Get Data<a class="headerlink" href="#get-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -572,8 +580,14 @@
 </details>
 </div>
 </section>
-<section id="using-koror-station">
-<h2>Using Koror Station<a class="headerlink" href="#using-koror-station" title="Link to this heading">#</a></h2>
+<section id="observations-from-koror-station">
+<h2>Observations from Koror Station<a class="headerlink" href="#observations-from-koror-station" title="Link to this heading">#</a></h2>
+<p>https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/doc/GHCND_documentation.pdf</p>
+<p>The data used for this analysis comes from the GHCN (Global Historical Climatology Network)-Daily database. <br>
+This a database that addresses the critical need for historical daily temperature, precipitation, and snow records over global land areas. GHCN-Daily is a
+composite of climate records from numerous sources that were merged and then subjected to a suite of
+quality assurance reviews. The archive includes over 40 meteorological elements including temperature daily maximum/minimum, temperature at observation time,
+precipitation and more.</p>
 <div class="cell tag_hide tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -594,6 +608,7 @@
 </div>
 </details>
 </div>
+<p>Dry days are considered those in which precipitation is lower than 1mm. <br></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">threshold</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#Threshold for dry and wet day</span>
@@ -612,6 +627,7 @@
 </div>
 </div>
 </div>
+<p>The following plot represents the average number of dry days which are considered those in which precipitation is lower than 1mm. <br></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_bar_probs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">),</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)[</span><span class="s1">&#39;consecutive_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> 
@@ -628,6 +644,7 @@
 <img alt="../../../_images/614273a007035b8acf3392512f8419c5faeff6553cead5ed184a8105d4946089.png" src="../../../_images/614273a007035b8acf3392512f8419c5faeff6553cead5ed184a8105d4946089.png" />
 </div>
 </div>
+<p>The following plot represents the maximum number of dry days which are considered those in which precipitation is lower than 1mm. <br></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plot_bar_probs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">),</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)[</span><span class="s1">&#39;consecutive_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> 
@@ -642,6 +659,9 @@
 <img alt="../../../_images/08ead805a8f9d819bd6aebfb687d316c0046072e87d496c16f76be210ebbd2e7.png" src="../../../_images/08ead805a8f9d819bd6aebfb687d316c0046072e87d496c16f76be210ebbd2e7.png" />
 </div>
 </div>
+<section id="generate-table">
+<h3>Generate table<a class="headerlink" href="#generate-table" title="Link to this heading">#</a></h3>
+<p>Table sumarizing different metrics of the data analyzed in the plots above</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">table_rain_dry_summary</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -653,6 +673,7 @@
 <img alt="../../../_images/3cad536cb7094ce707481148b957c1180b4d49d689776f3370fa6a7275a99ac3.png" src="../../../_images/3cad536cb7094ce707481148b957c1180b4d49d689776f3370fa6a7275a99ac3.png" />
 </div>
 </div>
+</section>
 </section>
 </section>
 
@@ -721,8 +742,12 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-data">Get Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-koror-station">Using Koror Station</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observations-from-koror-station">Observations from Koror Station</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-table">Generate table</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -484,10 +484,14 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-data">Get Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ibtracs">IBTrACS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-tcs">All TCs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#severe-tcs">Severe TCs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#count-tcs-by-category">Count TCs by category</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#count-tcs-by-category">Count TCs by category</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-table">Generate table</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -501,6 +505,9 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tc-analysis">
 <h1>TC Analysis<a class="headerlink" href="#tc-analysis" title="Link to this heading">#</a></h1>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
+<p>First, we need to import all the necessary libraries. Some of them are specifically developed to handle the download and plotting of the data and are hosted at the <a class="reference external" href="https://github.com/lauracagigal/indicators_setup">indicators set-up repository</a> in GitHub</p>
 <div class="cell tag_hide tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -540,8 +547,10 @@
 </div>
 </div>
 </div>
-<section id="get-data">
-<h2>Get Data<a class="headerlink" href="#get-data" title="Link to this heading">#</a></h2>
+</section>
+<section id="ibtracs">
+<h2>IBTrACS<a class="headerlink" href="#ibtracs" title="Link to this heading">#</a></h2>
+<p>IBTrACS (International Best Track Archive for Climate Stewardship) is the most comprehensive global database of tropical cyclones. It compiles data from all major meteorological agencies worldwide, providing track, intensity, and metadata for storms from 1842 to present. It supports research on cyclone trends, risks, and climate variability.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">update_data</span> <span class="o">=</span> <span class="kc">False</span>
@@ -620,6 +629,7 @@
 </section>
 <section id="all-tcs">
 <h2>All TCs<a class="headerlink" href="#all-tcs" title="Link to this heading">#</a></h2>
+<p>The static plot below shows all the TCs in the vicinity of Palau colored by its category.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tcs_sel_params</span><span class="p">[</span><span class="s1">&#39;category&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;storm&#39;</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">category</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">category</span><span class="p">))</span>
@@ -647,6 +657,7 @@
 <img alt="../../../_images/abd52ee2c4146ec0632bb9333f50664c955e744147e6c57a1bdc3385240f31a6.png" src="../../../_images/abd52ee2c4146ec0632bb9333f50664c955e744147e6c57a1bdc3385240f31a6.png" />
 </div>
 </div>
+<p>Plot of the TC count per month showing the seasonality of TC genesis in the area</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -667,6 +678,8 @@
 </section>
 <section id="severe-tcs">
 <h2>Severe TCs<a class="headerlink" href="#severe-tcs" title="Link to this heading">#</a></h2>
+<p>The static plot below shows all the severe TCs in the vicinity of Palau colored by its category. <br>
+Severe TCs are defined here as those having a category equal or larger than 3</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tcs_sel_params_severe</span> <span class="o">=</span> <span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">category</span> <span class="o">&gt;=</span><span class="mi">3</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -699,6 +712,7 @@
 </section>
 <section id="count-tcs-by-category">
 <h2>Count TCs by category<a class="headerlink" href="#count-tcs-by-category" title="Link to this heading">#</a></h2>
+<p>The bar plot below displays the TC count per category in the whole record and also to the record limited to 1979 and after.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">category</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -723,12 +737,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x179c4f560&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x17a53a0c0&gt;
 </pre></div>
 </div>
 <img alt="../../../_images/b8ea579c40ec8031fd0236e7f055409b5135161ab211304bbcee4d12bc3cda4a.png" src="../../../_images/b8ea579c40ec8031fd0236e7f055409b5135161ab211304bbcee4d12bc3cda4a.png" />
 </div>
 </div>
+<p>The following bar plot displays the TC count per year and per category, as well as the trend. <br>
+The grey color represent those TCs in the record where no pressure or wind information is available to determine the corresponding category.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_tc_categories_trend</span><span class="p">(</span><span class="n">tcs_sel_params</span><span class="p">)</span>
@@ -740,6 +756,7 @@
 <img alt="../../../_images/838795082aae4f27a4aac17c8e27c17737a8b7e64e8fd7678ec4198d6eb931b4.png" src="../../../_images/838795082aae4f27a4aac17c8e27c17737a8b7e64e8fd7678ec4198d6eb931b4.png" />
 </div>
 </div>
+<p>The plot below shows the trend of the number of TCs per year over time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">dmin_date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">values</span>
@@ -756,6 +773,7 @@
 <img alt="../../../_images/1c51d889fd74152bde29a896b460b8c51343a2f79d45e3d8a840d716c7d1774b.png" src="../../../_images/1c51d889fd74152bde29a896b460b8c51343a2f79d45e3d8a840d716c7d1774b.png" />
 </div>
 </div>
+<p>The plot below shows the trend of the number of severe TCs per year over time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tcs_sel_severe_params</span> <span class="o">=</span> <span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">category</span> <span class="o">&gt;=</span><span class="mi">3</span><span class="p">,</span> <span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
@@ -773,6 +791,7 @@
 <img alt="../../../_images/fe233f6ce5731e7f2a755e2e11e2aba23844ead03e8d0bc44d2897e8bb62ce8b.png" src="../../../_images/fe233f6ce5731e7f2a755e2e11e2aba23844ead03e8d0bc44d2897e8bb62ce8b.png" />
 </div>
 </div>
+<p>To showcase the spatial distribution of the TC tracks for the different categories, a map is shown below representing all the TCs in the record for each category.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
@@ -800,7 +819,10 @@
 <img alt="../../../_images/56c2a510e4b70bfc1f9c8d9691229a2c25ca0f2c8ba7eb844e679506d54f0daa.png" src="../../../_images/56c2a510e4b70bfc1f9c8d9691229a2c25ca0f2c8ba7eb844e679506d54f0daa.png" />
 </div>
 </div>
-<p>Number of TCs for each category</p>
+<section id="generate-table">
+<h3>Generate table<a class="headerlink" href="#generate-table" title="Link to this heading">#</a></h3>
+<p>Table sumarizing different metrics of the data analyzed in the plots above <br>
+Number of TCs for each category</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_tcs</span> <span class="o">=</span> <span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
@@ -826,6 +848,7 @@ Mean number of severe TCs per year:  1.12
 </div>
 </div>
 </div>
+</section>
 </section>
 </section>
 
@@ -894,10 +917,14 @@ Mean number of severe TCs per year:  1.12
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-data">Get Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ibtracs">IBTrACS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-tcs">All TCs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#severe-tcs">Severe TCs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#count-tcs-by-category">Count TCs by category</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#count-tcs-by-category">Count TCs by category</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-table">Generate table</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
