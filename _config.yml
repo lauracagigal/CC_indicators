@@ -10,7 +10,7 @@ only_build_toc_files : true
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: 'force' # 'cache' | 'force' | 'off' | 
+  execute_notebooks: 'cache' # 'cache' | 'force' | 'off' | 
   timeout: -1 # -1 means no timeout
 
 # Define the name of the latex output file for PDF builds
