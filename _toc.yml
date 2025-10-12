@@ -4,9 +4,6 @@
 format: jb-book
 root: intro.md
 parts:
-  - caption: Map
-    chapters:
-    - file: intro_map.ipynb
   - caption: HISTORICAL
     chapters:
       - file: notebooks_historical/atmosphere/atmosphere.md
@@ -19,22 +16,19 @@ parts:
           - file: notebooks_historical/atmosphere/2_surface_temperature/surface_temperature.md
             sections:
               - file: notebooks_historical/atmosphere/2_surface_temperature/a_mean_temperature.ipynb
-              - file: notebooks_historical/atmosphere/2_surface_temperature/b_mean_temperature_10e.ipynb
-              - file: notebooks_historical/atmosphere/2_surface_temperature/c_temperature_ninho.ipynb
-              - file: notebooks_historical/atmosphere/2_surface_temperature/d_hot_days.ipynb
+              - file: notebooks_historical/atmosphere/2_surface_temperature/b_min_max_temperature.ipynb
+              - file: notebooks_historical/atmosphere/2_surface_temperature/c_hot_cold_days.ipynb
           # -> 3. rainfall
           - file: notebooks_historical/atmosphere/3_rainfall/rainfall.md
             sections:
               - file: notebooks_historical/atmosphere/3_rainfall/a_Wet_day_rainfall.ipynb
               - file: notebooks_historical/atmosphere/3_rainfall/b_Consecutive_dry_days.ipynb
-              # - file: notebooks_historical/atmosphere/3_rainfall/c_Extreme_Rainfall.ipynb
-              - file: notebooks_historical/atmosphere/3_rainfall/d_Rainfall_ninho.ipynb
           # -> 4. tropical cyclones surface winds
           - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/tropical_cyclones_surface_winds.md
             sections:
               - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/a_tropical_cyclones_int.ipynb
               - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/b_tropical_cyclones.ipynb
-              - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/c_tropical_cyclones_ninho.ipynb
+              - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/c_severe_tropical_cyclones.ipynb
       - file: notebooks_historical/ocean/ocean.md
         sections:
           # -> 1. Sea Level

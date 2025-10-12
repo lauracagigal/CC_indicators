@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Consecutive dry days &#8212; CC Indicators</title>
+    <title>Dry Conditions &#8212; CC Indicators</title>
   
   
   
@@ -16,8 +16,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -27,22 +27,22 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
@@ -66,8 +66,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="El Niño vs La Niña" href="d_Rainfall_ninho.html" />
-    <link rel="prev" title="Wet and dry days" href="a_Wet_day_rainfall.html" />
+    <link rel="next" title="Tropical Cyclones and Surface Winds" href="../4_tropical_cyclones_surface_winds/tropical_cyclones_surface_winds.html" />
+    <link rel="prev" title="Total Wet-Day Rainfall" href="a_Wet_day_rainfall.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -174,34 +174,28 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Map</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../intro_map.html">MAP</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">HISTORICAL</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">HISTORICAL</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../atmosphere.html">Atmosphere</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 has-children"><a class="reference internal" href="../1_greenhouse_gases/greenhouse_gases.html">Atmospheric CO2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../1_greenhouse_gases/a_atmospheric_co2.html">Atmospheric Concentration of Carbon Dioxide (CO2)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../1_greenhouse_gases/a_atmospheric_co2.html">Atmospheric CO2</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../2_surface_temperature/surface_temperature.html">Surface temperature</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../2_surface_temperature/a_mean_temperature.html">Surface Temperature</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../2_surface_temperature/b_mean_temperature_10e.html">Top 10 Events</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../2_surface_temperature/c_temperature_ninho.html">El Niño vs La Niña</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../2_surface_temperature/d_hot_days.html">Hot days and cold nights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2_surface_temperature/a_mean_temperature.html">Local Mean Surface Temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2_surface_temperature/b_min_max_temperature.html">Local Maximum and Minimum Surface Temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2_surface_temperature/c_hot_cold_days.html">Amount of Hot Days and Cold Nights</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="rainfall.html">Rainfall</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="a_Wet_day_rainfall.html">Wet and dry days</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">Consecutive dry days</a></li>
-<li class="toctree-l3"><a class="reference internal" href="d_Rainfall_ninho.html">El Niño vs La Niña</a></li>
+<li class="toctree-l3"><a class="reference internal" href="a_Wet_day_rainfall.html">Total Wet-Day Rainfall</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Dry Conditions</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../4_tropical_cyclones_surface_winds/tropical_cyclones_surface_winds.html">Tropical Cyclones and Surface Winds</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../4_tropical_cyclones_surface_winds/a_tropical_cyclones_int.html">TC viewer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../4_tropical_cyclones_surface_winds/b_tropical_cyclones.html">TC Analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../4_tropical_cyclones_surface_winds/c_tropical_cyclones_ninho.html">TC Analysis - Niño</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../4_tropical_cyclones_surface_winds/b_tropical_cyclones.html">Number of Tropical Cyclones in the Vicinity of Palau</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../4_tropical_cyclones_surface_winds/c_severe_tropical_cyclones.html">Number of Severe Tropical Cyclones in the Vicinity of Palau</a></li>
 </ul>
 </details></li>
 </ul>
@@ -219,13 +213,13 @@
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../ocean/3_biochemistry/biochemistry.html">Biochemistry</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../ocean/3_biochemistry/a_chlorophyll.html">Chlorophyll</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ocean/3_biochemistry/a_chlorophyll.html">Chlorophyll Concentration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../ocean/3_biochemistry/b_chlorophyll_ninho.html">Clorophyll - El Niño</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../ocean/3_biochemistry/c_phytoplankton.html">Phytoplankton</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ocean/3_biochemistry/c_phytoplankton.html">Estimated Phytoplankton Size</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../ocean/3_biochemistry/d_phytoplankton_ninho.html">Phytoplankton - El Niño</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../ocean/3_biochemistry/e_oceanic_pH.html">Ocean Acidification: pH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../ocean/3_biochemistry/f_oceanic_pH_ninho.html">pH - El Niño vs La Niña</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../ocean/3_biochemistry/g_dissolved_o2.html"><span class="math notranslate nohighlight">\(O_2\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ocean/3_biochemistry/g_dissolved_o2.html">Subsurface Oxygen <span class="math notranslate nohighlight">\(O_2\)</span></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../ocean/3_biochemistry/h_dissolved_o2_ninho.html"><span class="math notranslate nohighlight">\(O_2\)</span> - El Niño vs La Niña</a></li>
 </ul>
 </details></li>
@@ -239,9 +233,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -474,7 +473,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Consecutive dry days</h1>
+    <h1>Dry Conditions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -501,8 +500,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="consecutive-dry-days">
-<h1>Consecutive dry days<a class="headerlink" href="#consecutive-dry-days" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="dry-conditions">
+<h1>Dry Conditions<a class="headerlink" href="#dry-conditions" title="Link to this heading">#</a></h1>
 <p>Highlights:</p>
 <ul class="simple">
 <li><p>There has been little change in the mean and maximum number of consecutive dry days over the period 1951 to 2024.</p></li>
@@ -517,24 +516,24 @@
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">os.path</span> <span class="k">as</span> <span class="nn">op</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">folium</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os.path</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">op</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">folium</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;../../../../indicators_setup&quot;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">ind_setup.plotting_int</span> <span class="kn">import</span> <span class="n">plot_timeseries_interactive</span>
-<span class="kn">from</span> <span class="nn">ind_setup.plotting</span> <span class="kn">import</span> <span class="n">plot_bar_probs</span>
-<span class="kn">from</span> <span class="nn">ind_setup.tables</span> <span class="kn">import</span> <span class="n">plot_df_table</span><span class="p">,</span> <span class="n">table_rain_dry_summary</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ind_setup.plotting_int</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_timeseries_interactive</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ind_setup.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_bar_probs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ind_setup.tables</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_df_table</span><span class="p">,</span> <span class="n">table_rain_dry_summary</span>
 
 
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;../../../functions&quot;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">data_downloaders</span> <span class="kn">import</span> <span class="n">GHCN</span>
-<span class="kn">from</span> <span class="nn">rain_func</span> <span class="kn">import</span> <span class="n">consecutive_dry_days</span><span class="p">,</span> <span class="n">count_consecutive_days</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">data_downloaders</span><span class="w"> </span><span class="kn">import</span> <span class="n">GHCN</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rain_func</span><span class="w"> </span><span class="kn">import</span> <span class="n">consecutive_dry_days</span><span class="p">,</span> <span class="n">count_consecutive_days</span>
 </pre></div>
 </div>
 </div>
@@ -641,7 +640,7 @@ precipitation and more.</p>
  &lt;Axes: ylabel=&#39;Mean consecutive dry days [&lt; 1mm]&#39;&gt;)
 </pre></div>
 </div>
-<img alt="../../../_images/614273a007035b8acf3392512f8419c5faeff6553cead5ed184a8105d4946089.png" src="../../../_images/614273a007035b8acf3392512f8419c5faeff6553cead5ed184a8105d4946089.png" />
+<img alt="../../../_images/b5367a3411f50656c282f030e2062907c2a3e2346055bf2b8c414669baf6813b.png" src="../../../_images/b5367a3411f50656c282f030e2062907c2a3e2346055bf2b8c414669baf6813b.png" />
 </div>
 </div>
 <p>The following plot represents the maximum number of dry days which are considered those in which precipitation is lower than 1mm. <br></p>
@@ -656,7 +655,7 @@ precipitation and more.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/08ead805a8f9d819bd6aebfb687d316c0046072e87d496c16f76be210ebbd2e7.png" src="../../../_images/08ead805a8f9d819bd6aebfb687d316c0046072e87d496c16f76be210ebbd2e7.png" />
+<img alt="../../../_images/9ae32f468e5d4d80c4fbf8b759ad2e1eec85afeb6d9cb269c152982564b2c4fc.png" src="../../../_images/9ae32f468e5d4d80c4fbf8b759ad2e1eec85afeb6d9cb269c152982564b2c4fc.png" />
 </div>
 </div>
 <section id="generate-table">
@@ -713,15 +712,15 @@ precipitation and more.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Wet and dry days</p>
+        <p class="prev-next-title">Total Wet-Day Rainfall</p>
       </div>
     </a>
     <a class="right-next"
-       href="d_Rainfall_ninho.html"
+       href="../4_tropical_cyclones_surface_winds/tropical_cyclones_surface_winds.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">El Niño vs La Niña</p>
+        <p class="prev-next-title">Tropical Cyclones and Surface Winds</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -796,8 +795,8 @@ By Laura Cagigal
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
