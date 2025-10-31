@@ -66,8 +66,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Tropical Cyclones and Surface Winds" href="../4_tropical_cyclones_surface_winds/tropical_cyclones_surface_winds.html" />
-    <link rel="prev" title="Total Wet-Day Rainfall" href="a_Wet_day_rainfall.html" />
+    <link rel="next" title="Total Wet-Day Rainfall" href="c_Heavy_rainfall.html" />
+    <link rel="prev" title="Total Wet-Day Rainfall" href="a_Total_rainfall.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -170,26 +170,27 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../../intro.html">
-                    Palau Climate Change Monitor: 2024
+                    Trainind book for the Palau Climate Change Monitor
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">HISTORICAL</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../atmosphere.html">Atmosphere</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 has-children"><a class="reference internal" href="../1_greenhouse_gases/greenhouse_gases.html">Atmospheric CO2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../1_greenhouse_gases/greenhouse_gases.html">Greenhouse Gases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../1_greenhouse_gases/a_atmospheric_co2.html">Atmospheric CO2</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../2_surface_temperature/surface_temperature.html">Surface temperature</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../2_surface_temperature/a_mean_temperature.html">Local Mean Surface Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../2_surface_temperature/b_min_max_temperature.html">Local Maximum and Minimum Surface Temperature</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../2_surface_temperature/c_hot_cold_days.html">Amount of Hot Days and Cold Nights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2_surface_temperature/c_hot_cold_days.html">Hot Days and Cold Nights</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="rainfall.html">Rainfall</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="a_Wet_day_rainfall.html">Total Wet-Day Rainfall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="a_Total_rainfall.html">Total Wet-Day Rainfall</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Dry Conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_Heavy_rainfall.html">Total Wet-Day Rainfall</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../4_tropical_cyclones_surface_winds/tropical_cyclones_surface_winds.html">Tropical Cyclones and Surface Winds</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -200,7 +201,7 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../ocean/ocean.html">Ocean parameters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ocean/ocean.html">Ocean</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../ocean/1_sea_level/sea_level.html">Sea Level</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../ocean/1_sea_level/a_sea_level_trend.html">Regional and Local Sea Level Change</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../ocean/1_sea_level/b_sea_level_ff.html">Minor Flood Frequency and Duration</a></li>
@@ -485,7 +486,8 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-data">Get Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observations-from-koror-station">Observations from Koror Station</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observations-from-koror-station">Observations from Koror Station</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-days-over-and-above-1mm-threshold">Number of days over and above 1mm threshold</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-table">Generate table</a></li>
 </ul>
 </li>
@@ -502,10 +504,6 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dry-conditions">
 <h1>Dry Conditions<a class="headerlink" href="#dry-conditions" title="Link to this heading">#</a></h1>
-<p>Highlights:</p>
-<ul class="simple">
-<li><p>There has been little change in the mean and maximum number of consecutive dry days over the period 1951 to 2024.</p></li>
-</ul>
 <section id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
 <p>First, we need to import all the necessary libraries. Some of them are specifically developed to handle the download and plotting of the data and are hosted at the <a class="reference external" href="https://github.com/lauracagigal/indicators_setup">indicators set-up repository</a> in GitHub</p>
@@ -524,10 +522,13 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">myst_nb</span><span class="w"> </span><span class="kn">import</span> <span class="n">glue</span> 
 
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;../../../../indicators_setup&quot;</span><span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">ind_setup.plotting_int</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_timeseries_interactive</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">ind_setup.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_bar_probs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ind_setup.colors</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_df_col</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ind_setup.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">fontsize</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">ind_setup.tables</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_df_table</span><span class="p">,</span> <span class="n">table_rain_dry_summary</span>
 
 
@@ -606,6 +607,97 @@ precipitation and more.</p>
 </div>
 </div>
 </details>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;wet_day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;PRCP&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;PRCP&#39;</span><span class="p">])</span><span class="o">==</span><span class="kc">True</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_bar_probs</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;wet_day&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()[</span><span class="s1">&#39;PRCP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Dry Days&#39;</span><span class="p">,</span> <span class="s1">&#39;Wet Days&#39;</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Distribution of Wet Days&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="n">fontsize</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of Days&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="n">fontsize</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Number of Days&#39;)
+</pre></div>
+</div>
+<img alt="../../../_images/2ea9d284285739f0e4279816662214df1046be3e2138d883af6124b18248cf90.png" src="../../../_images/2ea9d284285739f0e4279816662214df1046be3e2138d883af6124b18248cf90.png" />
+</div>
+</div>
+</section>
+<section id="number-of-days-over-and-above-1mm-threshold">
+<h2>Number of days over and above 1mm threshold<a class="headerlink" href="#number-of-days-over-and-above-1mm-threshold" title="Link to this heading">#</a></h2>
+<p>The following plot analyzes the number of wet (over 1mm) and dry days over time</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">threshold</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#np.percentile(data[&#39;PRCP&#39;].dropna(), 90)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;wet_day_t&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;PRCP&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;PRCP&#39;</span><span class="p">])</span><span class="o">==</span><span class="kc">True</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_th</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">wet_day_t</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()[</span><span class="s1">&#39;PRCP&#39;</span><span class="p">]</span>
+<span class="n">data_th</span> <span class="o">=</span> <span class="n">data_th</span><span class="o">/</span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()[</span><span class="s1">&#39;PRCP&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">365</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">data_th</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">stacked</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">get_df_col</span><span class="p">()[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of days&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="n">fontsize</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Number of days&#39;)
+</pre></div>
+</div>
+<img alt="../../../_images/ab659a6503f69f43289a91fb2564d8d041fe37d16624f316807dd73980bce9a0.png" src="../../../_images/ab659a6503f69f43289a91fb2564d8d041fe37d16624f316807dd73980bce9a0.png" />
+</div>
+</div>
+<p>The following plots analyze independently the number of wet and dry days over time as well the trend over time which is not significant in both cases.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Wet days</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;wet_day_t&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">data2</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">trend</span> <span class="o">=</span> <span class="n">plot_bar_probs</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">data2</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data2</span><span class="o">.</span><span class="n">PRCP</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">trendline</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+               <span class="n">y_label</span> <span class="o">=</span> <span class="s1">&#39;Number of wet days [&gt;1mm]&#39;</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">return_trend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_figs</span><span class="p">,</span> <span class="s1">&#39;F7a_Wet_days_1mm.png&#39;</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;trend_wet&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">trend</span><span class="p">),</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/222495bd312e8008da46b50f849b8e3636984083852ad883f3655c6354ea32d1.png" src="../../../_images/222495bd312e8008da46b50f849b8e3636984083852ad883f3655c6354ea32d1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Dry days</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;wet_day_t&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">data2</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">trend</span> <span class="o">=</span> <span class="n">plot_bar_probs</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">data2</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data2</span><span class="o">.</span><span class="n">PRCP</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">trendline</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+               <span class="n">y_label</span> <span class="o">=</span> <span class="s1">&#39;Number of dry days [&lt;1mm]&#39;</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">return_trend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_figs</span><span class="p">,</span> <span class="s1">&#39;F6a_Number_dry.png&#39;</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;trend_dry&#39;</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">trend</span><span class="p">),</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/57d60eef9a239588b4b89d5aa8e1d3345d65b072b1164c8988a396db6842621e.png" src="../../../_images/57d60eef9a239588b4b89d5aa8e1d3345d65b072b1164c8988a396db6842621e.png" />
+</div>
 </div>
 <p>Dry days are considered those in which precipitation is lower than 1mm. <br></p>
 <div class="cell docutils container">
@@ -707,7 +799,7 @@ precipitation and more.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="a_Wet_day_rainfall.html"
+       href="a_Total_rainfall.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -716,11 +808,11 @@ precipitation and more.</p>
       </div>
     </a>
     <a class="right-next"
-       href="../4_tropical_cyclones_surface_winds/tropical_cyclones_surface_winds.html"
+       href="c_Heavy_rainfall.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tropical Cyclones and Surface Winds</p>
+        <p class="prev-next-title">Total Wet-Day Rainfall</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -743,7 +835,8 @@ precipitation and more.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-data">Get Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observations-from-koror-station">Observations from Koror Station</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observations-from-koror-station">Observations from Koror Station</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-days-over-and-above-1mm-threshold">Number of days over and above 1mm threshold</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-table">Generate table</a></li>
 </ul>
 </li>
