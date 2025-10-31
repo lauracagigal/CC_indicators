@@ -1,4 +1,4 @@
-# Trainind book for the Palau Climate Change Monitor
+# Training book for the Palau Climate Change Monitor
 
 <br>
 This Jupyter Book contains the products and associated code used to generate the Palau Climate Change Monitor, a report that draws on the latest meteorological and oceanographic data and analyses to document observed long-term changes in climate in and around the Republic of Palau.  This Training Book is intended to support capacity building related to the use of the underlying Jupyter Notebooks and GitHub Repository that enable creation of the Palau Monitor, and serve as a template for the creation of similar national climate indicator reports for other Pacific Island nations and territories.  
