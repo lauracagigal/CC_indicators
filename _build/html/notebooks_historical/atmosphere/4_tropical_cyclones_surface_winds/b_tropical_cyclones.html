@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -170,7 +170,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../../intro.html">
-                    Trainind book for the Palau Climate Change Monitor
+                    Training book for the Palau Climate Change Monitor
                 </a>
             </li>
         </ul>
@@ -182,18 +182,18 @@
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../2_surface_temperature/surface_temperature.html">Surface temperature</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../2_surface_temperature/a_mean_temperature.html">Local Mean Surface Temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2_surface_temperature/a_mean_temperature.html">Mean Surface Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../2_surface_temperature/b_min_max_temperature.html">Local Maximum and Minimum Surface Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../2_surface_temperature/c_hot_cold_days.html">Hot Days and Cold Nights</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../3_rainfall/rainfall.html">Rainfall</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../3_rainfall/a_Total_rainfall.html">Total Wet-Day Rainfall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_rainfall/a_Total_rainfall.html">Total Rainfall</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../3_rainfall/b_Consecutive_dry_days.html">Dry Conditions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../3_rainfall/c_Heavy_rainfall.html">Total Wet-Day Rainfall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_rainfall/c_Heavy_rainfall.html">Heavy rainfall</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="tropical_cyclones_surface_winds.html">Tropical Cyclones and Surface Winds</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="tropical_cyclones_surface_winds.html">Tropical Cyclones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="a_tropical_cyclones_int.html">TC viewer</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Number of Tropical Cyclones in the Vicinity of Palau</a></li>
 <li class="toctree-l3"><a class="reference internal" href="c_severe_tropical_cyclones.html">Number of Severe Tropical Cyclones in the Vicinity of Palau</a></li>
@@ -486,13 +486,14 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ibtracs">IBTrACS</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-tcs">All TCs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#count-tcs-by-category">Count TCs by category</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-table">Generate table</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oni-index">ONI index</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">ALL TCs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-tcs">ALL TCs</a></li>
 </ul>
             </nav>
         </div>
@@ -506,6 +507,20 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="number-of-tropical-cyclones-in-the-vicinity-of-palau">
 <h1>Number of Tropical Cyclones in the Vicinity of Palau<a class="headerlink" href="#number-of-tropical-cyclones-in-the-vicinity-of-palau" title="Link to this heading">#</a></h1>
+<figure class="align-left">
+<a class="reference internal image-reference" href="../../../_images/331effb9013cd173b2af2983a38e0556e321d7aae7a02bfa75ff30dfbc1409a8.png"><img alt="../../../_images/331effb9013cd173b2af2983a38e0556e321d7aae7a02bfa75ff30dfbc1409a8.png" src="../../../_images/331effb9013cd173b2af2983a38e0556e321d7aae7a02bfa75ff30dfbc1409a8.png" style="width: 332.8px; height: 250.0px;" /></a>
+</figure>
+<figure class="align-right">
+<a class="reference internal image-reference" href="../../../_images/515ac7fffddd769093a3abdd4d2858b85911c8806153c26c3a635111ae4ea703.png"><img alt="../../../_images/515ac7fffddd769093a3abdd4d2858b85911c8806153c26c3a635111ae4ea703.png" src="../../../_images/515ac7fffddd769093a3abdd4d2858b85911c8806153c26c3a635111ae4ea703.png" style="width: 861.6999999999999px; height: 274.4px;" /></a>
+</figure>
+<p>In this notebook we will analyze the historical tropical cyclones  in the Vicinity of Palau, as well as: <br>
+<br></p>
+<ul class="simple">
+<li><p>The number of tropical cyclones per year <br></p></li>
+<li><p>The trend in the number of tropical cyclones over time <br></p></li>
+<li><p>The distribution of categories over time <br></p></li>
+<li><p>The influence of El Niño Southern Oscillation</p></li>
+</ul>
 <section id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
 <p>First, we need to import all the necessary libraries. Some of them are specifically developed to handle the download and plotting of the data and are hosted at the <a class="reference external" href="https://github.com/lauracagigal/indicators_setup">indicators set-up repository</a> in GitHub</p>
@@ -522,8 +537,7 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">os.path</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">op</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">io</span><span class="w"> </span><span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">myst_nb</span><span class="w"> </span><span class="kn">import</span> <span class="n">glue</span> 
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
@@ -583,6 +597,9 @@
 </div>
 </details>
 </div>
+</section>
+<section id="analysis">
+<h2>Analysis<a class="headerlink" href="#analysis" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tcs</span> <span class="o">=</span> <span class="n">tcs</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">storm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tcs</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">date_time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span> <span class="o">&gt;=</span> <span class="mi">1950</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>    
@@ -631,9 +648,6 @@
 </div>
 </div>
 </div>
-</section>
-<section id="all-tcs">
-<h2>All TCs<a class="headerlink" href="#all-tcs" title="Link to this heading">#</a></h2>
 <p>The static plot below shows all the TCs in the vicinity of Palau colored by its category.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -642,19 +656,23 @@
 </div>
 </div>
 </div>
+</section>
+<section id="plotting">
+<h2>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lon1</span><span class="p">,</span> <span class="n">lon2</span> <span class="o">=</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">200</span>
 <span class="n">lat1</span><span class="p">,</span> <span class="n">lat2</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">70</span>
 
 <span class="c1"># r1</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">Plot_TCs_HistoricalTracks_Category</span><span class="p">(</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">Plot_TCs_HistoricalTracks_Category</span><span class="p">(</span>
     <span class="n">tcs_sel</span><span class="p">,</span> <span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">category</span><span class="p">,</span>
     <span class="n">lon1</span><span class="p">,</span> <span class="n">lon2</span><span class="p">,</span> <span class="n">lat1</span><span class="p">,</span> <span class="n">lat2</span><span class="p">,</span>
     <span class="n">lon_lat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lon_lat</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">r1</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_figs</span><span class="p">,</span> <span class="s1">&#39;F8_TCs_Historical.png&#39;</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;tracks_fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -708,23 +726,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x17ed65340&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x17ea06e40&gt;
 </pre></div>
 </div>
 <img alt="../../../_images/d73f4406ee1f9c8866214001ba2e1bc808242d788b70feadff94e8d7baaa04cc.png" src="../../../_images/d73f4406ee1f9c8866214001ba2e1bc808242d788b70feadff94e8d7baaa04cc.png" />
-</div>
-</div>
-<p>The following bar plot displays the TC count per year and per category, as well as the trend. <br>
-The grey color represent those TCs in the record where no pressure or wind information is available to determine the corresponding category.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_tc_categories_trend</span><span class="p">(</span><span class="n">tcs_sel_params</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_figs</span><span class="p">,</span> <span class="s1">&#39;F8_TCs_Historical_bars_category.png&#39;</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/515ac7fffddd769093a3abdd4d2858b85911c8806153c26c3a635111ae4ea703.png" src="../../../_images/515ac7fffddd769093a3abdd4d2858b85911c8806153c26c3a635111ae4ea703.png" />
 </div>
 </div>
 <p>The plot below shows the trend of the number of TCs per year over time.</p>
@@ -744,6 +749,20 @@ The grey color represent those TCs in the record where no pressure or wind infor
 <img alt="../../../_images/9fb309b177246868609b204ae036ce0e99e6baf7ece4c3c4e36c31f10c4fd229.png" src="../../../_images/9fb309b177246868609b204ae036ce0e99e6baf7ece4c3c4e36c31f10c4fd229.png" />
 </div>
 </div>
+<p>The following bar plot displays the TC count per year and per category, as well as the trend. <br>
+The grey color represent those TCs in the record where no pressure or wind information is available to determine the corresponding category.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plot_tc_categories_trend</span><span class="p">(</span><span class="n">tcs_sel_params</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_figs</span><span class="p">,</span> <span class="s1">&#39;F8_TCs_Historical_bars_category.png&#39;</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;time_cat_fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/515ac7fffddd769093a3abdd4d2858b85911c8806153c26c3a635111ae4ea703.png" src="../../../_images/515ac7fffddd769093a3abdd4d2858b85911c8806153c26c3a635111ae4ea703.png" />
+</div>
+</div>
 <p>To showcase the spatial distribution of the TC tracks for the different categories, a map is shown below representing all the TCs in the record for each category.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -753,7 +772,7 @@ The grey color represent those TCs in the record where no pressure or wind infor
     <span class="n">tcs_cat_params</span> <span class="o">=</span> <span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">category</span> <span class="o">==</span> <span class="n">category</span><span class="p">,</span> <span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 
     <span class="c1"># r1</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">Plot_TCs_HistoricalTracks_Category</span><span class="p">(</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">Plot_TCs_HistoricalTracks_Category</span><span class="p">(</span>
         <span class="n">tcs_cat</span><span class="p">,</span> <span class="n">tcs_cat_params</span><span class="o">.</span><span class="n">category</span><span class="p">,</span>
         <span class="n">lon1</span><span class="p">,</span> <span class="n">lon2</span><span class="p">,</span> <span class="n">lat1</span><span class="p">,</span> <span class="n">lat2</span><span class="p">,</span>
         <span class="n">lon_lat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lon_lat</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">r1</span><span class="p">,</span>
@@ -954,8 +973,8 @@ dtype: float64
 </div>
 <p>The following bar plot represents the severe TC counts over time. The color of the bar represents wether it is a El Niño or La Niña year.</p>
 </section>
-<section id="id1">
-<h2>ALL TCs<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="all-tcs">
+<h2>ALL TCs<a class="headerlink" href="#all-tcs" title="Link to this heading">#</a></h2>
 <p>The following plots represent all the TCs in the record for the three different phases of the El Niño Southern Oscillation: “El Niño”, “Neutral” and “La Niña”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -966,7 +985,7 @@ dtype: float64
     <span class="n">tcs_cat</span> <span class="o">=</span> <span class="n">tcs_sel</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">oni_cat</span> <span class="o">==</span> <span class="n">category</span><span class="p">,</span> <span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
     <span class="n">tcs_cat_params</span> <span class="o">=</span> <span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">oni_cat</span> <span class="o">==</span> <span class="n">category</span><span class="p">,</span> <span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">Plot_TCs_HistoricalTracks_Category</span><span class="p">(</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">Plot_TCs_HistoricalTracks_Category</span><span class="p">(</span>
         <span class="n">tcs_cat</span><span class="p">,</span> <span class="n">tcs_cat_params</span><span class="o">.</span><span class="n">category</span><span class="p">,</span>
         <span class="n">lon1</span><span class="p">,</span> <span class="n">lon2</span><span class="p">,</span> <span class="n">lat1</span><span class="p">,</span> <span class="n">lat2</span><span class="p">,</span>
         <span class="n">lon_lat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lon_lat</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">r1</span><span class="p">,</span>
@@ -1053,13 +1072,14 @@ dtype: float64
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ibtracs">IBTrACS</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-tcs">All TCs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#count-tcs-by-category">Count TCs by category</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-table">Generate table</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oni-index">ONI index</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">ALL TCs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-tcs">ALL TCs</a></li>
 </ul>
   </nav></div>
 

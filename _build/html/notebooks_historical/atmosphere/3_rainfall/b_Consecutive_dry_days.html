@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -66,8 +66,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Total Wet-Day Rainfall" href="c_Heavy_rainfall.html" />
-    <link rel="prev" title="Total Wet-Day Rainfall" href="a_Total_rainfall.html" />
+    <link rel="next" title="Heavy rainfall" href="c_Heavy_rainfall.html" />
+    <link rel="prev" title="Total Rainfall" href="a_Total_rainfall.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -170,7 +170,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../../intro.html">
-                    Trainind book for the Palau Climate Change Monitor
+                    Training book for the Palau Climate Change Monitor
                 </a>
             </li>
         </ul>
@@ -182,18 +182,18 @@
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../2_surface_temperature/surface_temperature.html">Surface temperature</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../2_surface_temperature/a_mean_temperature.html">Local Mean Surface Temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2_surface_temperature/a_mean_temperature.html">Mean Surface Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../2_surface_temperature/b_min_max_temperature.html">Local Maximum and Minimum Surface Temperature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../2_surface_temperature/c_hot_cold_days.html">Hot Days and Cold Nights</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="rainfall.html">Rainfall</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="a_Total_rainfall.html">Total Wet-Day Rainfall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="a_Total_rainfall.html">Total Rainfall</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Dry Conditions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="c_Heavy_rainfall.html">Total Wet-Day Rainfall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_Heavy_rainfall.html">Heavy rainfall</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../4_tropical_cyclones_surface_winds/tropical_cyclones_surface_winds.html">Tropical Cyclones and Surface Winds</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../4_tropical_cyclones_surface_winds/tropical_cyclones_surface_winds.html">Tropical Cyclones</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../4_tropical_cyclones_surface_winds/a_tropical_cyclones_int.html">TC viewer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../4_tropical_cyclones_surface_winds/b_tropical_cyclones.html">Number of Tropical Cyclones in the Vicinity of Palau</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../4_tropical_cyclones_surface_winds/c_severe_tropical_cyclones.html">Number of Severe Tropical Cyclones in the Vicinity of Palau</a></li>
@@ -484,11 +484,18 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-data">Get Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observations-from-koror-station">Observations from Koror Station</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-days-over-and-above-1mm-threshold">Number of days over and above 1mm threshold</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-table">Generate table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-data">Get Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observations-from-koror-station">Observations from Koror Station</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-days-over-and-above-1mm-threshold">Number of days over and above 1mm threshold</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-consecutive-dry-days">Number of consecutive dry days</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table">Table</a></li>
 </ul>
 </li>
 </ul>
@@ -504,6 +511,9 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dry-conditions">
 <h1>Dry Conditions<a class="headerlink" href="#dry-conditions" title="Link to this heading">#</a></h1>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/a207ee48b70d446f71645eb707f274adb37005bb1c29e18d759973eb06cdb19a.png"><img alt="../../../_images/a207ee48b70d446f71645eb707f274adb37005bb1c29e18d759973eb06cdb19a.png" src="../../../_images/a207ee48b70d446f71645eb707f274adb37005bb1c29e18d759973eb06cdb19a.png" style="width: 606.0px; height: 255.6px;" /></a>
+</figure>
 <section id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
 <p>First, we need to import all the necessary libraries. Some of them are specifically developed to handle the download and plotting of the data and are hosted at the <a class="reference external" href="https://github.com/lauracagigal/indicators_setup">indicators set-up repository</a> in GitHub</p>
@@ -548,9 +558,8 @@
 </div>
 </div>
 </div>
-</section>
 <section id="get-data">
-<h2>Get Data<a class="headerlink" href="#get-data" title="Link to this heading">#</a></h2>
+<h3>Get Data<a class="headerlink" href="#get-data" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">update_data</span> <span class="o">=</span> <span class="kc">False</span>
@@ -581,7 +590,7 @@
 </div>
 </section>
 <section id="observations-from-koror-station">
-<h2>Observations from Koror Station<a class="headerlink" href="#observations-from-koror-station" title="Link to this heading">#</a></h2>
+<h3>Observations from Koror Station<a class="headerlink" href="#observations-from-koror-station" title="Link to this heading">#</a></h3>
 <p>https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/doc/GHCND_documentation.pdf</p>
 <p>The data used for this analysis comes from the GHCN (Global Historical Climatology Network)-Daily database. <br>
 This a database that addresses the critical need for historical daily temperature, precipitation, and snow records over global land areas. GHCN-Daily is a
@@ -627,13 +636,17 @@ precipitation and more.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Number of Days&#39;)
 </pre></div>
 </div>
-<img alt="../../../_images/2ea9d284285739f0e4279816662214df1046be3e2138d883af6124b18248cf90.png" src="../../../_images/2ea9d284285739f0e4279816662214df1046be3e2138d883af6124b18248cf90.png" />
+<img alt="../../../_images/803affd823de5981bd71f1d0ae09846a23f14b0f2090bef4009d4c8f2f16f850.png" src="../../../_images/803affd823de5981bd71f1d0ae09846a23f14b0f2090bef4009d4c8f2f16f850.png" />
 </div>
 </div>
 </section>
+</section>
+<section id="analysis">
+<h2>Analysis<a class="headerlink" href="#analysis" title="Link to this heading">#</a></h2>
 <section id="number-of-days-over-and-above-1mm-threshold">
-<h2>Number of days over and above 1mm threshold<a class="headerlink" href="#number-of-days-over-and-above-1mm-threshold" title="Link to this heading">#</a></h2>
-<p>The following plot analyzes the number of wet (over 1mm) and dry days over time</p>
+<h3>Number of days over and above 1mm threshold<a class="headerlink" href="#number-of-days-over-and-above-1mm-threshold" title="Link to this heading">#</a></h3>
+<p>The following plot analyzes the number of wet (over 1mm) and dry days over time <br>
+Dry days are considered those in which precipitation is lower than 1mm. <br></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">threshold</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#np.percentile(data[&#39;PRCP&#39;].dropna(), 90)</span>
@@ -650,6 +663,9 @@ precipitation and more.</p>
 </div>
 </div>
 </div>
+</section>
+<section id="plotting">
+<h3>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
@@ -662,7 +678,7 @@ precipitation and more.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Number of days&#39;)
 </pre></div>
 </div>
-<img alt="../../../_images/ab659a6503f69f43289a91fb2564d8d041fe37d16624f316807dd73980bce9a0.png" src="../../../_images/ab659a6503f69f43289a91fb2564d8d041fe37d16624f316807dd73980bce9a0.png" />
+<img alt="../../../_images/d82c3ad7a1eced62766bbb381fbdd5835d37ae17ddf1e5585390846bb5c83d8c.png" src="../../../_images/d82c3ad7a1eced62766bbb381fbdd5835d37ae17ddf1e5585390846bb5c83d8c.png" />
 </div>
 </div>
 <p>The following plots analyze independently the number of wet and dry days over time as well the trend over time which is not significant in both cases.</p>
@@ -679,7 +695,7 @@ precipitation and more.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/222495bd312e8008da46b50f849b8e3636984083852ad883f3655c6354ea32d1.png" src="../../../_images/222495bd312e8008da46b50f849b8e3636984083852ad883f3655c6354ea32d1.png" />
+<img alt="../../../_images/9c42f23fe697ebdd4db49de6df29062d357011a1759f80b12b06dca3c5564b98.png" src="../../../_images/9c42f23fe697ebdd4db49de6df29062d357011a1759f80b12b06dca3c5564b98.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -696,14 +712,12 @@ precipitation and more.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/57d60eef9a239588b4b89d5aa8e1d3345d65b072b1164c8988a396db6842621e.png" src="../../../_images/57d60eef9a239588b4b89d5aa8e1d3345d65b072b1164c8988a396db6842621e.png" />
+<img alt="../../../_images/2eafe90c254075817892ed98b04bdadaa75d6c9f781edb4e73a720770e7abb15.png" src="../../../_images/2eafe90c254075817892ed98b04bdadaa75d6c9f781edb4e73a720770e7abb15.png" />
 </div>
 </div>
-<p>Dry days are considered those in which precipitation is lower than 1mm. <br></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">threshold</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#Threshold for dry and wet day</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 <span class="n">data</span><span class="p">[</span><span class="s1">&#39;dry_day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;PRCP&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -718,21 +732,20 @@ precipitation and more.</p>
 </div>
 </div>
 </div>
-<p>The following plot represents the average number of dry days which are considered those in which precipitation is lower than 1mm. <br></p>
+<section id="number-of-consecutive-dry-days">
+<h4>Number of consecutive dry days<a class="headerlink" href="#number-of-consecutive-dry-days" title="Link to this heading">#</a></h4>
+<p>The following plot represents the average number of consecutive dry days which are considered those in which precipitation is lower than 1mm. <br></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_bar_probs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">),</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)[</span><span class="s1">&#39;consecutive_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_bar_probs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">),</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)[</span><span class="s1">&#39;consecutive_days&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> 
                <span class="n">trendline</span> <span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">y_label</span> <span class="o">=</span> <span class="s1">&#39;Mean consecutive dry days [&lt; 1mm]&#39;</span><span class="p">,</span>
                <span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;mean_dry_days_fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 1200x500 with 1 Axes&gt;,
- &lt;Axes: ylabel=&#39;Mean consecutive dry days [&lt; 1mm]&#39;&gt;)
-</pre></div>
-</div>
-<img alt="../../../_images/b5367a3411f50656c282f030e2062907c2a3e2346055bf2b8c414669baf6813b.png" src="../../../_images/b5367a3411f50656c282f030e2062907c2a3e2346055bf2b8c414669baf6813b.png" />
+<img alt="../../../_images/a207ee48b70d446f71645eb707f274adb37005bb1c29e18d759973eb06cdb19a.png" src="../../../_images/a207ee48b70d446f71645eb707f274adb37005bb1c29e18d759973eb06cdb19a.png" />
 </div>
 </div>
 <p>The following plot represents the maximum number of dry days which are considered those in which precipitation is lower than 1mm. <br></p>
@@ -750,8 +763,10 @@ precipitation and more.</p>
 <img alt="../../../_images/9ae32f468e5d4d80c4fbf8b759ad2e1eec85afeb6d9cb269c152982564b2c4fc.png" src="../../../_images/9ae32f468e5d4d80c4fbf8b759ad2e1eec85afeb6d9cb269c152982564b2c4fc.png" />
 </div>
 </div>
-<section id="generate-table">
-<h3>Generate table<a class="headerlink" href="#generate-table" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="table">
+<h3>Table<a class="headerlink" href="#table" title="Link to this heading">#</a></h3>
 <p>Table sumarizing different metrics of the data analyzed in the plots above</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -804,7 +819,7 @@ precipitation and more.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Total Wet-Day Rainfall</p>
+        <p class="prev-next-title">Total Rainfall</p>
       </div>
     </a>
     <a class="right-next"
@@ -812,7 +827,7 @@ precipitation and more.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Total Wet-Day Rainfall</p>
+        <p class="prev-next-title">Heavy rainfall</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -833,11 +848,18 @@ precipitation and more.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-data">Get Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observations-from-koror-station">Observations from Koror Station</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-days-over-and-above-1mm-threshold">Number of days over and above 1mm threshold</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-table">Generate table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-data">Get Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observations-from-koror-station">Observations from Koror Station</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-days-over-and-above-1mm-threshold">Number of days over and above 1mm threshold</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-consecutive-dry-days">Number of consecutive dry days</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table">Table</a></li>
 </ul>
 </li>
 </ul>
