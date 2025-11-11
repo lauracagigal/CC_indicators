@@ -24,12 +24,12 @@ parts:
               - file: notebooks_historical/atmosphere/3_rainfall/a_Total_rainfall.ipynb
               - file: notebooks_historical/atmosphere/3_rainfall/b_Consecutive_dry_days.ipynb
               - file: notebooks_historical/atmosphere/3_rainfall/c_Heavy_rainfall.ipynb
-          # -> 4. tropical cyclones surface winds
-          - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/tropical_cyclones_surface_winds.md
+          # -> 4. tropical cyclones
+          - file: notebooks_historical/atmosphere/4_tropical_cyclones/tropical_cyclones.md
             sections:
-              - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/a_tropical_cyclones_int.ipynb
-              - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/b_tropical_cyclones.ipynb
-              - file: notebooks_historical/atmosphere/4_tropical_cyclones_surface_winds/c_severe_tropical_cyclones.ipynb
+              - file: notebooks_historical/atmosphere/4_tropical_cyclones/a_tropical_cyclones_int.ipynb
+              - file: notebooks_historical/atmosphere/4_tropical_cyclones/b_tropical_cyclones.ipynb
+              - file: notebooks_historical/atmosphere/4_tropical_cyclones/c_severe_tropical_cyclones.ipynb
       - file: notebooks_historical/ocean/ocean.md
         sections:
           # -> 1. Sea Level
@@ -43,15 +43,13 @@ parts:
             sections:
               - file: notebooks_historical/ocean/2_temperature/a_ocean_sst_oisst_.ipynb
               - file: notebooks_historical/ocean/2_temperature/b_DHW.ipynb
-              - file: notebooks_historical/ocean/2_temperature/c_ocean_sst_ninho.ipynb
           # -> 3. Biochemistry
           - file: notebooks_historical/ocean/3_biochemistry/biochemistry.md
             sections:
-              - file: notebooks_historical/ocean/3_biochemistry/a_chlorophyll.ipynb
-              - file: notebooks_historical/ocean/3_biochemistry/b_chlorophyll_ninho.ipynb
+              - file: notebooks_historical/ocean/3_biochemistry/a_oceanic_pH.ipynb
+              - file: notebooks_historical/ocean/3_biochemistry/b_chlorophyll.ipynb
               - file: notebooks_historical/ocean/3_biochemistry/c_phytoplankton.ipynb
-              - file: notebooks_historical/ocean/3_biochemistry/d_phytoplankton_ninho.ipynb
-              - file: notebooks_historical/ocean/3_biochemistry/e_oceanic_pH.ipynb
-              - file: notebooks_historical/ocean/3_biochemistry/f_oceanic_pH_ninho.ipynb
-              - file: notebooks_historical/ocean/3_biochemistry/g_dissolved_o2.ipynb
-              - file: notebooks_historical/ocean/3_biochemistry/h_dissolved_o2_ninho.ipynb
+              - file: notebooks_historical/ocean/3_biochemistry/d_dissolved_o2.ipynb
+  - caption: REFERENCES
+    chapters:
+      - file: bibliography.md

@@ -1,5 +1,11 @@
-# Sea Surface Temperature
-
-Sea surface temperature (SST) is one of the most well-known and widely observed measures of long-term global climate change.  Changes in SST are used to track modes of natural climate variability such as the ENSO and the IPO/PDO, that affect patterns of wind and rain as well as ocean circulation.  Changes in ocean surface temperature have important ramifications for marine ecosystems. They influence species distribution, growth, and lifespan, and alter their migration and breeding patterns.  Increases in SST can threaten sensitive ecosystems such as coral reefs, where high temperatures over extended periods can lead to severe, widespread bleaching and significant coral mortality.
-
-In this section we look at two indicators of change in sea surface temperature.  Using the NOAA OISSTv2 satellite data, we will create plots and maps that show changes in mean surface temperature.  We will also create a create a plot showing changes in Degree Heating Weeks (DHW) using the NOAA Coral Reef Watch (CRW) daily global 5km satellite coral bleaching DHW product. DHW values are directly related to the timing and intensity of coral bleaching.  
+# Ocean Temperature
+<br>
+The temperature of the top few millimeters of the ocean is known as the sea surface temperature (SST).  Temperature of the ocean surface affects patterns of wind and rain, as well as ocean circulation.  SST has important ramifications for marine ecosystems. It influences species distribution, growth, and lifespan, and alter their migration and breeding patterns (IPCC, 2021).  Increases in SST can threaten sensitive ecosystems such as coral reefs, where high temperatures over extended periods can lead to severe, widespread bleaching and significant coral mortality. 
+<br>
+<br>
+SST is one of the most widely recognized indicators of long-term global climate change.  Changes in SST are also used to track modes of natural climate variability such as ENSO. Observations of SST are obtained from satellites, ships, and buoys and used formulate meausres such as area‑mean values and anomalies. Other measures, like Marine Heat Waves (MHW) and Degree Heating Weeks (DHW) include duration as well as magnitude (NOAA PSL, NOAA CRW).
+Palau’s corals were exposed to intense heat stress and widespread bleaching during the first global bleaching event in 1998, when a strong El Niño event followed by a La Niña event brought warmer waters to Palau (Bruno et al. 2001).  Prior to that, Palau had no records of significant bleaching events (Colin, 2009).  Palau experienced coral bleaching during the global bleaching events of 2010, 2014–2017, and 2023–2024, but not at the level of the 1998 event (van Woesik et al. 2012; Colin, 2018; Gouezo et al. 2019; Niemann, 2024).
+<br>
+<br>
+In this section we look at two indicators of change in sea surface temperature.  Using the NOAA OISSTv2 satellite data, we will create plots and maps that show changes in mean surface temperature.  We will also create a create a plot showing changes in Degree Heating Weeks (DHW) using the NOAA Coral Reef Watch (CRW) daily global 5km satellite coral bleaching DHW product. DHW values are directly related to the timing and intensity of coral bleaching.
+<br>

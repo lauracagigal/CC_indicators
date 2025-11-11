@@ -1,5 +1,0 @@
-# Tropical Cyclones
-
-Tropical Cyclones (TCs), also known as tropical storms or typhoons (hurricane, cyclones) depending on their strength, can have dramatic effects on human life and property. Impacts due to strong winds, heavy rains, and high seas associated with a landfalling TC can be devastating across multiple sectors, especially for islands like Palau.   Potential changes in the intensity, frequency, and location of TCs is an important consideration with respect to assessing the impacts of climate variability and change.  
-
-In this section we look at two indicators of change in tropical cyclones.  Using observations from the IBTrACS (International Best Track Archive for Climate Stewardship) we will create plots and maps that show changes in frequency, intensity and location of all tropical cyclones and severe tropical cyclones in the area of interest, where severe cyclones are those at fall into category 3 or higher 96–112 kt (178–208 km/h) on the he Saffir-Simpson scale.  We will also create a table that summarizes these results.  
