@@ -2,3 +2,9 @@
 data/.DS_Store
 .DS_Store
 data/output/
+**zz**
+functions/__pycache__/
+**copia**
+matrix/
+data/figures/
+_build/.jupyter_cache

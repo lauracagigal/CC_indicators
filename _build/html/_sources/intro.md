@@ -10,4 +10,4 @@ The full GitHub Repository, Jupyter Notebooks, and supporting materials can be a
 
 ![Palau Picture](resources/pictures/palau_pic.png)
 
-This report was produced by NOAA’s National Centers for Environmental Information (NCEI) working in partnership with the Palau Office of Climate Change and other agencies, organizations and institutions in the **Republic of Palau**.
+This report was produced by NOAA’s Pacific Research on Island Solutions for Adaptation (RISA) program working in partnership with the Palau Office of Climate Change and other agencies, organizations and institutions in the **Republic of Palau**.
