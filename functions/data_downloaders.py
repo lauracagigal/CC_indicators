@@ -240,7 +240,7 @@ def download_oni_index(p_data):
 
     content = requests.get(p_data).content.decode()
     oni = pd.read_csv(
-        StringIO(content), skiprows=1, delim_whitespace=True, header=None, index_col=0
+        StringIO(content), skiprows=1, sep='\s+', header=None, index_col=0
     )[1:-8]
     oni = oni.apply(pd.to_numeric, errors="coerce")
 
