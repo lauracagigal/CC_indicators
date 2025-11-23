@@ -19,6 +19,32 @@ def GetUniqueRows(np_array):
     np_result = np.asarray(result)
     return np_result
 
+def get_ibtracs_category(xds_TCs, d_vns, fillwinds = True):
+
+    n_storms = xds_TCs.storm.shape[0]
+
+    if fillwinds:
+
+        xfit = xds_TCs.wmo_pres.min(dim = 'date_time').values
+        yfit = xds_TCs.wmo_wind.max(dim = 'date_time').values
+        mask = np.isnan(xfit) | np.isnan(yfit)
+        linreg = np.polyfit(xfit[~mask], yfit[~mask], 2)
+        xds_TCs['wmo_wind'] = xds_TCs['wmo_wind'].fillna(linreg[0]*xds_TCs['wmo_pres']**2 + linreg[1]*xds_TCs['wmo_pres'] + linreg[2])
+    
+    nm_wnd = d_vns['wind']
+    wnd = xds_TCs[nm_wnd].values[:]
+
+    l_categ_in = []
+    for i_storm in range(n_storms):
+        wnd_s_in = wnd[i_storm]
+
+        wnd_s_max = np.nanmax(wnd_s_in)
+        categ = GetStormCategory_wind(wnd_s_max)
+        l_categ_in.append(np.array(categ))
+
+    xds_TCs['category'] = (('storm'), np.array(l_categ_in))
+
+    return xds_TCs
 
 def GeoDistance(lat1, lon1, lat2, lon2):
     'Returns great circle distance between points in degrees'
