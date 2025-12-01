@@ -506,8 +506,10 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="degree-heating-weeks">
 <h1>Degree Heating Weeks<a class="headerlink" href="#degree-heating-weeks" title="Link to this heading">#</a></h1>
-<p>The NOAA Coral Reef Watch (CRW) daily global 5km satellite coral bleaching Degree Heating Week (DHW) product for the virtual station in the vicinity of Palau shows accumulated heat stress, which can lead to coral bleaching and death (Figure 15). Bleaching heat stress is categorized into risk levels based on the DHW values, which are directly related to the timing and intensity of coral bleaching – Bleaching Warning (0 &lt; DHW &lt; 4), Bleaching Alert Level 1 (4 &lt;= DHW &lt; 8), and (8 &lt;= DHW &lt; 12).  At Bleaching Alert Level 1, significant bleaching is expected within a few weeks of the alert. At Bleaching Alert Level 2 and above, severe, widespread bleaching and significant coral mortality are likely.</p>
-<p>https://coralreefwatch.noaa.gov/product/5km/methodology.php#dhw</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../_images/043622a3463a2ceb9bb48268e8d07935976c800275468271a1e468e6ea52325d.png"><img alt="../../../_images/043622a3463a2ceb9bb48268e8d07935976c800275468271a1e468e6ea52325d.png" src="../../../_images/043622a3463a2ceb9bb48268e8d07935976c800275468271a1e468e6ea52325d.png" style="width: 768.0px; height: 333.0px;" /></a>
+</figure>
+<p><strong>Figure. NOAA Coral Reef Watch Degree Heating Weeks at the virtual station in the vicinity of Palau.</strong> The Degree Heating Week (DHW) value is shown on the vertical axis on the right. The coral bleaching heat stress level (or Bleaching Alert Level) – Warning, Alert Level 1, Alert Level 2 – are color-coded and shaded-in along the bottom horizontal axis.  Red dashed lines across the graphs indicate DHW threshold values of 4- and 8-degree Celsius-weeks (triggers for Bleaching Alert Levels 1 and 2, respectively). The representative SST value is shown on the vertical axis on the left.  The monthly mean climatology, the MMM, and the bleaching threshold SST are also provided on the graph.</p>
 <div class="cell tag_hide tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -519,13 +521,10 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">os.path</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">op</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ccrs</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">myst_nb</span><span class="w"> </span><span class="kn">import</span> <span class="n">glue</span> 
 
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;../../../../indicators_setup&quot;</span><span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">ind_setup.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_dhw</span><span class="p">,</span> <span class="n">plot_dhw_perpetual_year</span>
@@ -562,6 +561,8 @@
 </div>
 <section id="download-data">
 <h3>Download Data<a class="headerlink" href="#download-data" title="Link to this heading">#</a></h3>
+<p>The NOAA Coral Reef Watch (CRW) daily global 5km satellite coral bleaching Degree Heating Week (DHW) product for the virtual station in the vicinity of Palau shows accumulated heat stress, which can lead to coral bleaching and death (Figure 15). Bleaching heat stress is categorized into risk levels based on the DHW values, which are directly related to the timing and intensity of coral bleaching – Bleaching Warning (0 &lt; DHW &lt; 4), Bleaching Alert Level 1 (4 &lt;= DHW &lt; 8), and (8 &lt;= DHW &lt; 12).  At Bleaching Alert Level 1, significant bleaching is expected within a few weeks of the alert. At Bleaching Alert Level 2 and above, severe, widespread bleaching and significant coral mortality are likely.</p>
+<p>https://coralreefwatch.noaa.gov/product/5km/methodology.php#dhw</p>
 <div class="cell tag_hide tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -614,6 +615,7 @@ Bleaching Alert Level 2	1 &lt;= HotSpot and 8 &lt;= DHW <br></p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax2</span> <span class="o">=</span> <span class="n">plot_dhw</span><span class="p">(</span><span class="n">data_crw</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_figs</span><span class="p">,</span> <span class="s1">&#39;F13_DHW.png&#39;</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;dhw_all&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
