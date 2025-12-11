@@ -37,7 +37,9 @@ parts:
           - file: notebooks_historical/ocean/1_sea_level/sea_level.md
             sections: 
               - file: notebooks_historical/ocean/1_sea_level/a_sea_level_trend.ipynb
-              - file: notebooks_historical/ocean/1_sea_level/b_sea_level_ff.ipynb
+              - file: notebooks_historical/ocean/1_sea_level/b_sea_level_anomaly.ipynb
+              - file: notebooks_historical/ocean/1_sea_level/c_sea_level_ff.ipynb
+              - file: notebooks_historical/ocean/1_sea_level/d_sea_level_rankings.ipynb
           # -> 2. Temperature
           - file: notebooks_historical/ocean/2_temperature/temperature.md
             sections:
