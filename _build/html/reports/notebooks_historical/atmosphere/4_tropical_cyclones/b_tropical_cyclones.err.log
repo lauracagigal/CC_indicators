@@ -18,20 +18,39 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-time = tcs_sel_params.dmin_date.dt.year.values
-u, cu = np.unique(time, return_counts=True)
-plot_bar_probs(x = u, y = cu, figsize= (15, 4), trendline_plot = True,
-               y_label =  'Number TCs')
+import warnings
+warnings.filterwarnings("ignore")
+import sys
+import os.path as op
+import xarray as xr
+import pandas as pd
+from myst_nb import glue 
+import numpy as np
+import matplotlib.pyplot as plt
+
+sys.path.append("../../../functions")
+from tcs import Extract_Circle, get_ibtracs_category
+from data_downloaders import download_ibtracs
+
+sys.path.append("../../../../indicators_setup")
+from ind_setup.plotting_tcs import Plot_TCs_HistoricalTracks_Category
+from ind_setup.plotting import plot_bar_probs, plot_tc_categories_trend
+from ind_setup.tables import plot_df_table
+
+from ind_setup.plotting import plot_bar_probs_ONI, add_oni_cat
+from data_downloaders import  download_oni_index
+
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mTypeError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[14], line 3[0m
-[1;32m      1[0m time [38;5;241m=[39m tcs_sel_params[38;5;241m.[39mdmin_date[38;5;241m.[39mdt[38;5;241m.[39myear[38;5;241m.[39mvalues
-[1;32m      2[0m u, cu [38;5;241m=[39m np[38;5;241m.[39munique(time, return_counts[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
-[0;32m----> 3[0m [43mplot_bar_probs[49m[43m([49m[43mx[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mu[49m[43m,[49m[43m [49m[43my[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mcu[49m[43m,[49m[43m [49m[43mfigsize[49m[38;5;241;43m=[39;49m[43m [49m[43m([49m[38;5;241;43m15[39;49m[43m,[49m[43m [49m[38;5;241;43m4[39;49m[43m)[49m[43m,[49m[43m [49m[43mtrendline_plot[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m
-[1;32m      4[0m [43m               [49m[43my_label[49m[43m [49m[38;5;241;43m=[39;49m[43m  [49m[38;5;124;43m'[39;49m[38;5;124;43mNumber TCs[39;49m[38;5;124;43m'[39;49m[43m)[49m
+[0;31mImportError[0m                               Traceback (most recent call last)
+Cell [0;32mIn[1], line 18[0m
+[1;32m     16[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mind_setup[39;00m[38;5;21;01m.[39;00m[38;5;21;01mplotting_tcs[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Plot_TCs_HistoricalTracks_Category
+[1;32m     17[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mind_setup[39;00m[38;5;21;01m.[39;00m[38;5;21;01mplotting[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m plot_bar_probs, plot_tc_categories_trend
+[0;32m---> 18[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mind_setup[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtables[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m plot_df_table
+[1;32m     20[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mind_setup[39;00m[38;5;21;01m.[39;00m[38;5;21;01mplotting[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m plot_bar_probs_ONI, add_oni_cat
+[1;32m     21[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mdata_downloaders[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m  download_oni_index
 
-[0;31mTypeError[0m: plot_bar_probs() got an unexpected keyword argument 'trendline_plot'
+[0;31mImportError[0m: cannot import name 'plot_df_table' from 'ind_setup.tables' (/Users/laurac/Library/Mobile Documents/com~apple~CloudDocs/Projects/CC_indicators/CC_indicators/notebooks_historical/atmosphere/4_tropical_cyclones/../../../../indicators_setup/ind_setup/tables.py)
 
