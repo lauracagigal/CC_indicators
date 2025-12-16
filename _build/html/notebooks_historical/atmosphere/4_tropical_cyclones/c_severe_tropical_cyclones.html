@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -510,10 +510,10 @@
   <section class="tex2jax_ignore mathjax_ignore" id="severe-tropical-cyclones">
 <h1>Severe Tropical Cyclones<a class="headerlink" href="#severe-tropical-cyclones" title="Link to this heading">#</a></h1>
 <figure class="align-center">
-<a class="reference internal image-reference" href="../../../_images/766ff54c6a61b9f04e481c439ba047fcd52266401788a59a7f455a218cd3cc74.png"><img alt="../../../_images/766ff54c6a61b9f04e481c439ba047fcd52266401788a59a7f455a218cd3cc74.png" src="../../../_images/766ff54c6a61b9f04e481c439ba047fcd52266401788a59a7f455a218cd3cc74.png" style="width: 416.0px; height: 312.0px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/73bf03689658bc08a57e208edb2131c90e789b16299ec96650dd3abcba4b2e42.png"><img alt="../../../_images/73bf03689658bc08a57e208edb2131c90e789b16299ec96650dd3abcba4b2e42.png" src="../../../_images/73bf03689658bc08a57e208edb2131c90e789b16299ec96650dd3abcba4b2e42.png" style="width: 416.0px; height: 312.0px;" /></a>
 </figure>
 <figure class="align-center">
-<a class="reference internal image-reference" href="../../../_images/5994dbb9e1d71996940df2ec98d8d7e62809cfef56a33487c0a863ab46522915.png"><img alt="../../../_images/5994dbb9e1d71996940df2ec98d8d7e62809cfef56a33487c0a863ab46522915.png" src="../../../_images/5994dbb9e1d71996940df2ec98d8d7e62809cfef56a33487c0a863ab46522915.png" style="width: 496.8px; height: 156.8px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/70b03141aeaec05258b040b59bb3e569f02cd9db4d7c9f3e2adf1c2b8820cd3e.png"><img alt="../../../_images/70b03141aeaec05258b040b59bb3e569f02cd9db4d7c9f3e2adf1c2b8820cd3e.png" src="../../../_images/70b03141aeaec05258b040b59bb3e569f02cd9db4d7c9f3e2adf1c2b8820cd3e.png" style="width: 496.8px; height: 156.8px;" /></a>
 </figure>
 <p><strong>Figure. Severe Tropical cyclones (TCs) in the vicinity of Palau since 1950.</strong>  Map showing all severe TC tracks in the vicinity of Palau (top) and annual storm count (bottom).  Severe cyclones are those classified as Category 3 or greater on the Saffir Simpson scale (i.e., winds greater than 96kt [110 miles/hour]). The dashed black line represents a trend that is not statistically significant.</p>
 <section id="setup">
@@ -543,7 +543,6 @@
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;../../../../indicators_setup&quot;</span><span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">ind_setup.plotting_tcs</span><span class="w"> </span><span class="kn">import</span> <span class="n">Plot_TCs_HistoricalTracks_Category</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">ind_setup.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_bar_probs</span><span class="p">,</span> <span class="n">plot_tc_categories_trend</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">ind_setup.tables</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_df_table</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">ind_setup.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_bar_probs_ONI</span><span class="p">,</span> <span class="n">add_oni_cat</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">data_downloaders</span><span class="w"> </span><span class="kn">import</span>  <span class="n">download_oni_index</span>
@@ -551,20 +550,6 @@
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">18</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span><span class="w"> </span><span class="nn">ind_setup.plotting_tcs</span><span class="w"> </span><span class="kn">import</span> <span class="n">Plot_TCs_HistoricalTracks_Category</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">ind_setup.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_bar_probs</span><span class="p">,</span> <span class="n">plot_tc_categories_trend</span>
-<span class="ne">---&gt; </span><span class="mi">18</span> <span class="kn">from</span><span class="w"> </span><span class="nn">ind_setup.tables</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_df_table</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="kn">from</span><span class="w"> </span><span class="nn">ind_setup.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_bar_probs_ONI</span><span class="p">,</span> <span class="n">add_oni_cat</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">from</span><span class="w"> </span><span class="nn">data_downloaders</span><span class="w"> </span><span class="kn">import</span>  <span class="n">download_oni_index</span>
-
-<span class="ne">ImportError</span>: cannot import name &#39;plot_df_table&#39; from &#39;ind_setup.tables&#39; (/Users/laurac/Library/Mobile Documents/com~apple~CloudDocs/Projects/CC_indicators/CC_indicators/notebooks_historical/atmosphere/4_tropical_cyclones/../../../../indicators_setup/ind_setup/tables.py)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -683,7 +668,7 @@ Severe TCs are defined here as those having a category equal or larger than 3</p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/766ff54c6a61b9f04e481c439ba047fcd52266401788a59a7f455a218cd3cc74.png" src="../../../_images/766ff54c6a61b9f04e481c439ba047fcd52266401788a59a7f455a218cd3cc74.png" />
+<img alt="../../../_images/73bf03689658bc08a57e208edb2131c90e789b16299ec96650dd3abcba4b2e42.png" src="../../../_images/73bf03689658bc08a57e208edb2131c90e789b16299ec96650dd3abcba4b2e42.png" />
 </div>
 </div>
 <p>The plot below shows the trend of the number of severe TCs per year over time.</p>
@@ -701,7 +686,7 @@ Severe TCs are defined here as those having a category equal or larger than 3</p
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 1500x400 with 1 Axes&gt;, &lt;Axes: ylabel=&#39;Number of severe TCs&#39;&gt;)
 </pre></div>
 </div>
-<img alt="../../../_images/fe233f6ce5731e7f2a755e2e11e2aba23844ead03e8d0bc44d2897e8bb62ce8b.png" src="../../../_images/fe233f6ce5731e7f2a755e2e11e2aba23844ead03e8d0bc44d2897e8bb62ce8b.png" />
+<img alt="../../../_images/5717ae3850cca1c592faf53425bf3d085a98f0a89bcddf657fe25248812405ff.png" src="../../../_images/5717ae3850cca1c592faf53425bf3d085a98f0a89bcddf657fe25248812405ff.png" />
 </div>
 </div>
 <p>The following bar plot displays the TC count per year and per category, as well as the trend. <br>
@@ -712,11 +697,12 @@ The grey color represent those TCs in the record where no pressure or wind infor
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plot_tc_categories_trend</span><span class="p">(</span><span class="n">tcs_sel_severe_params</span><span class="p">,</span> <span class="n">trendline_plot</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_figs</span><span class="p">,</span> <span class="s1">&#39;F8_TCs_Historical_bars_category_severe.png&#39;</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
 <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;time_cat_fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_figs</span><span class="p">,</span> <span class="s1">&#39;F8_TCs_Historical_Severe_cat_time.png&#39;</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/5994dbb9e1d71996940df2ec98d8d7e62809cfef56a33487c0a863ab46522915.png" src="../../../_images/5994dbb9e1d71996940df2ec98d8d7e62809cfef56a33487c0a863ab46522915.png" />
+<img alt="../../../_images/70b03141aeaec05258b040b59bb3e569f02cd9db4d7c9f3e2adf1c2b8820cd3e.png" src="../../../_images/70b03141aeaec05258b040b59bb3e569f02cd9db4d7c9f3e2adf1c2b8820cd3e.png" />
 </div>
 </div>
 <p>To showcase the spatial distribution of the TC tracks for the different categories, a map is shown below representing all the TCs in the record for each category.</p>
@@ -738,9 +724,9 @@ The grey color represent those TCs in the record where no pressure or wind infor
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/1350034344b1cf066b961abacc2c21475469814a22f9eb3c11eb464049aa8cb1.png" src="../../../_images/1350034344b1cf066b961abacc2c21475469814a22f9eb3c11eb464049aa8cb1.png" />
-<img alt="../../../_images/e8e3cb658f666163bb565cb9aadf325dec97b6e0b70d7f1fff8a81ff7607892f.png" src="../../../_images/e8e3cb658f666163bb565cb9aadf325dec97b6e0b70d7f1fff8a81ff7607892f.png" />
-<img alt="../../../_images/56c2a510e4b70bfc1f9c8d9691229a2c25ca0f2c8ba7eb844e679506d54f0daa.png" src="../../../_images/56c2a510e4b70bfc1f9c8d9691229a2c25ca0f2c8ba7eb844e679506d54f0daa.png" />
+<img alt="../../../_images/4e970140f9b16279112eefb020670676f44d2625d1e6d43ee58a000cfe0fe48b.png" src="../../../_images/4e970140f9b16279112eefb020670676f44d2625d1e6d43ee58a000cfe0fe48b.png" />
+<img alt="../../../_images/9356350bf05d1f94cf9487e6f7c40d31cd44263bca4656b30455f99e1b8c49f2.png" src="../../../_images/9356350bf05d1f94cf9487e6f7c40d31cd44263bca4656b30455f99e1b8c49f2.png" />
+<img alt="../../../_images/90a01d92fb162b2965a58557d8c797a798a7525d75caeb924d5160f8d6f8f5b9.png" src="../../../_images/90a01d92fb162b2965a58557d8c797a798a7525d75caeb924d5160f8d6f8f5b9.png" />
 </div>
 </div>
 <section id="generate-table">
@@ -752,7 +738,7 @@ Number of TCs for each category</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_tcs</span> <span class="o">=</span> <span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
 <span class="n">df_tcs</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_tcs</span><span class="o">.</span><span class="n">dmin_date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
 <span class="n">df_t</span> <span class="o">=</span> <span class="n">df_tcs</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()[[</span><span class="s1">&#39;pressure_min&#39;</span><span class="p">]]</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plot_df_table</span><span class="p">(</span><span class="n">df_t</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">220</span><span class="p">))</span>
+<span class="c1"># fig = plot_df_table(df_t, figsize = (300, 220))</span>
 
 <span class="n">mean_tcs_per_year</span> <span class="o">=</span> <span class="n">df_tcs</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df_tcs</span><span class="p">[</span><span class="s1">&#39;dmin_date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="p">)[</span><span class="s1">&#39;pressure_min&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 
@@ -765,7 +751,6 @@ Number of TCs for each category</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/7eb19516497f2dd5f6a0ab4cf42e1647670342293fe715aff12badbf91b425e6.png" src="../../../_images/7eb19516497f2dd5f6a0ab4cf42e1647670342293fe715aff12badbf91b425e6.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean TCs per year:  2.8450704225352115
 Mean number of severe TCs per year:  1.12
 </pre></div>
@@ -842,9 +827,9 @@ Mean number of severe TCs per year:  1.12
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>oni_cat
--1    33.783784
- 0    36.486486
- 1    29.729730
+-1    33.333333
+ 0    37.333333
+ 1    29.333333
 dtype: float64
 </pre></div>
 </div>
@@ -876,9 +861,9 @@ dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>oni_cat
--1.0    0.910090
- 0.0    1.186291
- 1.0    0.853460
+-1.0    0.922388
+ 0.0    1.159382
+ 1.0    0.864993
 dtype: float64
 </pre></div>
 </div>
@@ -921,7 +906,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/fabe0267738240b9979c1f047333b4dabd3b6e01172e8ce9059dabe6ba6c10a2.png" src="../../../_images/fabe0267738240b9979c1f047333b4dabd3b6e01172e8ce9059dabe6ba6c10a2.png" />
+<img alt="../../../_images/bb06501da2560d53f22c32b710a71cd02cc62f7968088e931cb63947869578d4.png" src="../../../_images/bb06501da2560d53f22c32b710a71cd02cc62f7968088e931cb63947869578d4.png" />
 </div>
 </div>
 </section>
@@ -964,9 +949,9 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/936bcf50c340e50268eb402ec42cff10d7987ef9912242a73d6b8152b5e231fc.png" src="../../../_images/936bcf50c340e50268eb402ec42cff10d7987ef9912242a73d6b8152b5e231fc.png" />
-<img alt="../../../_images/d3e6e43512775449ba704c1a10f317f860a842671ef61deda2fb0c01072b8f72.png" src="../../../_images/d3e6e43512775449ba704c1a10f317f860a842671ef61deda2fb0c01072b8f72.png" />
-<img alt="../../../_images/a4efa08f4a62469f31561e86226ab6fb82213d33ba8f657b15c23a3aebbd124f.png" src="../../../_images/a4efa08f4a62469f31561e86226ab6fb82213d33ba8f657b15c23a3aebbd124f.png" />
+<img alt="../../../_images/5d6a01620711aeef5dc96a97815bb0ae23dd2d1e1b586bfeffeb980615e0d606.png" src="../../../_images/5d6a01620711aeef5dc96a97815bb0ae23dd2d1e1b586bfeffeb980615e0d606.png" />
+<img alt="../../../_images/0c6de4ae5977a17c59961b8357de0e0caa59670a372d0fe0d1931b12ccf5920b.png" src="../../../_images/0c6de4ae5977a17c59961b8357de0e0caa59670a372d0fe0d1931b12ccf5920b.png" />
+<img alt="../../../_images/cafe9516a7cf658f464ca58caca4c3005dd983596845ea4cb8139f0e390e7be1.png" src="../../../_images/cafe9516a7cf658f464ca58caca4c3005dd983596845ea4cb8139f0e390e7be1.png" />
 </div>
 </div>
 </section>

@@ -18,39 +18,30 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import warnings
-warnings.filterwarnings("ignore")
-import sys
-import os.path as op
-import xarray as xr
-import pandas as pd
-from myst_nb import glue 
-import numpy as np
-import matplotlib.pyplot as plt
+df_tcs = tcs_sel_params.to_dataframe()
+df_tcs['year'] = df_tcs.dmin_date.dt.year
+df_t = df_tcs.groupby('category').count()[['pressure_min']]
+fig = plot_df_table(df_t, figsize = (300, 220))
 
-sys.path.append("../../../functions")
-from tcs import Extract_Circle
-from data_downloaders import download_ibtracs
+mean_tcs_per_year = df_tcs.groupby(df_tcs['dmin_date'].dt.year)['pressure_min'].count()
 
-sys.path.append("../../../../indicators_setup")
-from ind_setup.plotting_tcs import Plot_TCs_HistoricalTracks_Category
-from ind_setup.plotting import plot_bar_probs, plot_tc_categories_trend
-from ind_setup.tables import plot_df_table
+df_sev = df_tcs.loc[df_tcs['category'] >=3]
+mean_tcs_per_year_sev = df_sev.groupby(df_sev['dmin_date'].dt.year)['pressure_min'].count()
 
-from ind_setup.plotting import plot_bar_probs_ONI, add_oni_cat
-from data_downloaders import  download_oni_index
+print('Mean TCs per year: ', np.nanmean(mean_tcs_per_year))
+print('Mean number of severe TCs per year: ', np.round(np.nanmean(mean_tcs_per_year_sev), 2))
 
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mImportError[0m                               Traceback (most recent call last)
-Cell [0;32mIn[1], line 18[0m
-[1;32m     16[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mind_setup[39;00m[38;5;21;01m.[39;00m[38;5;21;01mplotting_tcs[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Plot_TCs_HistoricalTracks_Category
-[1;32m     17[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mind_setup[39;00m[38;5;21;01m.[39;00m[38;5;21;01mplotting[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m plot_bar_probs, plot_tc_categories_trend
-[0;32m---> 18[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mind_setup[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtables[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m plot_df_table
-[1;32m     20[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mind_setup[39;00m[38;5;21;01m.[39;00m[38;5;21;01mplotting[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m plot_bar_probs_ONI, add_oni_cat
-[1;32m     21[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mdata_downloaders[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m  download_oni_index
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[14], line 4[0m
+[1;32m      2[0m df_tcs[[38;5;124m'[39m[38;5;124myear[39m[38;5;124m'[39m] [38;5;241m=[39m df_tcs[38;5;241m.[39mdmin_date[38;5;241m.[39mdt[38;5;241m.[39myear
+[1;32m      3[0m df_t [38;5;241m=[39m df_tcs[38;5;241m.[39mgroupby([38;5;124m'[39m[38;5;124mcategory[39m[38;5;124m'[39m)[38;5;241m.[39mcount()[[[38;5;124m'[39m[38;5;124mpressure_min[39m[38;5;124m'[39m]]
+[0;32m----> 4[0m fig [38;5;241m=[39m [43mplot_df_table[49m(df_t, figsize [38;5;241m=[39m ([38;5;241m300[39m, [38;5;241m220[39m))
+[1;32m      6[0m mean_tcs_per_year [38;5;241m=[39m df_tcs[38;5;241m.[39mgroupby(df_tcs[[38;5;124m'[39m[38;5;124mdmin_date[39m[38;5;124m'[39m][38;5;241m.[39mdt[38;5;241m.[39myear)[[38;5;124m'[39m[38;5;124mpressure_min[39m[38;5;124m'[39m][38;5;241m.[39mcount()
+[1;32m      8[0m df_sev [38;5;241m=[39m df_tcs[38;5;241m.[39mloc[df_tcs[[38;5;124m'[39m[38;5;124mcategory[39m[38;5;124m'[39m] [38;5;241m>[39m[38;5;241m=[39m[38;5;241m3[39m]
 
-[0;31mImportError[0m: cannot import name 'plot_df_table' from 'ind_setup.tables' (/Users/laurac/Library/Mobile Documents/com~apple~CloudDocs/Projects/CC_indicators/CC_indicators/notebooks_historical/atmosphere/4_tropical_cyclones/../../../../indicators_setup/ind_setup/tables.py)
+[0;31mNameError[0m: name 'plot_df_table' is not defined
 
