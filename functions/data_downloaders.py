@@ -1,5 +1,6 @@
 import os
 import os.path as op
+from urllib.request import urlretrieve
 import pandas as pd
 import xarray as xr
 import numpy as np
@@ -278,3 +279,36 @@ def download_ERDDAP_data(base_url, dataset_id, date_ini, date_end, lon_range, la
     for var in ['latitude', 'longitude', dataset_id]:
         data[var] = data[var].astype(float)
     return data
+
+# UHSLC Hourly Sea Level Data
+def download_uhslc_data(data_dir: str, uhslc_id: int, frequency: str = 'hourly'):
+# download the hourly data
+    fname = f'{frequency[0]}{uhslc_id:03}.nc' # h for hourly, d for daily
+
+    if frequency == 'hourly':
+        url = "https://uhslc.soest.hawaii.edu/data/netcdf/fast/hourly/" 
+    elif frequency == 'daily':
+        url = "https://uhslc.soest.hawaii.edu/data/netcdf/fast/daily/"
+
+    path = os.path.join(data_dir, fname)
+    temp_path = os.path.join(data_dir, 'temp_' + fname)
+    urlretrieve(os.path.join(url, fname), temp_path) 
+
+    if os.path.exists(path):
+        # To avoid a permission error from the file being open,
+        # we remove the old file before writing the new one.
+        os.remove(path)
+
+    # Rename the temporary file to the final path
+    os.rename(temp_path, path)
+
+    rsl = xr.open_dataset(path)
+
+    # remove the trailing zero from record_id. This zero is added to the record_id to make it unique if the station has multiple entries
+    rsl['record_id'] =(rsl['record_id']/10).astype(int)
+
+    # change station_name to string
+    for col in ['station_name', 'station_country']:
+        rsl[col] = rsl[col].astype(str)
+    
+    return rsl
