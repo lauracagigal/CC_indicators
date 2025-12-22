@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -513,10 +513,10 @@
   <section class="tex2jax_ignore mathjax_ignore" id="heavy-rainfall">
 <h1>Heavy rainfall<a class="headerlink" href="#heavy-rainfall" title="Link to this heading">#</a></h1>
 <figure class="align-center">
-<a class="reference internal image-reference" href="../../../_images/63c7936f1e8c3536db203a5f6ad6b70463a5b4c88c626470c413e3ecef713e66.png"><img alt="../../../_images/63c7936f1e8c3536db203a5f6ad6b70463a5b4c88c626470c413e3ecef713e66.png" src="../../../_images/63c7936f1e8c3536db203a5f6ad6b70463a5b4c88c626470c413e3ecef713e66.png" style="width: 743.4px; height: 209.4px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/d9fb30ef5dee6d9bddd754b36243f39ee70bb6b6a760b2c39504dade56c48ffb.png"><img alt="../../../_images/d9fb30ef5dee6d9bddd754b36243f39ee70bb6b6a760b2c39504dade56c48ffb.png" src="../../../_images/d9fb30ef5dee6d9bddd754b36243f39ee70bb6b6a760b2c39504dade56c48ffb.png" style="width: 743.4px; height: 209.4px;" /></a>
 </figure>
 <figure class="align-center">
-<a class="reference internal image-reference" href="../../../_images/eb32cfe22ef698a4b3276832389bb70ed8718a8ec88d20aa7c5aee40484c21d6.png"><img alt="../../../_images/eb32cfe22ef698a4b3276832389bb70ed8718a8ec88d20aa7c5aee40484c21d6.png" src="../../../_images/eb32cfe22ef698a4b3276832389bb70ed8718a8ec88d20aa7c5aee40484c21d6.png" style="width: 738.6px; height: 255.6px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/8341b9287e8453644a49de1dabfa1b49db0882a58695b4ef7ec26545b2b7fe98.png"><img alt="../../../_images/8341b9287e8453644a49de1dabfa1b49db0882a58695b4ef7ec26545b2b7fe98.png" src="../../../_images/8341b9287e8453644a49de1dabfa1b49db0882a58695b4ef7ec26545b2b7fe98.png" style="width: 738.6px; height: 255.6px;" /></a>
 </figure>
 <p><strong>Figure. Annual wet days (top) and days with heavy rainfall (bottom) over the period 1951–2024 at Koror.</strong>  Wet days are defined as days above 1mm (0.04 inches).  Heavy rainfall days are defined as days where rainfall is greater than 45.7mm (1.98 inches), the 95th percentile.    The solid black lines represent statistically significant trends (p &lt; 0.05).  The dashed black line represents a trend that is not statistically significant.</p>
 <section id="setup">
@@ -546,7 +546,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">ind_setup.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">fontsize</span>
 
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;../../../functions&quot;</span><span class="p">)</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">data_downloaders</span><span class="w"> </span><span class="kn">import</span> <span class="n">GHCN</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">data_downloaders</span><span class="w"> </span><span class="kn">import</span> <span class="n">GHCN</span><span class="p">,</span> <span class="n">filter_by_time_completeness</span>
 </pre></div>
 </div>
 </div>
@@ -619,6 +619,28 @@ precipitation and more.</p>
 </div>
 </details>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_filt</span><span class="p">,</span> <span class="n">removed_months</span><span class="p">,</span> <span class="n">removed_years</span> <span class="o">=</span> <span class="n">filter_by_time_completeness</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">,</span>
+    <span class="n">month_threshold</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
+    <span class="n">year_threshold</span><span class="o">=</span><span class="mf">0.75</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Removed </span><span class="si">{</span><span class="n">removed_months</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> months due to insufficient data: </span><span class="si">{</span><span class="n">removed_months</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Removed </span><span class="si">{</span><span class="n">removed_years</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> years due to insufficient data: </span><span class="si">{</span><span class="n">removed_years</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">df_filt</span> <span class="c1">#replace data with filtered data</span>
+<span class="n">data_daily</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Removed 9 months due to insufficient data: [(2018, 8), (2019, 1), (2022, 7), (2022, 11), (2022, 12), (2023, 1), (2023, 8), (2024, 2), (2025, 10)]
+Removed 1 years due to insufficient data: [2019]
+</pre></div>
+</div>
+</div>
+</div>
 <section id="wet-days">
 <h4>Wet days<a class="headerlink" href="#wet-days" title="Link to this heading">#</a></h4>
 <p>Now we are going to classify every day as a wet or dry day. <br>
@@ -651,7 +673,7 @@ Wet days are considered when rainfall is above 1mm</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Number of Days&#39;)
 </pre></div>
 </div>
-<img alt="../../../_images/46c63db5703b915782ba3c52c4f3553e8143bc8f46db8d7cb304572c55b81894.png" src="../../../_images/46c63db5703b915782ba3c52c4f3553e8143bc8f46db8d7cb304572c55b81894.png" />
+<img alt="../../../_images/0b3ee4cca35b4e78ca17dad7bee6c4bbb8231e1ae22ee0aab6717be32a0f7c2b.png" src="../../../_images/0b3ee4cca35b4e78ca17dad7bee6c4bbb8231e1ae22ee0aab6717be32a0f7c2b.png" />
 </div>
 </div>
 </section>
@@ -687,7 +709,7 @@ Wet days are considered when rainfall is above 1mm</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Number of days&#39;)
 </pre></div>
 </div>
-<img alt="../../../_images/949181d176967cd302dc271fe330345dbfd015aecadbb8b6b1b7c5b77cd3bed4.png" src="../../../_images/949181d176967cd302dc271fe330345dbfd015aecadbb8b6b1b7c5b77cd3bed4.png" />
+<img alt="../../../_images/db71f5cfcae51efb17805bea28c325bb04552a89890995841aa7bdd5a561c711.png" src="../../../_images/db71f5cfcae51efb17805bea28c325bb04552a89890995841aa7bdd5a561c711.png" />
 </div>
 </div>
 <p>The following plots analyze independently the number of wet and dry days over time as well the trend over time which is not significant in both cases.</p>
@@ -706,7 +728,7 @@ Wet days are considered when rainfall is above 1mm</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/63c7936f1e8c3536db203a5f6ad6b70463a5b4c88c626470c413e3ecef713e66.png" src="../../../_images/63c7936f1e8c3536db203a5f6ad6b70463a5b4c88c626470c413e3ecef713e66.png" />
+<img alt="../../../_images/d9fb30ef5dee6d9bddd754b36243f39ee70bb6b6a760b2c39504dade56c48ffb.png" src="../../../_images/d9fb30ef5dee6d9bddd754b36243f39ee70bb6b6a760b2c39504dade56c48ffb.png" />
 </div>
 </div>
 </section>
@@ -729,7 +751,7 @@ Wet days are considered when rainfall is above 1mm</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Threshold of 45.7mm
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Threshold of 45.2mm
 </pre></div>
 </div>
 </div>
@@ -768,7 +790,7 @@ Wet days are considered when rainfall is above 1mm</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/eb32cfe22ef698a4b3276832389bb70ed8718a8ec88d20aa7c5aee40484c21d6.png" src="../../../_images/eb32cfe22ef698a4b3276832389bb70ed8718a8ec88d20aa7c5aee40484c21d6.png" />
+<img alt="../../../_images/8341b9287e8453644a49de1dabfa1b49db0882a58695b4ef7ec26545b2b7fe98.png" src="../../../_images/8341b9287e8453644a49de1dabfa1b49db0882a58695b4ef7ec26545b2b7fe98.png" />
 </div>
 </div>
 </section>
@@ -790,85 +812,85 @@ Wet days are considered when rainfall is above 1mm</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
-#T_59b28 caption {
+#T_4beda caption {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
   color: #2C013B;
   margin-bottom: 12px;
 }
-#T_59b28 thead th {
+#T_4beda thead th {
   background-color: #eed3f4;
   color: #2C013B;
   font-weight: bold;
   text-align: center;
 }
-#T_59b28 td {
+#T_4beda td {
   padding: 6px;
   border-bottom: 1px solid #ccc;
   text-align: center;
 }
-#T_59b28_row0_col0, #T_59b28_row1_col0, #T_59b28_row2_col0, #T_59b28_row3_col0, #T_59b28_row4_col0, #T_59b28_row5_col0, #T_59b28_row6_col0, #T_59b28_row7_col0, #T_59b28_row8_col0, #T_59b28_row9_col0, #T_59b28_row10_col0, #T_59b28_row11_col0 {
+#T_4beda_row0_col0, #T_4beda_row1_col0, #T_4beda_row2_col0, #T_4beda_row3_col0, #T_4beda_row4_col0, #T_4beda_row5_col0, #T_4beda_row6_col0, #T_4beda_row7_col0, #T_4beda_row8_col0, #T_4beda_row9_col0, #T_4beda_row10_col0, #T_4beda_row11_col0 {
   text-align: center;
   font-weight: bold;
 }
 </style>
-<table id="T_59b28">
+<table id="T_4beda">
   <caption>Key Metrics Summary</caption>
   <thead>
     <tr>
-      <th id="T_59b28_level0_col0" class="col_heading level0 col0" >Metric</th>
-      <th id="T_59b28_level0_col1" class="col_heading level0 col1" >Value</th>
+      <th id="T_4beda_level0_col0" class="col_heading level0 col0" >Metric</th>
+      <th id="T_4beda_level0_col1" class="col_heading level0 col1" >Value</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td id="T_59b28_row0_col0" class="data row0 col0" >Annual average of wet days</td>
-      <td id="T_59b28_row0_col1" class="data row0 col1" >218.583</td>
+      <td id="T_4beda_row0_col0" class="data row0 col0" >Annual average of wet days</td>
+      <td id="T_4beda_row0_col1" class="data row0 col1" >218.986</td>
     </tr>
     <tr>
-      <td id="T_59b28_row1_col0" class="data row1 col0" >Change in number of wet days from 1960</td>
-      <td id="T_59b28_row1_col1" class="data row1 col1" >-6.528</td>
+      <td id="T_4beda_row1_col0" class="data row1 col0" >Change in number of wet days from 1951</td>
+      <td id="T_4beda_row1_col1" class="data row1 col1" >-5.475</td>
     </tr>
     <tr>
-      <td id="T_59b28_row2_col0" class="data row2 col0" >Rate of change in number of wet days</td>
-      <td id="T_59b28_row2_col1" class="data row2 col1" >-0.102</td>
+      <td id="T_4beda_row2_col0" class="data row2 col0" >Rate of change in number of wet days</td>
+      <td id="T_4beda_row2_col1" class="data row2 col1" >-0.075</td>
     </tr>
     <tr>
-      <td id="T_59b28_row3_col0" class="data row3 col0" >Average Number of Wet Days: 1951 - 1962</td>
-      <td id="T_59b28_row3_col1" class="data row3 col1" >240.091</td>
+      <td id="T_4beda_row3_col0" class="data row3 col0" >Average Number of Wet Days: 1951 - 1962</td>
+      <td id="T_4beda_row3_col1" class="data row3 col1" >240.091</td>
     </tr>
     <tr>
-      <td id="T_59b28_row4_col0" class="data row4 col0" >Average Number of Wet Days: 2012 - 2021</td>
-      <td id="T_59b28_row4_col1" class="data row4 col1" >223.222</td>
+      <td id="T_4beda_row4_col0" class="data row4 col0" >Average Number of Wet Days: 2012 - 2021</td>
+      <td id="T_4beda_row4_col1" class="data row4 col1" >222.222</td>
     </tr>
     <tr>
-      <td id="T_59b28_row5_col0" class="data row5 col0" >Wet days in the wettest year: 2011</td>
-      <td id="T_59b28_row5_col1" class="data row5 col1" >269.000</td>
+      <td id="T_4beda_row5_col0" class="data row5 col0" >Wet days in the wettest year: 2011</td>
+      <td id="T_4beda_row5_col1" class="data row5 col1" >269.000</td>
     </tr>
     <tr>
-      <td id="T_59b28_row6_col0" class="data row6 col0" > </td>
-      <td id="T_59b28_row6_col1" class="data row6 col1" ></td>
+      <td id="T_4beda_row6_col0" class="data row6 col0" > </td>
+      <td id="T_4beda_row6_col1" class="data row6 col1" ></td>
     </tr>
     <tr>
-      <td id="T_59b28_row7_col0" class="data row7 col0" >Annual average number of days with heavy rainfall (>95th percentile)</td>
-      <td id="T_59b28_row7_col1" class="data row7 col1" >17.972</td>
+      <td id="T_4beda_row7_col0" class="data row7 col0" >Annual average number of days with heavy rainfall (>95th percentile)</td>
+      <td id="T_4beda_row7_col1" class="data row7 col1" >18.143</td>
     </tr>
     <tr>
-      <td id="T_59b28_row8_col0" class="data row8 col0" >Change in number of heavy rainfall days from 1960</td>
-      <td id="T_59b28_row8_col1" class="data row8 col1" >-0.512</td>
+      <td id="T_4beda_row8_col0" class="data row8 col0" >Change in number of heavy rainfall days from 1951</td>
+      <td id="T_4beda_row8_col1" class="data row8 col1" >-2.409</td>
     </tr>
     <tr>
-      <td id="T_59b28_row9_col0" class="data row9 col0" >Rate of change in number of heavy rainfall days</td>
-      <td id="T_59b28_row9_col1" class="data row9 col1" >-0.008</td>
+      <td id="T_4beda_row9_col0" class="data row9 col0" >Rate of change in number of heavy rainfall days</td>
+      <td id="T_4beda_row9_col1" class="data row9 col1" >-0.033</td>
     </tr>
     <tr>
-      <td id="T_59b28_row10_col0" class="data row10 col0" >Average Number of Heavy Rainfall Days: 1951 - 1962</td>
-      <td id="T_59b28_row10_col1" class="data row10 col1" >19.909</td>
+      <td id="T_4beda_row10_col0" class="data row10 col0" >Average Number of Heavy Rainfall Days: 1951 - 1962</td>
+      <td id="T_4beda_row10_col1" class="data row10 col1" >20.182</td>
     </tr>
     <tr>
-      <td id="T_59b28_row11_col0" class="data row11 col0" >Average Number of Heavy Rainfall Days: 2012 - 2021</td>
-      <td id="T_59b28_row11_col1" class="data row11 col1" >13.889</td>
+      <td id="T_4beda_row11_col0" class="data row11 col0" >Average Number of Heavy Rainfall Days: 2012 - 2021</td>
+      <td id="T_4beda_row11_col1" class="data row11 col1" >14.333</td>
     </tr>
   </tbody>
 </table>

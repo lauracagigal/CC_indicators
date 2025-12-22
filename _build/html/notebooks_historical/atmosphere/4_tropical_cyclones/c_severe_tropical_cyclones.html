@@ -513,7 +513,7 @@
 <a class="reference internal image-reference" href="../../../_images/73bf03689658bc08a57e208edb2131c90e789b16299ec96650dd3abcba4b2e42.png"><img alt="../../../_images/73bf03689658bc08a57e208edb2131c90e789b16299ec96650dd3abcba4b2e42.png" src="../../../_images/73bf03689658bc08a57e208edb2131c90e789b16299ec96650dd3abcba4b2e42.png" style="width: 416.0px; height: 312.0px;" /></a>
 </figure>
 <figure class="align-center">
-<a class="reference internal image-reference" href="../../../_images/70b03141aeaec05258b040b59bb3e569f02cd9db4d7c9f3e2adf1c2b8820cd3e.png"><img alt="../../../_images/70b03141aeaec05258b040b59bb3e569f02cd9db4d7c9f3e2adf1c2b8820cd3e.png" src="../../../_images/70b03141aeaec05258b040b59bb3e569f02cd9db4d7c9f3e2adf1c2b8820cd3e.png" style="width: 496.8px; height: 156.8px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/92e0e59957f268f342a41c7ed08245de136f26b8d38ac82dc90fda1b6934070e.png"><img alt="../../../_images/92e0e59957f268f342a41c7ed08245de136f26b8d38ac82dc90fda1b6934070e.png" src="../../../_images/92e0e59957f268f342a41c7ed08245de136f26b8d38ac82dc90fda1b6934070e.png" style="width: 496.8px; height: 156.8px;" /></a>
 </figure>
 <p><strong>Figure. Severe Tropical cyclones (TCs) in the vicinity of Palau since 1950.</strong>  Map showing all severe TC tracks in the vicinity of Palau (top) and annual storm count (bottom).  Severe cyclones are those classified as Category 3 or greater on the Saffir Simpson scale (i.e., winds greater than 96kt [110 miles/hour]). The dashed black line represents a trend that is not statistically significant.</p>
 <section id="setup">
@@ -677,7 +677,11 @@ Severe TCs are defined here as those having a category equal or larger than 3</p
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tcs_sel_severe_params</span> <span class="o">=</span> <span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tcs_sel_params</span><span class="o">.</span><span class="n">category</span> <span class="o">&gt;=</span><span class="mi">3</span><span class="p">,</span> <span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">time</span> <span class="o">=</span> <span class="n">tcs_sel_severe_params</span><span class="o">.</span><span class="n">dmin_date</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">values</span>
 <span class="n">u</span><span class="p">,</span> <span class="n">cu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plot_bar_probs</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">u</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cu</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">trendline</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="n">years</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">tcs</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">date_time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+<span class="n">cyclone_counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">years</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span>
+<span class="n">cyclone_counts</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">cu</span>
+<span class="n">plot_bar_probs</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">years</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cyclone_counts</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">trendline</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
                <span class="n">y_label</span> <span class="o">=</span>  <span class="s1">&#39;Number of severe TCs&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -686,7 +690,7 @@ Severe TCs are defined here as those having a category equal or larger than 3</p
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 1500x400 with 1 Axes&gt;, &lt;Axes: ylabel=&#39;Number of severe TCs&#39;&gt;)
 </pre></div>
 </div>
-<img alt="../../../_images/5717ae3850cca1c592faf53425bf3d085a98f0a89bcddf657fe25248812405ff.png" src="../../../_images/5717ae3850cca1c592faf53425bf3d085a98f0a89bcddf657fe25248812405ff.png" />
+<img alt="../../../_images/b4ad47ddebbffc965056b21a91a7156f1a7e3b818e4c76d7567d4d51fb19adb2.png" src="../../../_images/b4ad47ddebbffc965056b21a91a7156f1a7e3b818e4c76d7567d4d51fb19adb2.png" />
 </div>
 </div>
 <p>The following bar plot displays the TC count per year and per category, as well as the trend. <br>
@@ -702,7 +706,7 @@ The grey color represent those TCs in the record where no pressure or wind infor
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/70b03141aeaec05258b040b59bb3e569f02cd9db4d7c9f3e2adf1c2b8820cd3e.png" src="../../../_images/70b03141aeaec05258b040b59bb3e569f02cd9db4d7c9f3e2adf1c2b8820cd3e.png" />
+<img alt="../../../_images/92e0e59957f268f342a41c7ed08245de136f26b8d38ac82dc90fda1b6934070e.png" src="../../../_images/92e0e59957f268f342a41c7ed08245de136f26b8d38ac82dc90fda1b6934070e.png" />
 </div>
 </div>
 <p>To showcase the spatial distribution of the TC tracks for the different categories, a map is shown below representing all the TCs in the record for each category.</p>
@@ -751,7 +755,7 @@ Number of TCs for each category</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean TCs per year:  2.8450704225352115
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean TCs per year:  2.780821917808219
 Mean number of severe TCs per year:  1.12
 </pre></div>
 </div>
@@ -844,9 +848,9 @@ dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>oni_cat
--1.0    30.746269
- 0.0    43.283582
- 1.0    25.373134
+-1.0    30.383481
+ 0.0    43.952802
+ 1.0    25.073746
 dtype: float64
 </pre></div>
 </div>
@@ -861,9 +865,9 @@ dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>oni_cat
--1.0    0.922388
- 0.0    1.159382
- 1.0    0.864993
+-1.0    0.911504
+ 0.0    1.177307
+ 1.0    0.854787
 dtype: float64
 </pre></div>
 </div>
@@ -897,16 +901,130 @@ dtype: float64
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">oni_y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ONI</th>
+      <th>oni_cat</th>
+      <th>tc_counts</th>
+      <th>tc_counts_sev</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1951</th>
+      <td>-0.82</td>
+      <td>1</td>
+      <td>7.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1952</th>
+      <td>-0.08</td>
+      <td>0</td>
+      <td>10.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1953</th>
+      <td>0.40</td>
+      <td>1</td>
+      <td>6.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1954</th>
+      <td>-0.90</td>
+      <td>-1</td>
+      <td>4.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1955</th>
+      <td>-1.67</td>
+      <td>-1</td>
+      <td>4.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>-1.05</td>
+      <td>-1</td>
+      <td>6.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>-1.06</td>
+      <td>-1</td>
+      <td>2.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2023</th>
+      <td>-0.68</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2024</th>
+      <td>-0.53</td>
+      <td>0</td>
+      <td>3.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2025</th>
+      <td>-0.59</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>75 rows × 4 columns</p>
+</div></div></div>
+</div>
 <p>The following bar plot represents the severe TC counts over time. The color of the bar represents wether it is a El Niño or La Niña year.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">plot_bar_probs_ONI</span><span class="p">(</span><span class="n">oni_y</span><span class="p">,</span> <span class="s1">&#39;tc_counts_sev&#39;</span><span class="p">,</span> <span class="n">y_label</span><span class="o">=</span> <span class="s1">&#39;TC counts - Severe&#39;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">plot_bar_probs_ONI</span><span class="p">(</span><span class="n">oni_y</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;tc_counts_sev&#39;</span><span class="p">,</span> <span class="n">y_label</span><span class="o">=</span> <span class="s1">&#39;TC counts - Severe&#39;</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">op</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_figs</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;F9_TCs_severe_bars_trend.png&#39;</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/bb06501da2560d53f22c32b710a71cd02cc62f7968088e931cb63947869578d4.png" src="../../../_images/bb06501da2560d53f22c32b710a71cd02cc62f7968088e931cb63947869578d4.png" />
+<img alt="../../../_images/0ad85d0dad4f7551bfac6fc347a08b65bf7a4a7588ad3241a2f6aff31b3570ab.png" src="../../../_images/0ad85d0dad4f7551bfac6fc347a08b65bf7a4a7588ad3241a2f6aff31b3570ab.png" />
 </div>
 </div>
 </section>

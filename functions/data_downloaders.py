@@ -1,5 +1,6 @@
 import os
 import os.path as op
+from urllib.request import urlretrieve
 import pandas as pd
 import xarray as xr
 import numpy as np
@@ -222,7 +223,7 @@ def download_ibtracs(url, basin=None):
     if basin:
         tcs = tcs.isel(storm=np.where(tcs.isel(date_time=0).basin.values.astype(str) == basin)[0])
 
-    return tcs#[['wmo_wind', 'wmo_pres', 'name']]
+    return tcs[['wmo_wind', 'wmo_pres', 'name']]
 
 
 ## ONI index
@@ -240,7 +241,7 @@ def download_oni_index(p_data):
 
     content = requests.get(p_data).content.decode()
     oni = pd.read_csv(
-        StringIO(content), skiprows=1, delim_whitespace=True, header=None, index_col=0
+        StringIO(content), skiprows=1, sep='\s+', header=None, index_col=0
     )[1:-8]
     oni = oni.apply(pd.to_numeric, errors="coerce")
 
@@ -278,3 +279,149 @@ def download_ERDDAP_data(base_url, dataset_id, date_ini, date_end, lon_range, la
     for var in ['latitude', 'longitude', dataset_id]:
         data[var] = data[var].astype(float)
     return data
+
+# UHSLC Hourly Sea Level Data
+def download_uhslc_data(data_dir: str, uhslc_id: int, frequency: str = 'hourly'):
+# download the hourly data
+    fname = f'{frequency[0]}{uhslc_id:03}.nc' # h for hourly, d for daily
+
+    if frequency == 'hourly':
+        url = "https://uhslc.soest.hawaii.edu/data/netcdf/fast/hourly/" 
+    elif frequency == 'daily':
+        url = "https://uhslc.soest.hawaii.edu/data/netcdf/fast/daily/"
+
+    path = os.path.join(data_dir, fname)
+    temp_path = os.path.join(data_dir, 'temp_' + fname)
+    urlretrieve(os.path.join(url, fname), temp_path) 
+
+    if os.path.exists(path):
+        # To avoid a permission error from the file being open,
+        # we remove the old file before writing the new one.
+        os.remove(path)
+
+    # Rename the temporary file to the final path
+    os.rename(temp_path, path)
+
+    rsl = xr.open_dataset(path)
+
+    # remove the trailing zero from record_id. This zero is added to the record_id to make it unique if the station has multiple entries
+    rsl['record_id'] =(rsl['record_id']/10).astype(int)
+
+    # change station_name to string
+    for col in ['station_name', 'station_country']:
+        rsl[col] = rsl[col].astype(str)
+    
+    return rsl
+
+
+## FILTER DATA BY TIME COMPLETENESS
+
+import pandas as pd
+import numpy as np
+
+def filter_by_time_completeness(
+    df,
+    time_col="time",
+    month_threshold=0.75,
+    year_threshold=0.75
+):
+    """
+    Filter a daily DataFrame based on time completeness criteria.
+
+    A month is kept if at least `month_threshold` fraction of its days
+    are present. A year is kept if at least `year_threshold` fraction
+    of its months pass the month-level test.
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        Input DataFrame with daily data.
+    time_col : str, optional
+        Name of the datetime column.
+    month_threshold : float, optional
+        Minimum fraction of days required to keep a month.
+    year_threshold : float, optional
+        Minimum fraction of valid months required to keep a year.
+
+    Returns
+    -------
+    df_filtered : pandas.DataFrame
+        Filtered DataFrame.
+    removed_months : pandas.DataFrame
+        Removed months with completeness information.
+        Index: (year, month)
+    removed_years : pandas.Series
+        Removed years with completeness ratio.
+        Index: year
+    """
+
+    df = df.copy()
+
+    # --------------------------------------------------
+    # Prepare time components
+    # --------------------------------------------------
+    df.index = pd.to_datetime(df.index)
+    df["year"]  = df.index.year
+    df["month"] = df.index.month
+    df["day"]   = df.index.day
+
+    # --------------------------------------------------
+    # Month completeness
+    # --------------------------------------------------
+    days_present = (
+        df.groupby(["year", "month"])["day"]
+        .nunique()
+        .rename("days_present")
+    )
+
+    days_in_month = (
+        days_present
+        .reset_index()
+        .assign(
+            days_in_month=lambda x: pd.to_datetime(
+                dict(year=x.year, month=x.month, day=1)
+            ).dt.days_in_month
+        )
+        .set_index(["year", "month"])["days_in_month"]
+    )
+
+    month_completeness = days_present / days_in_month
+
+    valid_months = month_completeness >= month_threshold
+
+    removed_months = (
+        month_completeness[~valid_months]
+        .to_frame(name="month_completeness")
+    )
+
+    # --------------------------------------------------
+    # Year completeness
+    # --------------------------------------------------
+    valid_months_per_year = valid_months.groupby("year").sum()
+    total_months_per_year = df.groupby("year")["month"].nunique()
+
+    year_completeness = valid_months_per_year / total_months_per_year
+
+    valid_years = year_completeness >= year_threshold
+
+    removed_years = year_completeness[~valid_years]
+
+    # --------------------------------------------------
+    # Filter DataFrame
+    # --------------------------------------------------
+    df_filtered = df[
+        df.set_index(["year", "month"]).index.isin(
+            valid_months[valid_months].index
+        )
+    ]
+
+    df_filtered = df_filtered[
+        df_filtered["year"].isin(valid_years[valid_years].index)
+    ]
+
+    # --------------------------------------------------
+    # Cleanup helper columns
+    # --------------------------------------------------
+    df_filtered = df_filtered.drop(columns=["year", "month", "day"])
+
+    return df_filtered, removed_months, removed_years
