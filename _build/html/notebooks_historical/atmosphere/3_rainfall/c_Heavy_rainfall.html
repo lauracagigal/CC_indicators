@@ -781,6 +781,101 @@ Wet days are considered when rainfall is above 1mm</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_over_th</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PRCP</th>
+      <th>PRCP_below</th>
+    </tr>
+    <tr>
+      <th>DATE</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1952-01-01</th>
+      <td>25</td>
+      <td>340</td>
+    </tr>
+    <tr>
+      <th>1953-01-01</th>
+      <td>19</td>
+      <td>346</td>
+    </tr>
+    <tr>
+      <th>1954-01-01</th>
+      <td>20</td>
+      <td>345</td>
+    </tr>
+    <tr>
+      <th>1955-01-01</th>
+      <td>9</td>
+      <td>356</td>
+    </tr>
+    <tr>
+      <th>1956-01-01</th>
+      <td>23</td>
+      <td>342</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2017-01-01</th>
+      <td>22</td>
+      <td>343</td>
+    </tr>
+    <tr>
+      <th>2018-01-01</th>
+      <td>13</td>
+      <td>352</td>
+    </tr>
+    <tr>
+      <th>2020-01-01</th>
+      <td>17</td>
+      <td>348</td>
+    </tr>
+    <tr>
+      <th>2021-01-01</th>
+      <td>20</td>
+      <td>345</td>
+    </tr>
+    <tr>
+      <th>2024-01-01</th>
+      <td>14</td>
+      <td>351</td>
+    </tr>
+  </tbody>
+</table>
+<p>70 rows × 2 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">trend_95</span> <span class="o">=</span> <span class="n">plot_bar_probs</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">data_over_th</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data_over_th</span><span class="p">[</span><span class="s1">&#39;PRCP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">trendline</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
                <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">return_trend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">y_label</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Number of days over </span><span class="si">{</span><span class="n">prcentile</span><span class="si">}</span><span class="s1"> percentile&#39;</span><span class="p">)</span>
 
@@ -812,85 +907,93 @@ Wet days are considered when rainfall is above 1mm</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
-#T_4beda caption {
+#T_b6dbb caption {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
   color: #2C013B;
   margin-bottom: 12px;
 }
-#T_4beda thead th {
+#T_b6dbb thead th {
   background-color: #eed3f4;
   color: #2C013B;
   font-weight: bold;
   text-align: center;
 }
-#T_4beda td {
+#T_b6dbb td {
   padding: 6px;
   border-bottom: 1px solid #ccc;
   text-align: center;
 }
-#T_4beda_row0_col0, #T_4beda_row1_col0, #T_4beda_row2_col0, #T_4beda_row3_col0, #T_4beda_row4_col0, #T_4beda_row5_col0, #T_4beda_row6_col0, #T_4beda_row7_col0, #T_4beda_row8_col0, #T_4beda_row9_col0, #T_4beda_row10_col0, #T_4beda_row11_col0 {
+#T_b6dbb_row0_col0, #T_b6dbb_row1_col0, #T_b6dbb_row2_col0, #T_b6dbb_row3_col0, #T_b6dbb_row4_col0, #T_b6dbb_row5_col0, #T_b6dbb_row6_col0, #T_b6dbb_row7_col0, #T_b6dbb_row8_col0, #T_b6dbb_row9_col0, #T_b6dbb_row10_col0, #T_b6dbb_row11_col0, #T_b6dbb_row12_col0, #T_b6dbb_row13_col0 {
   text-align: center;
   font-weight: bold;
 }
 </style>
-<table id="T_4beda">
+<table id="T_b6dbb">
   <caption>Key Metrics Summary</caption>
   <thead>
     <tr>
-      <th id="T_4beda_level0_col0" class="col_heading level0 col0" >Metric</th>
-      <th id="T_4beda_level0_col1" class="col_heading level0 col1" >Value</th>
+      <th id="T_b6dbb_level0_col0" class="col_heading level0 col0" >Metric</th>
+      <th id="T_b6dbb_level0_col1" class="col_heading level0 col1" >Value</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td id="T_4beda_row0_col0" class="data row0 col0" >Annual average of wet days</td>
-      <td id="T_4beda_row0_col1" class="data row0 col1" >218.986</td>
+      <td id="T_b6dbb_row0_col0" class="data row0 col0" >Annual average of wet days</td>
+      <td id="T_b6dbb_row0_col1" class="data row0 col1" >218.986</td>
     </tr>
     <tr>
-      <td id="T_4beda_row1_col0" class="data row1 col0" >Change in number of wet days from 1951</td>
-      <td id="T_4beda_row1_col1" class="data row1 col1" >-5.475</td>
+      <td id="T_b6dbb_row1_col0" class="data row1 col0" >Change in number of wet days from 1951</td>
+      <td id="T_b6dbb_row1_col1" class="data row1 col1" >-5.475</td>
     </tr>
     <tr>
-      <td id="T_4beda_row2_col0" class="data row2 col0" >Rate of change in number of wet days</td>
-      <td id="T_4beda_row2_col1" class="data row2 col1" >-0.075</td>
+      <td id="T_b6dbb_row2_col0" class="data row2 col0" >Rate of change in number of wet days</td>
+      <td id="T_b6dbb_row2_col1" class="data row2 col1" >-0.075</td>
     </tr>
     <tr>
-      <td id="T_4beda_row3_col0" class="data row3 col0" >Average Number of Wet Days: 1951 - 1962</td>
-      <td id="T_4beda_row3_col1" class="data row3 col1" >240.091</td>
+      <td id="T_b6dbb_row3_col0" class="data row3 col0" >Average Number of Wet Days: 1951 - 1962</td>
+      <td id="T_b6dbb_row3_col1" class="data row3 col1" >240.091</td>
     </tr>
     <tr>
-      <td id="T_4beda_row4_col0" class="data row4 col0" >Average Number of Wet Days: 2012 - 2021</td>
-      <td id="T_4beda_row4_col1" class="data row4 col1" >222.222</td>
+      <td id="T_b6dbb_row4_col0" class="data row4 col0" >Average Number of Wet Days: 2012 - 2021</td>
+      <td id="T_b6dbb_row4_col1" class="data row4 col1" >222.222</td>
     </tr>
     <tr>
-      <td id="T_4beda_row5_col0" class="data row5 col0" >Wet days in the wettest year: 2011</td>
-      <td id="T_4beda_row5_col1" class="data row5 col1" >269.000</td>
+      <td id="T_b6dbb_row5_col0" class="data row5 col0" >Wet days in the wettest year: 2011</td>
+      <td id="T_b6dbb_row5_col1" class="data row5 col1" >269.000</td>
     </tr>
     <tr>
-      <td id="T_4beda_row6_col0" class="data row6 col0" > </td>
-      <td id="T_4beda_row6_col1" class="data row6 col1" ></td>
+      <td id="T_b6dbb_row6_col0" class="data row6 col0" > </td>
+      <td id="T_b6dbb_row6_col1" class="data row6 col1" ></td>
     </tr>
     <tr>
-      <td id="T_4beda_row7_col0" class="data row7 col0" >Annual average number of days with heavy rainfall (>95th percentile)</td>
-      <td id="T_4beda_row7_col1" class="data row7 col1" >18.143</td>
+      <td id="T_b6dbb_row7_col0" class="data row7 col0" >Annual average number of days with heavy rainfall (>95th percentile)</td>
+      <td id="T_b6dbb_row7_col1" class="data row7 col1" >18.143</td>
     </tr>
     <tr>
-      <td id="T_4beda_row8_col0" class="data row8 col0" >Change in number of heavy rainfall days from 1951</td>
-      <td id="T_4beda_row8_col1" class="data row8 col1" >-2.409</td>
+      <td id="T_b6dbb_row8_col0" class="data row8 col0" >Maximum number of days with heavy rainfall (>95th percentile): 2011</td>
+      <td id="T_b6dbb_row8_col1" class="data row8 col1" >34.000</td>
     </tr>
     <tr>
-      <td id="T_4beda_row9_col0" class="data row9 col0" >Rate of change in number of heavy rainfall days</td>
-      <td id="T_4beda_row9_col1" class="data row9 col1" >-0.033</td>
+      <td id="T_b6dbb_row9_col0" class="data row9 col0" >Minimum number of days with heavy rainfall (>95th percentile): 2010</td>
+      <td id="T_b6dbb_row9_col1" class="data row9 col1" >5.000</td>
     </tr>
     <tr>
-      <td id="T_4beda_row10_col0" class="data row10 col0" >Average Number of Heavy Rainfall Days: 1951 - 1962</td>
-      <td id="T_4beda_row10_col1" class="data row10 col1" >20.182</td>
+      <td id="T_b6dbb_row10_col0" class="data row10 col0" >Change in number of heavy rainfall days from 1951</td>
+      <td id="T_b6dbb_row10_col1" class="data row10 col1" >-2.409</td>
     </tr>
     <tr>
-      <td id="T_4beda_row11_col0" class="data row11 col0" >Average Number of Heavy Rainfall Days: 2012 - 2021</td>
-      <td id="T_4beda_row11_col1" class="data row11 col1" >14.333</td>
+      <td id="T_b6dbb_row11_col0" class="data row11 col0" >Rate of change in number of heavy rainfall days</td>
+      <td id="T_b6dbb_row11_col1" class="data row11 col1" >-0.033</td>
+    </tr>
+    <tr>
+      <td id="T_b6dbb_row12_col0" class="data row12 col0" >Average Number of Heavy Rainfall Days: 1951 - 1962</td>
+      <td id="T_b6dbb_row12_col1" class="data row12 col1" >20.182</td>
+    </tr>
+    <tr>
+      <td id="T_b6dbb_row13_col0" class="data row13 col0" >Average Number of Heavy Rainfall Days: 2012 - 2021</td>
+      <td id="T_b6dbb_row13_col1" class="data row13 col1" >14.333</td>
     </tr>
   </tbody>
 </table>

@@ -665,6 +665,18 @@ Removed 1 years due to insufficient data: [2019]
 <img alt="../../../_images/18eb67790404f4e13cb54220edf156e08e355ab76172904761bf98d1316701cf.png" src="../../../_images/18eb67790404f4e13cb54220edf156e08e355ab76172904761bf98d1316701cf.png" />
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;wet_day&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()[</span><span class="s1">&#39;PRCP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">)))[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(134.1153846153846)
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="analysis">
@@ -795,85 +807,89 @@ Dry days are considered those in which precipitation is lower than 1mm. <br></p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
-#T_cf4d3 caption {
+#T_53739 caption {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
   color: #2C013B;
   margin-bottom: 12px;
 }
-#T_cf4d3 thead th {
+#T_53739 thead th {
   background-color: #eed3f4;
   color: #2C013B;
   font-weight: bold;
   text-align: center;
 }
-#T_cf4d3 td {
+#T_53739 td {
   padding: 6px;
   border-bottom: 1px solid #ccc;
   text-align: center;
 }
-#T_cf4d3_row0_col0, #T_cf4d3_row1_col0, #T_cf4d3_row2_col0, #T_cf4d3_row3_col0, #T_cf4d3_row4_col0, #T_cf4d3_row5_col0, #T_cf4d3_row6_col0, #T_cf4d3_row7_col0, #T_cf4d3_row8_col0, #T_cf4d3_row9_col0, #T_cf4d3_row10_col0, #T_cf4d3_row11_col0 {
+#T_53739_row0_col0, #T_53739_row1_col0, #T_53739_row2_col0, #T_53739_row3_col0, #T_53739_row4_col0, #T_53739_row5_col0, #T_53739_row6_col0, #T_53739_row7_col0, #T_53739_row8_col0, #T_53739_row9_col0, #T_53739_row10_col0, #T_53739_row11_col0, #T_53739_row12_col0 {
   text-align: center;
   font-weight: bold;
 }
 </style>
-<table id="T_cf4d3">
+<table id="T_53739">
   <caption>Dry Conditions</caption>
   <thead>
     <tr>
-      <th id="T_cf4d3_level0_col0" class="col_heading level0 col0" >Metric</th>
-      <th id="T_cf4d3_level0_col1" class="col_heading level0 col1" >Value</th>
+      <th id="T_53739_level0_col0" class="col_heading level0 col0" >Metric</th>
+      <th id="T_53739_level0_col1" class="col_heading level0 col1" >Value</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td id="T_cf4d3_row0_col0" class="data row0 col0" >Annual Average Number of Dry Days [<1mm]</td>
-      <td id="T_cf4d3_row0_col1" class="data row0 col1" >144.800</td>
+      <td id="T_53739_row0_col0" class="data row0 col0" >Annual Average Number of Dry Days [<1mm]</td>
+      <td id="T_53739_row0_col1" class="data row0 col1" >144.800</td>
     </tr>
     <tr>
-      <td id="T_cf4d3_row1_col0" class="data row1 col0" >Change in Number of Dry Days since 1951</td>
-      <td id="T_cf4d3_row1_col1" class="data row1 col1" >-10.001</td>
+      <td id="T_53739_row1_col0" class="data row1 col0" >Change in Number of Dry Days since 1951</td>
+      <td id="T_53739_row1_col1" class="data row1 col1" >-10.001</td>
     </tr>
     <tr>
-      <td id="T_cf4d3_row2_col0" class="data row2 col0" >Rate of Change in Number of Dry Days (days/year)</td>
-      <td id="T_cf4d3_row2_col1" class="data row2 col1" >-0.137</td>
+      <td id="T_53739_row2_col0" class="data row2 col0" >Rate of Change in Number of Dry Days (days/year)</td>
+      <td id="T_53739_row2_col1" class="data row2 col1" >-0.137</td>
     </tr>
     <tr>
-      <td id="T_cf4d3_row3_col0" class="data row3 col0" >Average Number of Dry Days: 1951 - 1962</td>
-      <td id="T_cf4d3_row3_col1" class="data row3 col1" >125.182</td>
+      <td id="T_53739_row3_col0" class="data row3 col0" >Average Number of Dry Days: 1951 - 1962</td>
+      <td id="T_53739_row3_col1" class="data row3 col1" >125.182</td>
     </tr>
     <tr>
-      <td id="T_cf4d3_row4_col0" class="data row4 col0" >Average Number of Dry Days: 2012 - 2021</td>
-      <td id="T_cf4d3_row4_col1" class="data row4 col1" >136.667</td>
+      <td id="T_53739_row4_col0" class="data row4 col0" >Average Number of Dry Days: 2012 - 2021</td>
+      <td id="T_53739_row4_col1" class="data row4 col1" >136.667</td>
     </tr>
     <tr>
-      <td id="T_cf4d3_row5_col0" class="data row5 col0" >Number of dry days in the driest year on record (2015)</td>
-      <td id="T_cf4d3_row5_col1" class="data row5 col1" >181.000</td>
+      <td id="T_53739_row5_col0" class="data row5 col0" >Number of dry days in the driest year on record (2015)</td>
+      <td id="T_53739_row5_col1" class="data row5 col1" >181.000</td>
     </tr>
     <tr>
-      <td id="T_cf4d3_row6_col0" class="data row6 col0" > </td>
-      <td id="T_cf4d3_row6_col1" class="data row6 col1" ></td>
+      <td id="T_53739_row6_col0" class="data row6 col0" > </td>
+      <td id="T_53739_row6_col1" class="data row6 col1" ></td>
     </tr>
     <tr>
-      <td id="T_cf4d3_row7_col0" class="data row7 col0" >Maximum number of consecutive dry days on record</td>
-      <td id="T_cf4d3_row7_col1" class="data row7 col1" >24.000</td>
+      <td id="T_53739_row7_col0" class="data row7 col0" >Average Annual Maximum Consecutive Dry Days</td>
+      <td id="T_53739_row7_col1" class="data row7 col1" >10.200</td>
     </tr>
     <tr>
-      <td id="T_cf4d3_row8_col0" class="data row8 col0" >Change in Maximum Consecutive Dry Days since 1951</td>
-      <td id="T_cf4d3_row8_col1" class="data row8 col1" >0.511</td>
+      <td id="T_53739_row8_col0" class="data row8 col0" >Maximum number of consecutive dry days on record</td>
+      <td id="T_53739_row8_col1" class="data row8 col1" >24.000</td>
     </tr>
     <tr>
-      <td id="T_cf4d3_row9_col0" class="data row9 col0" >Rate of Change in Maximum Consecutive Dry Days (days/year)</td>
-      <td id="T_cf4d3_row9_col1" class="data row9 col1" >0.007</td>
+      <td id="T_53739_row9_col0" class="data row9 col0" >Change in Maximum Consecutive Dry Days since 1951</td>
+      <td id="T_53739_row9_col1" class="data row9 col1" >0.511</td>
     </tr>
     <tr>
-      <td id="T_cf4d3_row10_col0" class="data row10 col0" >Average Annual Maximum Consecutive Dry Days: 1951 - 1962</td>
-      <td id="T_cf4d3_row10_col1" class="data row10 col1" >8.364</td>
+      <td id="T_53739_row10_col0" class="data row10 col0" >Rate of Change in Maximum Consecutive Dry Days (days/year)</td>
+      <td id="T_53739_row10_col1" class="data row10 col1" >0.007</td>
     </tr>
     <tr>
-      <td id="T_cf4d3_row11_col0" class="data row11 col0" >Average Annual Maximum Consecutive Dry Days: 2012 - 2021</td>
-      <td id="T_cf4d3_row11_col1" class="data row11 col1" >9.444</td>
+      <td id="T_53739_row11_col0" class="data row11 col0" >Average Annual Maximum Consecutive Dry Days: 1951 - 1962</td>
+      <td id="T_53739_row11_col1" class="data row11 col1" >8.364</td>
+    </tr>
+    <tr>
+      <td id="T_53739_row12_col0" class="data row12 col0" >Average Annual Maximum Consecutive Dry Days: 2012 - 2021</td>
+      <td id="T_53739_row12_col1" class="data row12 col1" >9.444</td>
     </tr>
   </tbody>
 </table>
