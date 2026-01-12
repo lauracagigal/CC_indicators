@@ -4,7 +4,7 @@
 title: CC Indicators
 author: Laura Cagigal
 logo: resources/icons/icon.png
-copyright                   : "2024"  # Copyright year to be placed in the footer
+copyright                   : "2026"  # Copyright year to be placed in the footer
 only_build_toc_files : true
 
 # Force re-execution of notebooks on each build.
