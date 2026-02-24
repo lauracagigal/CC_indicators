@@ -1,27 +1,42 @@
-name: cc_indicators_v2
+name: cc-indicators
 channels:
   - conda-forge
-  - defaults
+
 dependencies:
-  - python==3.12.0
+  - python=3.12
+
+  # Core
+  - numpy
   - pandas
-  - ipykernel
+  - scipy
   - xarray
   - matplotlib
-  - plotly
-  - geopy
+  - netcdf4
+  - dask
+  - h5netcdf
+
+  # Geospatial
   - cartopy
-  - seaborn
-  - folium
-  - cmocean
-  - contextily
-  - ipywidgets
-  - nbformat
-  - jupyter-book
   - geopandas
-  - erddapy
-  - papermill
+  - contextily
+  - cmocean
+
+  # Visualization
+  - plotly
+  - anywidget
+  - seaborn
+
+  # Web
+  - requests
+
+  # Notebook
+  - ipykernel
+
   - pip
   - pip:
-    - df2img
-    - copernicusmarine
+      - kaleido
+      - df2img
+      - myst-nb
+      - copernicusmarine
+      - great-tables
+      - playwright

@@ -302,7 +302,7 @@ def download_uhslc_data(data_dir: str, uhslc_id: int, frequency: str = 'hourly')
     # Rename the temporary file to the final path
     os.rename(temp_path, path)
 
-    rsl = xr.open_dataset(path)
+    rsl = xr.open_dataset(path, engine="h5netcdf")
 
     # remove the trailing zero from record_id. This zero is added to the record_id to make it unique if the station has multiple entries
     rsl['record_id'] =(rsl['record_id']/10).astype(int)

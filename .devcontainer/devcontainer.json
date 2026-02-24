@@ -1,15 +1,15 @@
 {
-  "name": "Conda_env",
-  "build": {
-    "context": "..",
-    "dockerfile": "Dockerfile"
-  },
-  "postCreateCommand": "pip install --upgrade ipykernel && python -m ipykernel install --user",
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  },
-  "extensions": [
-    "ms-python.python",
-    "ms-toolsai.jupyter"    
-  ]
+    "name": "CC-Indicators",
+    "image": "geoocean/cc-indicators:latest",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter"
+            ]
+        }
+    }
 }
