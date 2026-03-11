@@ -1,6 +1,6 @@
 {
     "name": "CC-Indicators",
-    "image": "geoocean/cc-indicators:latest",
+    "image": "geoocean/cc-indicators:data",
     "customizations": {
         "vscode": {
             "settings": {
@@ -11,5 +11,6 @@
                 "ms-toolsai.jupyter"
             ]
         }
-    }
+    },
+    "postCreateCommand": "cp -r /data/* data/"
 }
