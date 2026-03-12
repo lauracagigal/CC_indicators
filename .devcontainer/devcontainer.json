@@ -1,6 +1,6 @@
 {
     "name": "CC-Indicators",
-    "image": "geoocean/cc-indicators:data",
+    "image": "geoocean/cc-indicators:data1",
     "customizations": {
         "vscode": {
             "settings": {
